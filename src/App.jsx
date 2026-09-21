@@ -30,11 +30,9 @@ export default function App() {
   return (
     <>
       <ScalarisPrototype />
-      {import.meta.env.DEV && (
-        <button className="temp-logout-button" onClick={auth.logout} aria-label="Temporary logout">
-          <LockKeyhole size={16} /> Temp logout
-        </button>
-      )}
+      <button className="temp-logout-button" onClick={auth.logout} aria-label="Temporary logout">
+        <LockKeyhole size={16} /> Temp logout
+      </button>
     </>
   );
 }
