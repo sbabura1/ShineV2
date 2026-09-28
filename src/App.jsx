@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <>
-      <ScalarisPrototype />
+      <ScalarisPrototype key={auth.userId} userId={auth.userId} />
       <button className="temp-logout-button" onClick={auth.logout} aria-label="Temporary logout">
         <LockKeyhole size={16} /> Temp logout
       </button>

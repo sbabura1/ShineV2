@@ -12,8 +12,9 @@ import SectorHub from "./components/SectorHub";
 import ShineSprint from "./components/ShineSprint";
 import Topbar from "./components/Topbar";
 import Worldview from "./components/Worldview";
+import { loadPreAssessment, savePreAssessment } from "./preAssessmentStorage";
 
-export default function ScalarisPrototype() {
+export default function ScalarisPrototype({ userId } = {}) {
     const [screen, setScreen] = useState("landing");
     const [identity, setIdentity] = useState({ name: "Jordan Vega", avatar: "🧑🏽‍🚀", faculty: "Dr. Maya Chen", sector: "sentinel", role: "Crime Analyst" });
     const [missionLevel, setMissionLevel] = useState("Beginning");
@@ -22,8 +23,8 @@ export default function ScalarisPrototype() {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [anomalies, setAnomalies] = useState([]);
     const [toast, setToast] = useState("");
-    const [preAssessmentComplete, setPreAssessmentComplete] = useState(false);
-    const [preAssessmentResult, setPreAssessmentResult] = useState(null);
+    const [preAssessmentResult, setPreAssessmentResult] = useState(() => loadPreAssessment(userId));
+    const preAssessmentComplete = preAssessmentResult !== null;
     const [completedSectors, setCompletedSectors] = useState([]);
     const [postAssessmentComplete, setPostAssessmentComplete] = useState(false);
     const [projectAssessmentComplete, setProjectAssessmentComplete] = useState(false);
@@ -45,14 +46,13 @@ export default function ScalarisPrototype() {
         React.createElement(Topbar, { identity: identity, onHome: () => go("nexus") }),
         screen === "worldview" && React.createElement(Worldview, { onEnter: () => go("identity") }),
         screen === "identity" && React.createElement(Identity, { identity: identity, setIdentity: setIdentity, onContinue: () => go("nexus"), preAssessmentComplete, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete: completedSectors.length === sectors.length, completedCount: completedSectors.length, onPostAssessment: () => { if (completedSectors.length === sectors.length) go("postassessment"); } }),
-        screen === "preassessment" && React.createElement(PreAssessment, { identity: identity, onExit: () => go("nexus"), onComplete: (result) => { setPreAssessmentResult(result); setPreAssessmentComplete(true); go("nexus"); notify("Pre-assessment complete. All Sectors are now unlocked."); } }),
+        screen === "preassessment" && React.createElement(PreAssessment, { identity: identity, onExit: () => go("nexus"), onComplete: (result) => { setPreAssessmentResult({ score: result.score, pct: result.pct, band: result.band }); const saved = savePreAssessment(userId, result); go("nexus"); notify(saved ? "Pre-assessment complete. Summary saved in this browser." : "Pre-assessment complete for this visit. Browser storage is unavailable."); } }),
         screen === "postassessment" && React.createElement(PostAssessment, { identity, completedSectors, onBack: () => go("nexus"), onComplete: () => { setPostAssessmentComplete(true); go("nexus"); notify("Post-assessment marked complete."); } }),
         screen === "nexus" && React.createElement(Nexus, { identity: identity, preAssessmentComplete: preAssessmentComplete, preAssessmentResult: preAssessmentResult, completedSectors, postAssessmentComplete, projectAssessmentComplete, onPostAssessment: () => { if (completedSectors.length === sectors.length) go("postassessment"); }, onPreAssessment: () => go("preassessment"), onSector: (id) => {
-                if (!preAssessmentComplete) { go("preassessment"); return; }
                 const s = sectors.find(x => x.id === id);
                 setIdentity({ ...identity, sector: id, role: s.roles.split(" • ")[0] });
                 go("sector");
-            }, onMission: () => { if (!preAssessmentComplete) { go("preassessment"); return; } setStep(0); go("mission"); } }),
+            }, onMission: () => { setStep(0); go("mission"); } }),
         screen === "sector" && React.createElement(SectorHub, { sector: sector, identity: identity, missionLevel: missionLevel, setMissionLevel: setMissionLevel, onBack: () => go("nexus"), onMission: () => { setStep(0); go("mission"); }, onSprint: () => go("sprint") }),
         screen === "sprint" && React.createElement(ShineSprint, {
             sector: sector,

@@ -6,13 +6,16 @@ export default function useAuth() {
   const [status, setStatus] = useState('loading');
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
+  const [userId, setUserId] = useState(null);
 
   const checkAuth = useCallback(async () => {
     try {
-      await getCurrentUser();
+      const user = await getCurrentUser();
+      setUserId(user.userId);
       setStatus('authenticated');
       setError('');
     } catch {
+      setUserId(null);
       setStatus('unauthenticated');
     }
   }, []);
@@ -100,7 +103,7 @@ export default function useAuth() {
   }, [checkAuth]);
 
   return {
-    status, error, message, login, loginWithGoogle, finishNewPasswordSignIn,
+    status, userId, error, message, login, loginWithGoogle, finishNewPasswordSignIn,
     createAccount, confirmAccount, logout: signOut,
   };
 }
