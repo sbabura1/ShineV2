@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { sectorQRSkills, sprintApplicationBank, sprintSkillBank } from '../data';
+import { sectorQRFramework, sectorQRSkills, sprintApplicationBank, sprintSkillBank } from '../data';
 
 function makeSprintQuestions(sector){
  const entry=sectorQRFramework[sector.id];
+ if(!entry)return [];
  return Object.entries(entry.groups).flatMap(([category,skills],groupIndex)=>skills.map((skill,index)=>{
-  const item=groupIndex===2?sprintApplicationBank[sector.id][index]:sprintSkillBank[skill.toLowerCase()];
+  const item=groupIndex===2?sprintApplicationBank[sector.id]?.[index]:sprintSkillBank[skill.toLowerCase()];
+  if(!item)return null;
   // Rotate answer positions deterministically so correct choices are distributed.
   const offset=(groupIndex*4+index)%item[1].length;
   const choices=item[1].map((_,i)=>item[1][(i+offset)%item[1].length]);
   return {skill,category,prompt:item[0],choices,correct:(item[2]-offset+choices.length)%choices.length};
- }));
+ }).filter(Boolean));
 }
 export default function ShineSprint({sector,onBack}){
  const qs=makeSprintQuestions(sector);
@@ -18,6 +20,17 @@ export default function ShineSprint({sector,onBack}){
  const [showSummary,setShowSummary]=React.useState(false);
  const [reflection,setReflection]=React.useState({});
  const [reflectionSubmitted,setReflectionSubmitted]=React.useState(false);
+
+ if(!qs.length){
+  return React.createElement("main",{className:"page route-error-page"},
+   React.createElement("section",{className:"card route-error-card",role:"alert"},
+    React.createElement("div",{className:"eyebrow"},"Mission data unavailable"),
+    React.createElement("h2",null,"This sprint is not ready yet."),
+    React.createElement("p",null,"Return to the Nexus and choose an available mission."),
+    React.createElement("button",{type:"button",className:"btn",onClick:onBack},"RETURN TO THE NEXUS")
+   )
+  );
+ }
 
  const cur=qs[q];
  const answered=ans[q]!==undefined;

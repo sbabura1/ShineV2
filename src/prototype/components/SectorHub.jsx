@@ -1,5 +1,14 @@
 import React from 'react';
-import { sectorQRSkills } from '../data';
+import { sectorQRFramework, sectorQRSkills } from '../data';
+
+const vitalisMissions = [
+    { number: "01", title: "Clinic Capacity Signal", description: "Compare appointments, provider-days, and wait times to identify a defensible staffing signal.", data: "Appointments · Provider-days · Wait times", active: true },
+    { number: "02", title: "Emergency Department Flow", description: "Investigate how arrival patterns and treatment capacity affect emergency-department waits.", data: "Hourly arrivals · Capacity · Wait percentiles" },
+    { number: "03", title: "Community Health Trends", description: "Compare population rates over time and separate meaningful trends from changes in group size.", data: "Population counts · Rates · Time series" },
+    { number: "04", title: "Resource Allocation", description: "Balance staffing hours, patient needs, and a limited operating budget across clinic locations.", data: "Staffing hours · Acuity · Budget" },
+    { number: "05", title: "Screening and Risk", description: "Interpret screening results while accounting for false positives, base rates, and uncertainty.", data: "Screening results · Base rates · Risk" },
+    { number: "06", title: "Program Evaluation", description: "Evaluate whether a health program improved outcomes using baseline and comparison-group evidence.", data: "Baseline · Follow-up · Comparison groups" }
+];
 
 export default function SectorHub({ sector, identity, missionLevel, setMissionLevel, onBack, onMission, onSprint }) {
     const skills = sectorQRSkills[sector.id] || [];
@@ -18,15 +27,16 @@ export default function SectorHub({ sector, identity, missionLevel, setMissionLe
                 Object.entries(sectorQRFramework[sector.id].groups).map(([category,items]) => React.createElement("section", {className:"qr-category",key:category}, React.createElement("h3",null,category),React.createElement("div", { className: "sector-skill-list" }, items.map(x => React.createElement("span", { className: "sector-skill", key: x }, x))))),
                 React.createElement("button", { className: "btn sprint-launch", onClick: onSprint }, "SHINE SPRINT SKILLS CHECKUP →"))),
         React.createElement("div", { className: "section-title", style: { marginTop: 24 } }, React.createElement("div", null,
-            React.createElement("h2", null, "Available Missions"), React.createElement("p", null, "Select a challenge level for each mission."))),
-        React.createElement("div", { className: "grid cols-3" }, [
-          ["Mission 01 • Active",sectorMissionConfigs[sector.id].title,sectorMissionConfigs[sector.id].intro],
-          ["Mission 02","Response Time Divide","Investigate why some neighborhoods wait longer for emergency response."],
-          ["Mission 03","The Mayor's Claim","Two leaders cite different statistics. Determine whether either claim is misleading."]
-        ].map((m,i)=>React.createElement("div", {className:"card"+(i?" locked":""),key:m[1]},
-          React.createElement("div",{className:"eyebrow"},m[0]),React.createElement("h3",null,m[1]),React.createElement("p",{style:{color:"var(--muted)"}},m[2]),
-          i===0 && React.createElement(React.Fragment,null,
+            React.createElement("h2", null, "Vitalis Missions"), React.createElement("p", null, "Mission 01 is available now. The remaining health-data missions are prepared for future release."))),
+        React.createElement("div", { className: "mission-card-grid" }, vitalisMissions.map((mission)=>React.createElement("article", {className:"card sector-mission-card"+(mission.active?" active":" locked"),key:mission.number},
+          React.createElement("div",{className:"mission-card-top"},React.createElement("div",{className:"eyebrow"},"Mission "+mission.number),React.createElement("span",{className:"tag"},mission.active?"ACTIVE":"LOCKED")),
+          React.createElement("h3",null,mission.title),
+          React.createElement("p",{className:"mission-card-description"},mission.description),
+          React.createElement("div",{className:"mission-data-label"},"DATA FOCUS"),
+          React.createElement("p",{className:"mission-data-copy"},mission.data),
+          mission.active && React.createElement(React.Fragment,null,
             React.createElement("label",{style:{marginTop:14}},"Mission Skill Level"),
             React.createElement("select",{value:missionLevel,onChange:e=>setMissionLevel(e.target.value)},["Beginning","Intermediate","Advanced"].map(x=>React.createElement("option",{key:x},x))),
-            React.createElement("button",{className:"btn",style:{marginTop:14},onClick:onMission},"START MISSION"))))));
+            React.createElement("button",{className:"btn",style:{marginTop:14},onClick:onMission},"START MISSION 01 →")),
+          !mission.active && React.createElement("button",{className:"btn secondary",type:"button",disabled:true},"COMING SOON")))));
 }

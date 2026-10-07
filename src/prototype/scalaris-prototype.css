@@ -388,3 +388,24 @@
 .qr-category{margin-top:20px}.qr-category h3{font-size:15px;color:var(--cyan);margin:0 0 8px}.qr-category:last-of-type h3{color:var(--gold)}
 .v-voice-settings{margin:18px 0;padding:16px;border:1px solid #357397;border-radius:12px;background:#071725}.v-voice-settings summary{font-weight:700}.v-voice-settings label{margin-top:16px;font-size:14px}.v-voice-settings input[type=range]{padding:0;accent-color:var(--cyan);margin-top:10px}.v-voice-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.v-voice-settings p{font-size:14px}
 .profile-logout-button{width:38px;height:38px;display:grid;place-items:center;flex:none;margin-left:4px;padding:0;border:0;border-left:1px solid rgba(156,181,199,.3);border-radius:0 9px 9px 0;background:transparent;color:var(--muted);cursor:pointer}.profile-logout-button:hover{background:rgba(255,255,255,.07);color:var(--text)}.profile-logout-button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.mission-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.sector-mission-card{display:flex;flex-direction:column;min-height:330px;padding:22px;text-align:left}.sector-mission-card.active{border-color:rgba(87,216,255,.65);box-shadow:0 0 28px rgba(87,216,255,.1)}.sector-mission-card.locked{opacity:.62}.mission-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.sector-mission-card h3{font-size:23px;margin:20px 0 10px}.mission-card-description{color:var(--muted);line-height:1.6;flex:1}.mission-data-label{margin-top:18px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.12em}.mission-data-copy{margin:7px 0 18px;color:var(--text);font-size:13px}.sector-mission-card select{width:100%;margin-top:8px}.sector-mission-card>.btn{width:100%;margin-top:auto}.sector-node:disabled{cursor:not-allowed}.sector-node.locked{opacity:.42;filter:saturate(.35)}.sector-node.locked:hover{transform:translate(-50%,-50%)}.card.sector{width:100%;color:inherit;text-align:left}.card.sector.locked{cursor:not-allowed;opacity:.5;filter:saturate(.35)}@media(max-width:1000px){.mission-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.mission-card-grid{grid-template-columns:1fr}}
+.route-error-page {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.route-error-card {
+  width: min(620px, calc(100% - 32px));
+  padding: 36px;
+  text-align: center;
+}
+
+.route-error-card h2 {
+  margin: 12px 0;
+}
+
+.route-error-card p {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
