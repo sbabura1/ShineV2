@@ -1,8 +1,8 @@
-import React from "react";
-import AssessmentIndicators from "./AssessmentIndicators";
-import { sectors } from "../data";
+import React from 'react';
+import AssessmentIndicators from './AssessmentIndicators';
+import { sectors } from '../data';
 
-export default function Identity({ identity, setIdentity, onContinue, preAssessmentComplete, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, onPostAssessment }) {
+export default function Identity({ identity, setIdentity, onContinue, preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, onPostAssessment }) {
     return React.createElement("main", { className: "page" },
         React.createElement("div", { className: "section-title" },
             React.createElement("div", null,
@@ -41,7 +41,7 @@ export default function Identity({ identity, setIdentity, onContinue, preAssessm
                     React.createElement("b", null, "Identity is more than appearance."),
                     React.createElement("br", null),
                     "Your rank, sector clearance, Beacon Trust, data clearance, and mission authority grow as you demonstrate quantitative reasoning."),
-                React.createElement(AssessmentIndicators, { preAssessmentComplete, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, totalSectors: sectors.length, onPostAssessment }),
+                React.createElement(AssessmentIndicators, { preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, totalSectors: sectors.length, onPostAssessment }),
                 React.createElement("div", { className: "cta-row", style: { justifyContent: "flex-start" } },
                     React.createElement("button", { className: "btn", onClick: onContinue }, "CONTINUE TO THE NEXUS \u2192")))));
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function AssessmentVisual({type}) {
   if(type==="study") return React.createElement("div",{className:"assessment-table"},React.createElement("table",null,

@@ -1,5 +1,5 @@
-import React from "react";
-import { sectors } from "../data";
+import React from 'react';
+import AssessmentIndicators from './AssessmentIndicators';
 
 export default function PostAssessment({identity,completedSectors,onBack,onComplete}) {
     return React.createElement("main",{className:"page"},

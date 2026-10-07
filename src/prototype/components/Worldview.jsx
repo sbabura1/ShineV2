@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Worldview({ onEnter }) {
     return React.createElement("main", { className: "page" },

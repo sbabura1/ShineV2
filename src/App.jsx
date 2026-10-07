@@ -1,7 +1,6 @@
-import { LockKeyhole } from 'lucide-react';
 import useAuth from './auth/useAuth';
 import Login from './auth/Login';
-import ScalarisPrototype from './prototype/ScalarisPrototype';
+import ScalarisApp from './prototype/ScalarisApp';
 
 export default function App() {
   const auth = useAuth();
@@ -9,7 +8,7 @@ export default function App() {
     && new URLSearchParams(window.location.search).has('prototype');
 
   if (isPrototypePreview) {
-    return <ScalarisPrototype />;
+    return <ScalarisApp userId="prototype-preview" />;
   }
 
   if (auth.status !== 'authenticated') {
@@ -28,11 +27,6 @@ export default function App() {
   }
 
   return (
-    <>
-      <ScalarisPrototype key={auth.userId} userId={auth.userId} />
-      <button className="temp-logout-button" onClick={auth.logout} aria-label="Temporary logout">
-        <LockKeyhole size={16} /> Temp logout
-      </button>
-    </>
+    <ScalarisApp key={auth.userId} userId={auth.userId} onLogout={auth.logout} />
   );
 }

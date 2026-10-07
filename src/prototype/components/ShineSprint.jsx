@@ -1,25 +1,15 @@
-import React from "react";
-import { sectorQRSkills } from "../data";
+import React, { useState } from 'react';
+import { sectorQRSkills, sprintApplicationBank, sprintSkillBank } from '../data';
 
 function makeSprintQuestions(sector){
- const skills=sectorQRSkills[sector.id]||[]; const sk=i=>skills[i%skills.length];
- return [
-  [sk(0),"A dataset contains the same record twice. What should an analyst do first?",["Average the records","Flag and verify the duplicate","Delete both records","Convert both to percentages"],1],
-  [sk(1),"A value rises from 40 to 50. What is the percent increase?",["10%","20%","25%","50%"],2],
-  [sk(2),"There are 36 events among 12,000 people. What is the rate per 1,000?",["0.3","3","30","300"],1],
-  [sk(3),"Two groups have different population sizes. Which measure usually gives the fairest comparison?",["Raw totals","A population-adjusted rate","The largest value","The category name"],1],
-  [sk(4),"Values are 8, 9, 9, 10, and 34. Which measure best represents a typical value?",["Mean","Median","Range","Maximum"],1],
-  [sk(5),"Which graph is generally best for showing change over time?",["Line graph","Pie chart","Single number","Venn diagram"],0],
-  [sk(6),"120 of 400 cases are in Category A. What percentage is that?",["12%","25%","30%","40%"],2],
-  [sk(7),"A sample reports a 20% outcome rate. Which statement is strongest?",["Exactly 20% will occur everywhere","The rate is evidence, but sampling and uncertainty matter","The result proves causation","The denominator is irrelevant"],1],
-  [sk(0),"One value is ten times larger than nearby values. What should you do first?",["Assume it is correct","Remove it","Investigate whether it is real or an error","Replace it with zero"],2],
-  [sk(1),"A value falls from 80 to 60. What is the percent decrease?",["20%","25%","33%","40%"],1],
-  [sk(2),"150 miles are traveled in 3 hours. What is the unit rate?",["30 mph","45 mph","50 mph","75 mph"],2],
-  [sk(3),"48 of 80 in Group A and 30 of 60 in Group B meet a criterion. Which has the higher proportion?",["Group A","Group B","Equal","Cannot determine"],0],
-  [sk(4),"What is the mean of 12, 16, and 20?",["14","16","18","48"],1],
-  [sk(5),"A chart starts its vertical axis at 95, making a small difference look huge. What is the issue?",["Sampling error","Misleading scale","Duplicate data","Unit conversion"],1],
-  [sk(6),`Which conclusion best reflects strong quantitative reasoning in ${sector.label}?`,["Act on the biggest number immediately","Combine data quality, appropriate measures, context, and uncertainty","Ignore denominators","Choose the result supporting the original claim"],1]
- ].map(x=>({skill:x[0],prompt:x[1],choices:x[2],correct:x[3]}));
+ const entry=sectorQRFramework[sector.id];
+ return Object.entries(entry.groups).flatMap(([category,skills],groupIndex)=>skills.map((skill,index)=>{
+  const item=groupIndex===2?sprintApplicationBank[sector.id][index]:sprintSkillBank[skill.toLowerCase()];
+  // Rotate answer positions deterministically so correct choices are distributed.
+  const offset=(groupIndex*4+index)%item[1].length;
+  const choices=item[1].map((_,i)=>item[1][(i+offset)%item[1].length]);
+  return {skill,category,prompt:item[0],choices,correct:(item[2]-offset+choices.length)%choices.length};
+ }));
 }
 export default function ShineSprint({sector,onBack}){
  const qs=makeSprintQuestions(sector);
@@ -198,7 +188,7 @@ export default function ShineSprint({sector,onBack}){
    React.createElement("div",{className:"card sprint-shell",style:{marginTop:18}},
      React.createElement("div",{className:"eyebrow"},"SHINE Sprint Skills Checkup"),
      React.createElement("h2",null,sector.name," • ",sector.label),
-     React.createElement("p",{style:{color:"var(--muted)"}},"Question ",q+1," of ",qs.length," • ",cur.skill),
+     React.createElement("p",{style:{color:"var(--muted)"}},"Question ",q+1," of ",qs.length," • ",cur.category," • ",cur.skill),
      React.createElement("div",{className:"progress"},
        React.createElement("div",{style:{width:((q+1)/qs.length*100)+"%"}})
      ),
@@ -214,7 +204,7 @@ export default function ShineSprint({sector,onBack}){
      // but never make Submit Checkup inert.
      q===qs.length-1 && !answered &&
        React.createElement("p",{style:{color:"var(--gold)",fontSize:12,marginTop:13}},
-         "You may answer Question 15 before submitting. If you submit now, the unanswered question will count as incorrect."
+         `You may answer Question ${qs.length} before submitting. If you submit now, the unanswered question will count as incorrect.`
        ),
 
      React.createElement("div",{style:{display:"flex",justifyContent:"space-between",marginTop:20,gap:12,flexWrap:"wrap"}},

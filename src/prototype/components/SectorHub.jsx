@@ -1,5 +1,5 @@
-import React from "react";
-import { sectorQRSkills } from "../data";
+import React from 'react';
+import { sectorQRSkills } from '../data';
 
 export default function SectorHub({ sector, identity, missionLevel, setMissionLevel, onBack, onMission, onSprint }) {
     const skills = sectorQRSkills[sector.id] || [];
@@ -12,15 +12,15 @@ export default function SectorHub({ sector, identity, missionLevel, setMissionLe
             React.createElement("p", { style: { maxWidth: 850, color: "var(--muted)", fontSize: 16 } }, sector.desc),
             React.createElement("div", { className: "mission-meta" },
                 React.createElement("span", { className: "tag" }, identity.role),
-                React.createElement("span", { className: "tag" }, "Data Lab Required")),
+                React.createElement("span", { className: "tag" }, "Workforce: " + sectorQRFramework[sector.id].workforce)),
             React.createElement("div", { className: "sector-skill-box" },
                 React.createElement("div", { className: "eyebrow" }, "Quantitative Reasoning Skills in This Sector"),
-                React.createElement("div", { className: "sector-skill-list" }, skills.map(x => React.createElement("span", { className: "sector-skill", key: x }, x))),
+                Object.entries(sectorQRFramework[sector.id].groups).map(([category,items]) => React.createElement("section", {className:"qr-category",key:category}, React.createElement("h3",null,category),React.createElement("div", { className: "sector-skill-list" }, items.map(x => React.createElement("span", { className: "sector-skill", key: x }, x))))),
                 React.createElement("button", { className: "btn sprint-launch", onClick: onSprint }, "SHINE SPRINT SKILLS CHECKUP →"))),
         React.createElement("div", { className: "section-title", style: { marginTop: 24 } }, React.createElement("div", null,
             React.createElement("h2", null, "Available Missions"), React.createElement("p", null, "Select a challenge level for each mission."))),
         React.createElement("div", { className: "grid cols-3" }, [
-          ["Mission 01 • Active","The West District Spike","A dramatic change appears in recent incident reports. Determine whether the pattern is real and advise command staff."],
+          ["Mission 01 • Active",sectorMissionConfigs[sector.id].title,sectorMissionConfigs[sector.id].intro],
           ["Mission 02","Response Time Divide","Investigate why some neighborhoods wait longer for emergency response."],
           ["Mission 03","The Mayor's Claim","Two leaders cite different statistics. Determine whether either claim is misleading."]
         ].map((m,i)=>React.createElement("div", {className:"card"+(i?" locked":""),key:m[1]},

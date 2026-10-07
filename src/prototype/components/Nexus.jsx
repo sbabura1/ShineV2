@@ -1,8 +1,8 @@
-import React from "react";
-import AssessmentIndicators from "./AssessmentIndicators";
-import { sectors } from "../data";
+import React from 'react';
+import AssessmentIndicators from './AssessmentIndicators';
+import { sectors } from '../data';
 
-export default function Nexus({ identity, onSector, onMission, preAssessmentComplete, preAssessmentResult, onPreAssessment, completedSectors, postAssessmentComplete, projectAssessmentComplete, onPostAssessment }) {
+export default function Nexus({ identity, onSector, onMission, preAssessmentComplete, preAssessmentSkipped, preAssessmentResult, onPreAssessment, onSkipPreAssessment, completedSectors, postAssessmentComplete, projectAssessmentComplete, onPostAssessment }) {
     const networkNodes = [
         ["gateway", 15, 16], ["mosaic", 34, 10], ["civitas", 63, 11], ["horizon", 84, 19],
         ["sentinel", 9, 38], ["lumina", 27, 35], ["vitalis", 79, 35], ["terra", 91, 48],
@@ -20,13 +20,15 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
     return React.createElement("main", { className: "page" },
         React.createElement("div", { className: "preassess-lock-banner " + (preAssessmentComplete ? "complete" : "") },
             React.createElement("div", null,
-                React.createElement("strong", null, preAssessmentComplete ? "✓ Nexus Pre-Assessment Complete" : "Optional: Nexus Pre-Assessment"),
+                React.createElement("strong", null, preAssessmentSkipped ? "Pre-Assessment Skipped" : preAssessmentComplete ? "✓ Nexus Pre-Assessment Complete" : "Optional: Nexus Pre-Assessment"),
                 React.createElement("p", null, preAssessmentComplete
-                    ? ("Baseline assessment completed" + (preAssessmentResult ? " · Baseline skills level: " + preAssessmentResult.band + " (" + preAssessmentResult.pct + "%)" : ""))
-                    : "Explore sectors and missions now, or take the optional assessment to understand your starting skills. Completed summaries are saved only in this browser.")),
-            React.createElement("button", { className: preAssessmentComplete ? "btn secondary" : "btn gold", onClick: onPreAssessment },
-                preAssessmentComplete ? "RETAKE PRE-ASSESSMENT" : "BEGIN PRE-ASSESSMENT →")),
-        React.createElement(AssessmentIndicators, { preAssessmentComplete, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount: completedSectors.length, totalSectors: sectors.length, onPostAssessment }),
+                    ? (preAssessmentSkipped ? "You can explore every sector now and take the assessment later." : "Baseline saved · Skills level: " + preAssessmentResult.band + " (" + preAssessmentResult.pct + "%)")
+                    : "Take the baseline assessment now, or skip it and begin exploring every sector.")),
+            React.createElement("div", { className: "cta-row" },
+                React.createElement("button", { className: preAssessmentComplete ? "btn secondary" : "btn gold", onClick: onPreAssessment },
+                    preAssessmentComplete ? (preAssessmentSkipped ? "TAKE PRE-ASSESSMENT" : "RETAKE PRE-ASSESSMENT") : "BEGIN PRE-ASSESSMENT →"),
+                !preAssessmentComplete && React.createElement("button", { className: "btn secondary", onClick: onSkipPreAssessment }, "SKIP PRE-ASSESSMENT"))),
+        React.createElement(AssessmentIndicators, { preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount: completedSectors.length, totalSectors: sectors.length, onPostAssessment }),
         React.createElement("div", { className: "section-title", style: { marginTop: 22 } },
             React.createElement("div", null,
                 React.createElement("div", { className: "eyebrow" }, "Central Hub"),
@@ -102,7 +104,7 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
             React.createElement("div", null,
                 React.createElement("h2", null, "14 Sectors of Scalaris"),
                 React.createElement("p", null, "Each sector changes the context\u2014not the expectation to reason from evidence."))),
-        React.createElement("div", { className: "grid cols-4" }, sectors.map(s => React.createElement("div", { className: "card sector", key: s.id, onClick: () => onSector(s.id) },
+        React.createElement("div", { className: "grid cols-4" }, sectors.map((s) => React.createElement("div", { className: "card sector", key: s.id, onClick: () => onSector(s.id) },
             React.createElement("div", null,
                 React.createElement("div", { className: "sector-icon" }, s.icon),
                 React.createElement("h3", null, s.name),
