@@ -10,6 +10,7 @@ import ShineSprint from './components/ShineSprint';
 import Topbar from './components/Topbar';
 import Worldview from './components/Worldview';
 import { BeaconSectorMission, BeaconSectorProfile } from './components/BeaconMission';
+import beaconImage from './assets/beacon.png';
 
 const defaultIdentity = {
   name: 'Jordan Vega', avatar: '🧑🏽‍🚀', faculty: 'Dr. Maya Chen',
@@ -75,7 +76,7 @@ export default function ScalarisApp({ userId = 'guest', onLogout } = {}) {
       {screen === 'mission' && <BeaconSectorMission key={`${sector.id}:${missionLevel}`} sector={sector} identity={identity} missionLevel={missionLevel} step={step} setStep={setStep} onFinish={() => { setCompletedSectors((current) => current.includes(identity.sector) ? current : [...current, identity.sector]); go('profile'); }} />}
       {screen === 'profile' && <BeaconSectorProfile identity={identity} onNexus={() => go('nexus')} onReplay={() => { setStep(0); go('mission'); }} />}
       {beaconOpen && <div className="beacon-panel"><h3>Beacon AI</h3><p>Ask for a hint, challenge your reasoning, clarify a quantitative concept, or check the evidence you are using. Beacon will coach without making the decision for you.</p><button className="btn secondary" style={{ marginTop: 12 }} onClick={() => setBeaconOpen(false)}>CLOSE</button></div>}
-      <button className="beacon-fab" title="Open Beacon AI" aria-label="Open Beacon AI" onClick={() => setBeaconOpen((open) => !open)}><span className="beacon-glyph" aria-hidden="true">B</span></button>
+      <button className="beacon-fab" title="Open Beacon AI" aria-label="Open Beacon AI" onClick={() => setBeaconOpen((open) => !open)}><img src={beaconImage} alt="" aria-hidden="true" /></button>
       {toast && <div className="toast" style={{ bottom: 105 }}>{toast}</div>}
     </div>
   );
