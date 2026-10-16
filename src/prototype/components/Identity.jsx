@@ -1,19 +1,28 @@
 import React from 'react';
 import AssessmentIndicators from './AssessmentIndicators';
+import { beaconOptions, selectedBeacon } from '../beacons';
+import { FacultyDiscussionSettings } from './DiscussionBoard';
 import { sectors } from '../data';
 
-export default function Identity({ identity, setIdentity, onContinue, preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, onPostAssessment }) {
+export default function Identity({ viewerRole, identity, setIdentity, onContinue, preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, onPostAssessment }) {
     return React.createElement("main", { className: "page" },
         React.createElement("div", { className: "section-title" },
             React.createElement("div", null,
                 React.createElement("h2", null, "Build Your Nexus Identity"),
                 React.createElement("p", null, "Who will you become in Scalaris?"))),
-        React.createElement("div", { className: "grid cols-3" },
-            React.createElement("div", { className: "card" },
+        React.createElement("div", { className: "grid cols-3 identity-layout" },
+            React.createElement("div", { className: "card identity-avatar-card" },
                 React.createElement("div", { className: "eyebrow" }, "Avatar"),
                 React.createElement("div", { style: { fontSize: 88, textAlign: "center", padding: "20px 0" } }, identity.avatar),
-                React.createElement("div", { className: "avatar-choice" }, ["🧑🏽‍🚀", "👩🏻‍💼", "🧑🏿‍🔬", "👨🏼‍💻", "👩🏽‍⚕️", "🧑🏻‍🚒"].map(a => React.createElement("button", { key: a, className: identity.avatar === a ? "active" : "", onClick: () => setIdentity({ ...identity, avatar: a }) }, a)))),
+                React.createElement("div", { className: "avatar-choice" }, ["🧑🏽‍🚀", "👩🏻‍💼", "🧑🏿‍🔬", "👨🏼‍💻", "👩🏽‍⚕️", "🧑🏻‍🚒"].map(a => React.createElement("button", { key: a, className: identity.avatar === a ? "active" : "", onClick: () => setIdentity({ ...identity, avatar: a }) }, a))),
+                React.createElement("section", { className: "beacon-picker", "aria-label": "Choose your Beacon companion" },
+                    React.createElement("div", { className: "eyebrow" }, "Choose Your Beacon"),
+                    React.createElement("p", { className: "beacon-picker-copy" }, "Choose the companion who will guide you through Scalaris."),
+                    React.createElement("div", { className: "beacon-options" }, beaconOptions.map(option => React.createElement("button", { key: option.id, type: "button", className: "beacon-option" + (selectedBeacon(identity).id === option.id ? " active" : ""), "aria-pressed": selectedBeacon(identity).id === option.id, onClick: () => setIdentity({ ...identity, beacon: option.id }) },
+                        React.createElement("img", { src: option.src, alt: "", loading: "lazy" }),
+                        React.createElement("span", null, option.label), selectedBeacon(identity).id === option.id && React.createElement("span", { className: "beacon-selected" }, "✓ Selected")))))),
             React.createElement("div", { className: "card", style: { gridColumn: "span 2" } },
+                viewerRole === "faculty" && React.createElement(FacultyDiscussionSettings, null),
                 React.createElement("div", { className: "form-row" },
                     React.createElement("div", null,
                         React.createElement("label", null, "Identity Name"),

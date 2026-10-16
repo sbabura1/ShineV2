@@ -1,8 +1,43 @@
 import React from 'react';
 import AssessmentIndicators from './AssessmentIndicators';
-import { sectors } from '../data';
+import { preCognitiveQuestions, sectorQRFramework, sectors } from '../data';
+
+const BASELINE_SKILL_MAP = {
+    'frequency tables':[0], 'univariate table interpretation':[0],
+    'percentage interpretation and rescaling':[2,12,13], 'row and column percentages':[4,16,17],
+    'selecting measures of central tendency':[1], 'graph selection':[5],
+    'adding and comparing percentages':[2,6,17], 'table interpretation':[0,10,11,16,17],
+    'spreadsheet analysis and pivot tables':[18], 'percent change':[15], 'table selection':[4],
+    'graph interpretation':[7,8,9], 'rates and proportions':[2,6,12,16,17], 'rates and ratios':[14],
+    'independent and dependent variables':[3], 'correlation interpretation':[19],
+    'correlation versus causation':[6,11], 'evidence-based inference':[6,10,11]
+};
+
+function sectorBaselineMastery(id, result) {
+    const skills = Object.values(sectorQRFramework[id].groups).flat();
+    const covered = skills.filter((skill) => BASELINE_SKILL_MAP[skill.toLowerCase()]);
+    const indices = [...new Set(covered.flatMap((skill) => BASELINE_SKILL_MAP[skill.toLowerCase()]))];
+    if (!result?.cognitive || !indices.length || indices.some((index) => result.cognitive[index] === undefined)) return { pct: null, tone: 'neutral', covered: 0, total: skills.length };
+    const correct = indices.filter((index) => result.cognitive[index] === preCognitiveQuestions[index].a).length;
+    const raw = correct / indices.length * 100;
+    return { pct: Math.round(raw), tone: raw < 50 ? 'red' : raw < 80 ? 'yellow' : 'green', covered: covered.length, total: skills.length, questions: indices.length };
+}
+
+function NexusOverview({ onClose }) {
+    const steps = [
+        ['1. Build your identity', 'Choose your identity, Beacon companion, starting sector, and screen mode. Faculty can manage sector discussion boards here.'],
+        ['2. Check your starting point', 'Take the optional three-part pre-assessment. Sector indicators summarize relevant baseline answers.'],
+        ['3. Explore a sector', 'Review its workforce connection and quantitative reasoning skills, then complete its SHINE Sprint Skills Checkup.'],
+        ['4. Investigate a mission', 'Choose a challenge level, examine data, and make evidence-based decisions. Beacon offers support after each challenge.'],
+        ['5. Connect and reflect', 'Discuss results with classmates when Faculty enables the board, assess your reasoning, and reflect on what you learned.'],
+        ['6. Return and grow', 'Return to the Nexus and review your mission record. Additional sectors remain clearly marked as coming soon.']
+    ];
+    return <section className="card nexus-overview" aria-label="Scalaris system overview"><div className="discussion-heading"><div><div className="eyebrow">Nexus Central Hub</div><h2>How Scalaris Works</h2></div><button type="button" className="btn secondary" onClick={onClose}>Close overview</button></div><p>Scalaris connects quantitative reasoning to workforce decisions. The Nexus is your home base for choosing a sector, reviewing progress, and planning your next learning experience.</p><div className="grid cols-3">{steps.map(([title, body]) => <div key={title} className="callout"><h3>{title}</h3><p>{body}</p></div>)}</div><div className="callout" style={{ marginTop: 18 }}><strong>Reading the sector rings</strong><p>Red: below 50%. Yellow: 50% to below 80%. Green: 80% or higher. Gray: not assessed. These are estimated baselines, not certification of every sector skill.</p></div></section>;
+}
 
 export default function Nexus({ identity, onSector, onMission, preAssessmentComplete, preAssessmentSkipped, preAssessmentResult, onPreAssessment, onSkipPreAssessment, completedSectors, postAssessmentComplete, projectAssessmentComplete, onPostAssessment }) {
+    const [overviewOpen, setOverviewOpen] = React.useState(false);
+    const masteryFor = (id) => sectorBaselineMastery(id, preAssessmentSkipped ? null : preAssessmentResult);
     const networkNodes = [
         ["gateway", 15, 16], ["mosaic", 34, 10], ["civitas", 63, 11], ["horizon", 84, 19],
         ["sentinel", 9, 38], ["lumina", 27, 35], ["vitalis", 79, 35], ["terra", 91, 48],
@@ -22,8 +57,8 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
             React.createElement("div", null,
                 React.createElement("strong", null, preAssessmentSkipped ? "Pre-Assessment Skipped" : preAssessmentComplete ? "✓ Nexus Pre-Assessment Complete" : "Optional: Nexus Pre-Assessment"),
                 React.createElement("p", null, preAssessmentComplete
-                    ? (preAssessmentSkipped ? "You can explore Vitalis now and take the assessment later." : "Baseline saved · Skills level: " + preAssessmentResult.band + " (" + preAssessmentResult.pct + "%)")
-                    : "Take the baseline assessment now, or skip it and begin exploring Vitalis.")),
+                    ? (preAssessmentSkipped ? "You can explore every sector now and take the assessment later." : "Baseline saved · Skills level: " + preAssessmentResult.band + " (" + preAssessmentResult.pct + "%)")
+                    : "Take the baseline assessment now, or skip it and begin exploring any sector.")),
             React.createElement("div", { className: "cta-row" },
                 React.createElement("button", { className: preAssessmentComplete ? "btn secondary" : "btn gold", onClick: onPreAssessment },
                     preAssessmentComplete ? (preAssessmentSkipped ? "TAKE PRE-ASSESSMENT" : "RETAKE PRE-ASSESSMENT") : "BEGIN PRE-ASSESSMENT →"),
@@ -35,6 +70,7 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                 React.createElement("h2", null, "Welcome to The Nexus"),
                 React.createElement("p", null, "Explore Scalaris as a connected network of quantitative reasoning contexts.")),
             React.createElement("button", { className: "btn gold", onClick: onMission }, "CONTINUE ACTIVE MISSION")),
+        overviewOpen && React.createElement(NexusOverview, { onClose: () => setOverviewOpen(false) }),
         React.createElement("div", { className: "nexus-layout" },
             React.createElement("div", { className: "card world-map" },
                 React.createElement("svg", { className: "constellation-lines", viewBox: "0 0 100 100", preserveAspectRatio: "none", "aria-hidden": "true" },
@@ -45,17 +81,18 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                         key: a + "-" + b, className: "network-line cross",
                         x1: nodeMap[a].x, y1: nodeMap[a].y, x2: nodeMap[b].x, y2: nodeMap[b].y
                     }))),
-                React.createElement("div", { className: "nexus-core" },
+                React.createElement("button", { type: "button", className: "nexus-core", onClick: () => setOverviewOpen(!overviewOpen), "aria-expanded": overviewOpen, "aria-label": "Open Scalaris system overview" },
                     React.createElement("div", null,
                         React.createElement("strong", null, "THE NEXUS"),
-                        React.createElement("span", { style: { fontSize: 10, color: "#dff8ff", letterSpacing: ".08em" } }, "CENTRAL HUB"))),
+                        React.createElement("span", { style: { fontSize: 10, color: "#dff8ff", letterSpacing: ".08em" } }, "CENTRAL HUB · OVERVIEW"))),
                 networkNodes.map(([id, x, y]) => {
                     const s = sectors.find(t => t.id === id);
-                    const isOpen = id === "vitalis";
+                    const isOpen = true;
+                    const mastery = masteryFor(id);
                     return React.createElement("button", {
                         key: id,
                         title: isOpen ? `${s.name}: ${s.label}` : `${s.name}: coming soon`,
-                        className: "sector-node " + (isOpen ? "open" : "locked"),
+                        className: "sector-node " + (isOpen ? `open mastery-${mastery.tone}` : "locked"),
                         style: { left: `${x}%`, top: `${y}%` },
                         onClick: isOpen ? () => onSector(id) : undefined,
                         disabled: !isOpen,
@@ -63,12 +100,13 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                     },
                         React.createElement("span", { className: "node-icon" }, s.icon),
                         React.createElement("span", { className: "node-name" }, s.name),
-                        React.createElement("span", { className: "node-status" }, isOpen ? (completedSectors.includes(id) ? "Complete" : "Open") : "Coming soon")
+                        isOpen && React.createElement("span", { className: "node-mastery" }, mastery.pct === null ? "Not assessed" : `${mastery.pct}% mastery`),
+                        React.createElement("span", { className: "node-status" }, isOpen ? (completedSectors.includes(id) ? "Complete" : "Baseline estimate") : "Coming soon")
                     );
                 }),
                 React.createElement("div", { className: "network-legend" },
-                    React.createElement("span", { className: "tag" }, "SOLID = Nexus connection"),
-                    React.createElement("span", { className: "tag" }, "DASHED = Cross-sector relationship"))),
+                    React.createElement("span", { className: "tag" }, "Red <50% · Yellow 50–79% · Green ≥80%"),
+                    React.createElement("span", { className: "tag" }, "Gray = not assessed · Baseline estimates"))),
             React.createElement("div", { className: "side-stack" },
                 React.createElement("div", { className: "card beacon" },
                     React.createElement("div", { className: "beacon-orb" }, "\u2600\uFE0F"),
@@ -89,7 +127,7 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                             React.createElement("b", null, "620"),
                             React.createElement("span", null, "REPUTATION")),
                         React.createElement("div", { className: "stat" },
-                            React.createElement("b", null, "1"),
+                            React.createElement("b", null, "14"),
                             React.createElement("span", null, "SECTORS OPEN"))),
                     React.createElement("div", { style: { marginTop: 15, fontSize: 12, color: "var(--muted)" } }, "Next rank: Senior Analyst"),
                     React.createElement("div", { className: "progress", style: { marginTop: 7 } },
@@ -106,9 +144,9 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
         React.createElement("div", { className: "section-title", style: { marginTop: 26 } },
             React.createElement("div", null,
                 React.createElement("h2", null, "14 Sectors of Scalaris"),
-                React.createElement("p", null, "Vitalis is available now. Additional sectors will unlock as their missions are completed."))),
+                React.createElement("p", null, "Every sector has its own workforce context, skills checkup, mission data, and questions."))),
         React.createElement("div", { className: "grid cols-4" }, sectors.map((s) => {
-            const isOpen = s.id === "vitalis";
+            const isOpen = true;
             return React.createElement(isOpen ? "button" : "div", { className: "card sector " + (isOpen ? "open" : "locked"), key: s.id, onClick: isOpen ? () => onSector(s.id) : undefined, "aria-disabled": !isOpen },
             React.createElement("div", null,
                 React.createElement("div", { className: "sector-icon" }, s.icon),

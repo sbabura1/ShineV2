@@ -1,19 +1,18 @@
 import React from 'react';
-import { sectorQRFramework, sectorQRSkills } from '../data';
+import { sectorQRFramework } from '../data';
+import { sectorMissionConfigs } from './BeaconMission';
+import SectorDiscussion from './DiscussionBoard';
 
-const vitalisMissions = [
-    { number: "01", title: "Clinic Capacity Signal", description: "Compare appointments, provider-days, and wait times to identify a defensible staffing signal.", data: "Appointments · Provider-days · Wait times", active: true },
-    { number: "02", title: "Emergency Department Flow", description: "Investigate how arrival patterns and treatment capacity affect emergency-department waits.", data: "Hourly arrivals · Capacity · Wait percentiles" },
-    { number: "03", title: "Community Health Trends", description: "Compare population rates over time and separate meaningful trends from changes in group size.", data: "Population counts · Rates · Time series" },
-    { number: "04", title: "Resource Allocation", description: "Balance staffing hours, patient needs, and a limited operating budget across clinic locations.", data: "Staffing hours · Acuity · Budget" },
-    { number: "05", title: "Screening and Risk", description: "Interpret screening results while accounting for false positives, base rates, and uncertainty.", data: "Screening results · Base rates · Risk" },
-    { number: "06", title: "Program Evaluation", description: "Evaluate whether a health program improved outcomes using baseline and comparison-group evidence.", data: "Baseline · Follow-up · Comparison groups" }
-];
-
-export default function SectorHub({ sector, identity, missionLevel, setMissionLevel, onBack, onMission, onSprint }) {
-    const skills = sectorQRSkills[sector.id] || [];
+export default function SectorHub({ sector, identity, viewerRole, missionLevel, setMissionLevel, onBack, onMission, onSprint }) {
+    const config = sectorMissionConfigs[sector.id];
+    const missions = [
+        { number: "01", title: config.title, description: config.intro, data: `${config.numerator} · ${config.denominator} · ${config.outcome}`, active: true },
+        { number: "02", title: "Response Time Divide", description: `Investigate why outcomes differ across ${config.unit.toLowerCase()} groups after adjusting for ${config.denominator.toLowerCase()}.`, data: `${config.outcome} · Comparative rates · Context` },
+        { number: "03", title: "The Leader's Claim", description: `Evaluate two competing claims about ${sector.label.toLowerCase()} and identify which conclusion the evidence supports.`, data: "Competing statistics · Evidence quality · Uncertainty" }
+    ];
     return React.createElement("main", { className: "page" },
         React.createElement("button", { className: "btn secondary", onClick: onBack }, "← BACK TO NEXUS"),
+        React.createElement(SectorDiscussion, { key: sector.id, sector, identity, viewerRole }),
         React.createElement("div", { className: "card", style: { marginTop: 16, padding: 26 } },
             React.createElement("div", { style: { fontSize: 42 } }, sector.icon),
             React.createElement("div", { className: "eyebrow" }, sector.name, " Sector"),
@@ -27,8 +26,8 @@ export default function SectorHub({ sector, identity, missionLevel, setMissionLe
                 Object.entries(sectorQRFramework[sector.id].groups).map(([category,items]) => React.createElement("section", {className:"qr-category",key:category}, React.createElement("h3",null,category),React.createElement("div", { className: "sector-skill-list" }, items.map(x => React.createElement("span", { className: "sector-skill", key: x }, x))))),
                 React.createElement("button", { className: "btn sprint-launch", onClick: onSprint }, "SHINE SPRINT SKILLS CHECKUP →"))),
         React.createElement("div", { className: "section-title", style: { marginTop: 24 } }, React.createElement("div", null,
-            React.createElement("h2", null, "Vitalis Missions"), React.createElement("p", null, "Mission 01 is available now. The remaining health-data missions are prepared for future release."))),
-        React.createElement("div", { className: "mission-card-grid" }, vitalisMissions.map((mission)=>React.createElement("article", {className:"card sector-mission-card"+(mission.active?" active":" locked"),key:mission.number},
+            React.createElement("h2", null, `${sector.name} Missions`), React.createElement("p", null, "Mission 01 uses this sector’s own data, quantitative reasoning skills, questions, and assessment. Additional missions are coming soon."))),
+        React.createElement("div", { className: "mission-card-grid" }, missions.map((mission)=>React.createElement("article", {className:"card sector-mission-card"+(mission.active?" active":" locked"),key:mission.number},
           React.createElement("div",{className:"mission-card-top"},React.createElement("div",{className:"eyebrow"},"Mission "+mission.number),React.createElement("span",{className:"tag"},mission.active?"ACTIVE":"LOCKED")),
           React.createElement("h3",null,mission.title),
           React.createElement("p",{className:"mission-card-description"},mission.description),

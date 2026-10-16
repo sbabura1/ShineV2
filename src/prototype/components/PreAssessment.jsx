@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import AssessmentVisual from './AssessmentVisual';
 import { majors, preAttitudeStatements, preCognitiveQuestions } from '../data';
+import { useSavedState } from '../utils/useSavedState';
 
 export default function PreAssessment({identity,onComplete,onExit}) {
-  const [part,setPart]=useState(1), [info,setInfo]=useState({name:identity.name||"",studentId:"",instructor:identity.faculty||"",date:new Date().toLocaleDateString()}), [att,setAtt]=useState({}), [cog,setCog]=useState({}), [demo,setDemo]=useState({majors:[]}), [showSkillsRecap,setShowSkillsRecap]=useSavedState("preAssessmentComplete",false);
+  const [part,setPart]=useSavedState("baseline-part-v2",1), [info,setInfo]=useSavedState("baseline-info-v2",{name:identity.name||"",studentId:"",instructor:identity.faculty||"",date:new Date().toLocaleDateString()}), [att,setAtt]=useSavedState("baseline-attitudes-v2",{}), [cog,setCog]=useSavedState("baseline-cognitive-v2",{}), [demo,setDemo]=useSavedState("baseline-demographics-v2",{majors:[]}), [showSkillsRecap,setShowSkillsRecap]=useState(false);
   const attitudeComplete=preAttitudeStatements.every((_,i)=>att[i]);
   const cognitiveComplete=preCognitiveQuestions.every((_,i)=>cog[i]!==undefined);
   const score=preCognitiveQuestions.reduce((n,q,i)=>n+(cog[i]===q.a?1:0),0), pct=Math.round(score/20*100), band=pct>=80?"Advanced":pct>=60?"Intermediate":"Beginner";
@@ -24,7 +25,7 @@ export default function PreAssessment({identity,onComplete,onExit}) {
   ));
 
   return React.createElement("main",{className:"page"},React.createElement("div",{className:"preassess-shell"},
-    React.createElement("div",{className:"preassess-header"},React.createElement("div",{className:"eyebrow"},"Required Before Sector Access"),React.createElement("h2",null,"HSI-SHINE Baseline Pre-Assessment"),React.createElement("p",null,"Complete all three parts before entering any Sector. Part 2 may use a calculator or spreadsheet, but not artificial intelligence to look up answers.")),progress,
+    React.createElement("div",{className:"preassess-header"},React.createElement("div",{className:"eyebrow"},"Optional Pre-Assessment"),React.createElement("h2",null,"HSI-SHINE Baseline Pre-Assessment"),React.createElement("button",{className:"btn secondary",onClick:onExit,style:{margin:"12px 0"}},"SKIP FOR NOW — RETURN TO NEXUS"),React.createElement("p",null,"This pre-assessment is optional. You can skip it and explore any Scalaris sector. Part 2 may use a calculator or spreadsheet, but not artificial intelligence to look up answers.")),progress,
 
     part===1&&React.createElement(React.Fragment,null,
       React.createElement("div",{className:"card"},React.createElement("h3",{style:{marginTop:0}},"Participant Information"),React.createElement("div",{className:"form-row"},
@@ -32,7 +33,7 @@ export default function PreAssessment({identity,onComplete,onExit}) {
         React.createElement("div",null,React.createElement("label",null,"Student ID"),React.createElement("input",{value:info.studentId,onChange:e=>setInfo({...info,studentId:e.target.value})})),
         React.createElement("div",null,React.createElement("label",null,"Instructor Name / Mentor"),React.createElement("input",{value:info.instructor,onChange:e=>setInfo({...info,instructor:e.target.value})})),
         React.createElement("div",null,React.createElement("label",null,"Date"),React.createElement("input",{value:info.date,onChange:e=>setInfo({...info,date:e.target.value})}))),
-        React.createElement("div",{className:"callout",style:{marginTop:16}},React.createElement("strong",null,"Assessment notice"),React.createElement("div",{style:{marginTop:5,color:"var(--muted)",fontSize:"13px"}},"This assessment is required for SHINE participants and is also used for research purposes by the SHINE project leadership team. Students who wish to participate in the SHINE Research Program must complete the Institutional Review Board (IRB) consent form before completing this assessment."))),
+        React.createElement("div",{className:"callout",style:{marginTop:16}},React.createElement("strong",null,"Assessment notice"),React.createElement("div",{style:{marginTop:5,color:"var(--muted)",fontSize:"13px"}},"This pre-assessment is optional in Scalaris. It may also be used for research purposes by the SHINE project leadership team. Students who wish to participate in the SHINE Research Program must complete the Institutional Review Board (IRB) consent form before completing this assessment."))),
       React.createElement("div",{className:"card",style:{marginTop:16}},React.createElement("h3",{style:{marginTop:0}},"Part 1: Attitudinal Questions"),React.createElement("p",{style:{color:"var(--muted)",fontSize:"13px"}},"Use the same 1–7 scale for every statement."),preAttitudeStatements.map((s,i)=>React.createElement("div",{className:"assessment-question",key:i},React.createElement("h4",null,(i+1)+". "+s),React.createElement("div",{className:"likert-row"},[1,2,3,4,5,6,7].map(v=>React.createElement("button",{key:v,className:"likert-btn "+(att[i]===v?"selected":""),onClick:()=>setAtt({...att,[i]:v})},v))),React.createElement("div",{className:"likert-anchors"},React.createElement("span",null,"1 · Disagree strongly"),React.createElement("span",null,"7 · Agree strongly"))))),
       React.createElement("div",{className:"assessment-nav"},React.createElement("button",{className:"btn secondary",onClick:onExit},"RETURN TO NEXUS"),React.createElement("button",{className:"btn",disabled:!attitudeComplete,style:{opacity:attitudeComplete?1:.45},onClick:()=>{setPart(2);window.scrollTo({top:0,behavior:"smooth"});}},"CONTINUE TO PART 2 →"))
     ),
@@ -62,7 +63,7 @@ export default function PreAssessment({identity,onComplete,onExit}) {
         React.createElement("div",null,React.createElement("label",null,"17. Follow-up email address"),React.createElement("input",{type:"email",value:demo.email||"",onChange:e=>setD("email",e.target.value)})),
         React.createElement("div",null,React.createElement("label",null,"18. Follow-up phone number"),React.createElement("input",{value:demo.phone||"",onChange:e=>setD("phone",e.target.value)}))
       ),React.createElement("div",{className:"assessment-question"},React.createElement("h4",null,"12. What is your current major? Select all that apply."),React.createElement("div",{className:"checkbox-grid"},majors.map(m=>React.createElement("button",{key:m,className:"option-chip "+(demo.majors.includes(m)?"selected":""),onClick:()=>toggleMajor(m)},m))))),
-      React.createElement("div",{className:"assessment-nav"},React.createElement("button",{className:"btn secondary",onClick:()=>{setShowSkillsRecap(true);window.scrollTo({top:0,behavior:"smooth"});}},"← SKILLS RECAP"),React.createElement("button",{className:"btn good",disabled:!demoComplete,style:{opacity:demoComplete?1:.45},onClick:()=>onComplete({info,attitudes:att,cognitive:cog,score,pct,band,demographics:demo})},"COMPLETE PRE-ASSESSMENT & UNLOCK SECTORS"))
+      React.createElement("div",{className:"assessment-nav"},React.createElement("button",{className:"btn secondary",onClick:()=>{setShowSkillsRecap(true);window.scrollTo({top:0,behavior:"smooth"});}},"← SKILLS RECAP"),React.createElement("button",{className:"btn good",disabled:!demoComplete,style:{opacity:demoComplete?1:.45},onClick:()=>onComplete({info,attitudes:att,cognitive:cog,score,pct,band,demographics:demo})},"COMPLETE PRE-ASSESSMENT"))
     )
   ));
 }
