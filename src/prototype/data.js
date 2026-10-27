@@ -132,7 +132,8 @@ export const sectorQRFramework = {
         "Spreadsheet data organization",
         "selecting measures of central tendency",
         "table selection",
-        "preparing tables and graphs"
+        "preparing tables and graphs",
+        "calculating and interpreting variance"
       ],
       "Scientific Reasoning": [
         "Research ethics",
@@ -143,7 +144,8 @@ export const sectorQRFramework = {
       "Business / Contextual Analytics": [
         "Evaluate evidence for research decisions",
         "compare proposed studies",
-        "recognize misleading uses of research data"
+        "recognize misleading uses of research data",
+        "Compare variance in research results to evaluate consistency"
       ]
     }
   },
@@ -198,7 +200,8 @@ export const sectorQRFramework = {
         "Rates and ratios",
         "percent error",
         "selecting measures of central tendency",
-        "table interpretation"
+        "table interpretation",
+        "calculating and interpreting variance"
       ],
       "Scientific Reasoning": [
         "Developing hypotheses",
@@ -209,7 +212,8 @@ export const sectorQRFramework = {
       "Business / Contextual Analytics": [
         "Evaluate production efficiency",
         "compare manufacturing options",
-        "interpret tolerance and variation for quality decisions"
+        "interpret tolerance and variation for quality decisions",
+        "Compare variance in product measurements to assess production consistency"
       ]
     }
   },
@@ -242,7 +246,8 @@ export const sectorQRFramework = {
         "Rates and yields",
         "spreadsheet data organization",
         "data grouping and categorization",
-        "selecting measures of central tendency"
+        "selecting measures of central tendency",
+        "calculating and interpreting variance"
       ],
       "Scientific Reasoning": [
         "Developing hypotheses",
@@ -253,7 +258,8 @@ export const sectorQRFramework = {
       "Business / Contextual Analytics": [
         "Compare production costs",
         "evaluate agricultural yield trends",
-        "compare resource allocation options"
+        "compare resource allocation options",
+        "Compare variance in crop yields to evaluate production reliability"
       ]
     }
   },
@@ -264,7 +270,8 @@ export const sectorQRFramework = {
         "Rates and ratios",
         "adding and comparing percentages",
         "selecting measures of central tendency",
-        "graph interpretation"
+        "graph interpretation",
+        "calculating and interpreting variance"
       ],
       "Scientific Reasoning": [
         "Operationalizing concepts",
@@ -275,7 +282,8 @@ export const sectorQRFramework = {
       "Business / Contextual Analytics": [
         "Compare performance trends",
         "select improvement strategies",
-        "recognize misleading uses of performance data"
+        "recognize misleading uses of performance data",
+        "Compare variance in performance results to evaluate consistency"
       ]
     }
   },
@@ -631,6 +639,15 @@ export const sprintSkillBank = {
       "No other variable could explain the pattern"
     ],
     0
+  ],
+  "calculating and interpreting variance": [
+    "Treat 1, 1, 3, and 3 as a complete population. Their mean is 2. What is the population variance (the average squared distance from the mean)?",
+    [
+      "1",
+      "2",
+      "0"
+    ],
+    0
   ]
 };
 export const sprintApplicationBank = {
@@ -806,6 +823,15 @@ export const sprintApplicationBank = {
         "Treat the total as proof of cause"
       ],
       0
+    ],
+    [
+      "Two research teams report the same mean result. Team A has variance 2 and Team B has variance 18 in the same squared units. Which conclusion is supported?",
+      [
+        "Team A’s results are more consistent, but lower variance alone does not prove accuracy",
+        "Team B’s results are more consistent because its variance is larger",
+        "Both teams have identical consistency because their means match"
+      ],
+      0
     ]
   ],
   "vitalis": [
@@ -893,6 +919,15 @@ export const sprintApplicationBank = {
         "9.7 mm"
       ],
       0
+    ],
+    [
+      "Two production lines make parts with the same mean measurement. Line A has variance 0.04 mm² and Line B has variance 0.25 mm². What does this tell you?",
+      [
+        "Line A has less measurement variation; also check whether the parts meet tolerance limits",
+        "Line B is more consistent because it has greater variance",
+        "Variance alone proves that every part meets the design specification"
+      ],
+      0
     ]
   ],
   "transit": [
@@ -951,6 +986,15 @@ export const sprintApplicationBank = {
         "Select only evidence that confirms your initial view"
       ],
       0
+    ],
+    [
+      "Two fields have the same average crop yield. Across comparable seasons, Field A has variance 4 and Field B has variance 25 in the same squared units. Which is the better interpretation?",
+      [
+        "Field A’s yields are more stable across these seasons; other risks still matter",
+        "Field B’s yields are more reliable because they vary more",
+        "Equal average yields guarantee equal reliability"
+      ],
+      0
     ]
   ],
   "arena": [
@@ -978,6 +1022,15 @@ export const sprintApplicationBank = {
         "Check denominators, comparable groups, and the original source",
         "Accept the headline because the total is large",
         "Treat the total as proof of cause"
+      ],
+      0
+    ],
+    [
+      "Two athletes have the same average score. Athlete A’s score variance is 3 and Athlete B’s is 20. What is supported by these results?",
+      [
+        "Athlete A’s scores are more consistent over the observed performances",
+        "Athlete B always performs better because the variance is higher",
+        "The athletes have identical consistency because their average scores match"
       ],
       0
     ]

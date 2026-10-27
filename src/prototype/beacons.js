@@ -1,4 +1,4 @@
-import original from './assets/beacons/Beacon-Original.jpg';
+import beaconBase from './assets/characters/beacon-base.png';
 import cosmicOriginal from './assets/beacons/Beacon-Cosmic-Original.jpg';
 import cosmicRevised from './assets/beacons/Beacon-Cosmic-Revised.jpg';
 import forest from './assets/beacons/Beacon-Forest.jpg';
@@ -10,7 +10,7 @@ import tealFace from './assets/beacons/Beacon-Teal-Face.jpg';
 import whiteFace from './assets/beacons/Beacon-White-Face.jpg';
 
 export const beaconOptions = [
-  { id: 'Beacon-Original.jpg', label: 'Original', src: original },
+  { id: 'Beacon-Original.jpg', label: 'Original', src: beaconBase },
   { id: 'Beacon-Cosmic-Original.jpg', label: 'Cosmic Original', src: cosmicOriginal },
   { id: 'Beacon-Cosmic-Revised.jpg', label: 'Cosmic Revised', src: cosmicRevised },
   { id: 'Beacon-Forest.jpg', label: 'Forest', src: forest },
@@ -23,5 +23,8 @@ export const beaconOptions = [
 ];
 
 export function selectedBeacon(identity = {}) {
+  if (identity.beaconImage && ['beacon-base-v1', 'beacon-custom-v2'].includes(identity.beaconRenderVersion)) {
+    return { id: 'custom', label: 'Your Beacon', src: identity.beaconImage };
+  }
   return beaconOptions.find((option) => option.id === identity.beacon) || beaconOptions[0];
 }

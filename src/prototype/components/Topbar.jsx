@@ -1,8 +1,9 @@
 import React from 'react';
 import { LogOut, Moon, Sun } from 'lucide-react';
+import { IdentityAvatar } from './CharacterBuilderGenerated';
 
-export default function Topbar({ identity, onHome, onLogout, onIdentity, mode, setMode, viewerRole, setViewerRole }) {
-  const lightMode = mode === 'light';
+export default function Topbar({ identity, onHome, onLogout, onIdentity, theme, toggleTheme, viewerRole, setViewerRole }) {
+  const lightMode = theme === 'light';
 
   return (
     <header className="topbar">
@@ -27,14 +28,15 @@ export default function Topbar({ identity, onHome, onLogout, onIdentity, mode, s
         <button
           type="button"
           className="theme-toggle-icon"
-          onClick={() => setMode(lightMode ? 'dark' : 'light')}
+          onClick={toggleTheme}
           title={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
           aria-label={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
+          aria-pressed={!lightMode}
         >
           {lightMode ? <Moon size={20} aria-hidden="true" /> : <Sun size={20} aria-hidden="true" />}
         </button>
         <div className="profile-pill">
-          <div className="avatar-mini">{identity.avatar}</div>
+          <div className="avatar-mini"><IdentityAvatar identity={identity} className="avatar-mini-image" /></div>
           <div className="nameblock">
             <div style={{ fontWeight: 700, fontSize: 13 }}>{identity.name}</div>
             <div className="level">Nexus Level 7 · 620 Reputation</div>

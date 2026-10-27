@@ -27,6 +27,7 @@ export function createScalarisRoute(screen, { sectorId, step = 0 } = {}) {
     sprint: `/sectors/${sector}/sprint`,
     mission: `/sectors/${sector}/missions/01/${missionTaskSlugs[taskIndex]}`,
     profile: `/sectors/${sector}/missions/01/results`,
+    themes: '/design-system',
   };
 
   return { screen, sectorId: sectorId || null, step: taskIndex, path: paths[screen] || '/' };
@@ -41,6 +42,7 @@ export function readScalarisRoute() {
   if (path === '/nexus') return createScalarisRoute('nexus');
   if (path === '/assessments/pre') return createScalarisRoute('preassessment');
   if (path === '/assessments/post') return createScalarisRoute('postassessment');
+  if (path === '/design-system') return createScalarisRoute('themes');
 
   const missionMatch = path.match(/^\/sectors\/([^/]+)\/missions\/01\/([^/]+)$/);
   if (missionMatch) {

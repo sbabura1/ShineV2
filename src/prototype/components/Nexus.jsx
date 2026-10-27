@@ -1,6 +1,8 @@
 import React from 'react';
 import AssessmentIndicators from './AssessmentIndicators';
 import { preCognitiveQuestions, sectorQRFramework, sectors } from '../data';
+import { Sparkles } from 'lucide-react';
+import SectorIcon from './SectorIcon';
 
 const BASELINE_SKILL_MAP = {
     'frequency tables':[0], 'univariate table interpretation':[0],
@@ -61,15 +63,15 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                     : "Take the baseline assessment now, or skip it and begin exploring any sector.")),
             React.createElement("div", { className: "cta-row" },
                 React.createElement("button", { className: preAssessmentComplete ? "btn secondary" : "btn gold", onClick: onPreAssessment },
-                    preAssessmentComplete ? (preAssessmentSkipped ? "TAKE PRE-ASSESSMENT" : "RETAKE PRE-ASSESSMENT") : "BEGIN PRE-ASSESSMENT →"),
-                !preAssessmentComplete && React.createElement("button", { className: "btn secondary", onClick: onSkipPreAssessment }, "SKIP PRE-ASSESSMENT"))),
+                    preAssessmentComplete ? (preAssessmentSkipped ? "Take Pre-Assessment" : "Retake Pre-Assessment") : "Begin Pre-Assessment →"),
+                !preAssessmentComplete && React.createElement("button", { className: "btn secondary", onClick: onSkipPreAssessment }, "Skip Pre-Assessment"))),
         React.createElement(AssessmentIndicators, { preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount: completedSectors.length, totalSectors: sectors.length, onPostAssessment }),
         React.createElement("div", { className: "section-title", style: { marginTop: 22 } },
             React.createElement("div", null,
                 React.createElement("div", { className: "eyebrow" }, "Central Hub"),
-                React.createElement("h2", null, "Welcome to The Nexus"),
+                React.createElement("h1", null, "Welcome to The Nexus"),
                 React.createElement("p", null, "Explore Scalaris as a connected network of quantitative reasoning contexts.")),
-            React.createElement("button", { className: "btn gold", onClick: onMission }, "CONTINUE ACTIVE MISSION")),
+            React.createElement("button", { className: "btn accent", onClick: onMission }, "Continue Active Mission")),
         overviewOpen && React.createElement(NexusOverview, { onClose: () => setOverviewOpen(false) }),
         React.createElement("div", { className: "nexus-layout" },
             React.createElement("div", { className: "card world-map" },
@@ -84,7 +86,7 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                 React.createElement("button", { type: "button", className: "nexus-core", onClick: () => setOverviewOpen(!overviewOpen), "aria-expanded": overviewOpen, "aria-label": "Open Scalaris system overview" },
                     React.createElement("div", null,
                         React.createElement("strong", null, "THE NEXUS"),
-                        React.createElement("span", { style: { fontSize: 10, color: "#dff8ff", letterSpacing: ".08em" } }, "CENTRAL HUB · OVERVIEW"))),
+                        React.createElement("span", { className: "nexus-core-label" }, "Central Hub · Overview"))),
                 networkNodes.map(([id, x, y]) => {
                     const s = sectors.find(t => t.id === id);
                     const isOpen = true;
@@ -98,7 +100,7 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                         disabled: !isOpen,
                         "aria-disabled": !isOpen
                     },
-                        React.createElement("span", { className: "node-icon" }, s.icon),
+                        React.createElement("span", { className: "node-icon" }, React.createElement(SectorIcon, { sectorId: s.id, size: 25 })),
                         React.createElement("span", { className: "node-name" }, s.name),
                         isOpen && React.createElement("span", { className: "node-mastery" }, mastery.pct === null ? "Not assessed" : `${mastery.pct}% mastery`),
                         React.createElement("span", { className: "node-status" }, isOpen ? (completedSectors.includes(id) ? "Complete" : "Baseline estimate") : "Coming soon")
@@ -109,30 +111,30 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
                     React.createElement("span", { className: "tag" }, "Gray = not assessed · Baseline estimates"))),
             React.createElement("div", { className: "side-stack" },
                 React.createElement("div", { className: "card beacon" },
-                    React.createElement("div", { className: "beacon-orb" }, "\u2600\uFE0F"),
+                    React.createElement("div", { className: "beacon-orb" }, React.createElement(Sparkles, { size: 22, "aria-hidden": "true" })),
                     React.createElement("div", { className: "beacon-copy" },
                         React.createElement("h3", null, "Beacon"),
                         React.createElement("p", null,
                             "\u201CWelcome back, ",
                             identity.name.split(" ")[0],
                             ". The network shows how sectors connect. Try a new context or continue your active mission.\u201D"))),
-                React.createElement("div", { className: "card" },
+                React.createElement("div", { className: "card identity-snapshot" },
                     React.createElement("div", { className: "eyebrow" }, "Identity Snapshot"),
                     React.createElement("h3", null, identity.role),
                     React.createElement("div", { className: "stat-row" },
                         React.createElement("div", { className: "stat" },
                             React.createElement("b", null, "7"),
-                            React.createElement("span", null, "NEXUS LEVEL")),
+                            React.createElement("span", null, "Nexus level")),
                         React.createElement("div", { className: "stat" },
                             React.createElement("b", null, "620"),
-                            React.createElement("span", null, "REPUTATION")),
+                            React.createElement("span", null, "Reputation")),
                         React.createElement("div", { className: "stat" },
                             React.createElement("b", null, "14"),
-                            React.createElement("span", null, "SECTORS OPEN"))),
+                            React.createElement("span", null, "Sectors open"))),
                     React.createElement("div", { style: { marginTop: 15, fontSize: 12, color: "var(--muted)" } }, "Next rank: Senior Analyst"),
                     React.createElement("div", { className: "progress", style: { marginTop: 7 } },
                         React.createElement("div", { style: { width: "68%" } }))),
-                React.createElement("div", { className: "card" },
+                React.createElement("div", { className: "card credentials-card" },
                     React.createElement("div", { className: "eyebrow" }, "Unlocked Credentials"),
                     React.createElement("p", null,
                         React.createElement("span", { className: "tag" }, "Signal Finder"),
@@ -149,12 +151,12 @@ export default function Nexus({ identity, onSector, onMission, preAssessmentComp
             const isOpen = true;
             return React.createElement(isOpen ? "button" : "div", { className: "card sector " + (isOpen ? "open" : "locked"), key: s.id, onClick: isOpen ? () => onSector(s.id) : undefined, "aria-disabled": !isOpen },
             React.createElement("div", null,
-                React.createElement("div", { className: "sector-icon" }, s.icon),
+                React.createElement("div", { className: "sector-icon" }, React.createElement(SectorIcon, { sectorId: s.id, size: 26 })),
                 React.createElement("h3", null, s.name),
                 React.createElement("div", { className: "roles" }, s.roles),
                 React.createElement("p", null, s.desc)),
             React.createElement("footer", null,
-                React.createElement("span", { className: "tag" }, isOpen ? (completedSectors.includes(s.id) ? "COMPLETE" : "OPEN") : "COMING SOON"),
+                React.createElement("span", { className: "tag" }, isOpen ? (completedSectors.includes(s.id) ? "Complete" : "Open") : "Coming soon"),
                 isOpen && React.createElement("span", null, "\u2192")));
         })));
 }

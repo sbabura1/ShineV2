@@ -301,7 +301,7 @@ function MissionBeaconAvatar({src,className,alt}){
 }
 
 function beaconSustainedDifficulty(attempts){return (attempts.length>=3&&attempts.slice(-3).every(x=>!x.correct))||(attempts.length>=5&&attempts.slice(-5).filter(x=>!x.correct).length>=4);}
-export function BeaconSectorMission({sector,identity,missionLevel,step,setStep,onFinish}){
+export function BeaconSectorMission({sector,identity,missionLevel,step,setStep,onBack,onFinish}){
  const [takingBreak,setTakingBreak]=useState(false);
  const [submittedResponses,setSubmittedResponses]=useSavedState('mission-submitted-responses:'+sector.id+':'+missionLevel,{evidence:null,reflection:null});
 
@@ -342,7 +342,7 @@ export function BeaconSectorMission({sector,identity,missionLevel,step,setStep,o
  onClick:e=>{if(disabled||support||rush||cartwheel||takingBreak)return;if(e&&e.detail>1)return;fn();},
  disabled:disabled||!!support||rush||cartwheel||takingBreak
  },text);
- return h('main',{className:'page vitalis',onPointerDown:()=>{lastActivity.current=Date.now();},onKeyDown:()=>{lastActivity.current=Date.now();}},rush&&h(RushReminder,{onClose:()=>{setRush(false);timing.current.start=Date.now();setMessage('You set the pace. Read, check, and choose when you’re ready.');setMood('encourage');}}),cartwheel&&h(BeaconCartwheel,{identity,score,total:task.qs.length,onClose:()=>setCartwheel(false)}),
+return h('main',{className:'page vitalis',onPointerDown:()=>{lastActivity.current=Date.now();},onKeyDown:()=>{lastActivity.current=Date.now();}},h('button',{type:'button',className:'btn secondary mission-back-button',onClick:onBack},'← BACK TO '+sector.name.toUpperCase()+' SECTOR'),rush&&h(RushReminder,{onClose:()=>{setRush(false);timing.current.start=Date.now();setMessage('You set the pace. Read, check, and choose when you’re ready.');setMood('encourage');}}),cartwheel&&h(BeaconCartwheel,{identity,score,total:task.qs.length,onClose:()=>setCartwheel(false)}),
  takingBreak&&h('section',{className:'card beacon-break',role:'status'},h('h2',null,'Take a breather'),h('p',null,'Your question is paused. Come back when you’re ready.'),h('button',{className:'btn',onClick:()=>{quietAfterCheck();setTakingBreak(false);timing.current.start=Date.now();setMessage(task.goal);}},'I’m ready to resume')),
  h('div',{className:'mission-header'},h('div',null,h('div',{className:'eyebrow'},sector.name+' · Mission 01'),h('h2',null,config.title),h('p',null,config.intro)),h('div',{className:'card'},h('b',null,missionLevel),h('p',null,missionSteps[step]),h('small',null,`${correct} / ${all.length} correct so far`))),
  h('nav',{className:'stepper','aria-label':'Mission tasks'},missionSteps.map((s,i)=>h('div',{key:s,className:'step '+(i===step?'active':records[i]?.length===tasks[i].qs.length?'done':'')},`${i+1}. ${s}`))),

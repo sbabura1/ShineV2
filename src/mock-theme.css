@@ -347,7 +347,7 @@ input, select {
 .stats small { margin-top: 3px; color: var(--muted); font-size: 9px; }
 .progress-label { display: flex; justify-content: space-between; margin-top: 16px; color: var(--muted); font-size: 11px; }
 .progress { height: 9px; overflow: hidden; border: 1px solid rgba(255,255,255,.06); border-radius: 999px; background: #0a1623; }
-.progress > span { display: block; width: 68%; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--purple)); }
+.progress > span { display: block; width: 68%; height: 100%; background: linear-gradient(90deg, var(--cyan), var(--blue)); }
 .current-sector { margin-top: 14px; color: var(--muted); font-size: 12px; }
 
 .section-heading { margin: 28px 0 16px; }

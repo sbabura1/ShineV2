@@ -5,6 +5,7 @@ import App from './App';
 import './styles.css';
 import './mock-theme.css';
 import './prototype/scalaris-prototype.css';
+import './prototype/theme.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
