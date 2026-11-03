@@ -1,49 +1,25 @@
-import React from 'react';
-import AssessmentIndicators from './AssessmentIndicators';
+import { useEffect, useState } from 'react';
 import CharacterBuilder from './CharacterBuilderGenerated';
-import { FacultyDiscussionSettings } from './DiscussionBoard';
-import { sectors } from '../data';
 
-export default function Identity({ viewerRole, identity, setIdentity, onContinue, preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, onPostAssessment }) {
-    return React.createElement("main", { className: "page" },
-        React.createElement("div", { className: "section-title" },
-            React.createElement("div", null,
-                React.createElement("h1", null, "Build Your Nexus Identity"),
-                React.createElement("p", null, "Who will you become in Scalaris?"))),
-        React.createElement("div", { className: "grid cols-3 identity-layout" },
-            React.createElement("div", { className: "card identity-avatar-card" },
-                React.createElement(CharacterBuilder, { kind: "avatar", identity, setIdentity }),
-                React.createElement(CharacterBuilder, { kind: "beacon", identity, setIdentity })),
-            React.createElement("div", { className: "card identity-details-card", style: { gridColumn: "span 2" } },
-                viewerRole === "faculty" && React.createElement(FacultyDiscussionSettings, null),
-                React.createElement("div", { className: "form-row" },
-                    React.createElement("div", null,
-                        React.createElement("label", { htmlFor: "identity-name" }, "Identity Name"),
-                        React.createElement("input", { id: "identity-name", name: "identityName", autoComplete: "name", value: identity.name, onChange: e => setIdentity({ ...identity, name: e.target.value }) })),
-                    React.createElement("div", null,
-                        React.createElement("label", { htmlFor: "faculty-name" }, React.createElement("span", { className: "faculty-link" }, "Faculty Name")),
-                        React.createElement("select", { id: "faculty-name", name: "faculty", autoComplete: "off", value: identity.faculty, onChange: e => setIdentity({ ...identity, faculty: e.target.value }) },
-                            React.createElement("option", null, "Dr. Maya Chen"),
-                            React.createElement("option", null, "Prof. Elena Ruiz"),
-                            React.createElement("option", null, "Dr. Marcus Reed"),
-                            React.createElement("option", null, "Faculty Not Listed"))),
-                    React.createElement("div", null,
-                        React.createElement("label", { htmlFor: "starting-sector" }, "Starting Sector"),
-                        React.createElement("select", { id: "starting-sector", name: "startingSector", autoComplete: "off", value: identity.sector, onChange: e => {
-                                const s = sectors.find(x => x.id === e.target.value);
-                                setIdentity({ ...identity, sector: e.target.value, role: s.roles.split(" • ")[0] });
-                            } }, sectors.map(s => React.createElement("option", { key: s.id, value: s.id },
-                            s.name,
-                            " \u2014 ",
-                            s.label)))),
-                    React.createElement("div", null,
-                        React.createElement("label", { htmlFor: "starting-role" }, "Starting Role"),
-                        React.createElement("input", { id: "starting-role", name: "startingRole", autoComplete: "off", value: identity.role, onChange: e => setIdentity({ ...identity, role: e.target.value }) }))),
-                React.createElement("div", { className: "callout", style: { marginTop: 18 } },
-                    React.createElement("b", null, "Identity is more than appearance."),
-                    React.createElement("br", null),
-                    "Your rank, sector clearance, Beacon Trust, data clearance, and mission authority grow as you demonstrate quantitative reasoning."),
-                React.createElement(AssessmentIndicators, { preAssessmentComplete, preAssessmentSkipped, postAssessmentComplete, projectAssessmentComplete, allSectorsComplete, completedCount, totalSectors: sectors.length, onPostAssessment }),
-                React.createElement("div", { className: "cta-row", style: { justifyContent: "flex-start" } },
-                    React.createElement("button", { className: "btn", onClick: onContinue }, "Continue to the Nexus →")))));
+const savedFields = ['name', 'faculty', 'sector', 'role', 'avatarDesign', 'beaconDesign', 'beacon', 'theme'];
+export default function Identity({ profile, sectors, onSave, onContinue, baseline }) {
+  const [draft, setDraft] = useState(profile);
+  const [status, setStatus] = useState('');
+  const [saving, setSaving] = useState(false);
+  useEffect(() => { setDraft(profile); }, [profile]);
+  const save = async () => {
+    setSaving(true); setStatus('');
+    try { await onSave(Object.fromEntries(savedFields.filter(key => draft[key] !== undefined).map(key => [key, draft[key]])), profile.rev); setStatus('Identity saved.'); return true; }
+    catch (error) { setStatus(error.message); return false; } finally { setSaving(false); }
+  };
+  return <main className="page"><header className="section-title"><div><h1>Build Your Nexus Identity</h1><p>Your profile and appearance are saved to your account.</p></div></header>
+    <div className="grid cols-3 identity-layout"><div className="card identity-avatar-card"><CharacterBuilder kind="avatar" identity={draft} setIdentity={setDraft} /><CharacterBuilder kind="beacon" identity={draft} setIdentity={setDraft} /></div>
+      <section className="card identity-details-card" style={{ gridColumn: 'span 2' }}><div className="form-row">
+        <label htmlFor="identity-name">Name<input id="identity-name" autoComplete="name" value={draft.name || ''} maxLength={200} onChange={event => setDraft(current => ({ ...current, name: event.target.value }))} /></label>
+        <label htmlFor="faculty-name">Instructor / mentor<input id="faculty-name" value={draft.faculty || ''} maxLength={200} onChange={event => setDraft(current => ({ ...current, faculty: event.target.value }))} /></label>
+        <label htmlFor="starting-sector">Sector<select id="starting-sector" value={draft.sector || sectors.find(sector => sector.enabled)?.id || ''} onChange={event => setDraft(current => ({ ...current, sector: event.target.value }))}>{sectors.filter(sector => sector.enabled).map(sector => <option key={sector.id} value={sector.id}>{sector.name}</option>)}</select></label>
+        <label htmlFor="starting-role">Professional role<input id="starting-role" value={draft.role || ''} maxLength={200} onChange={event => setDraft(current => ({ ...current, role: event.target.value }))} /></label>
+      </div><div className="cta-row"><button type="button" className="btn" disabled={saving} onClick={save}>{saving ? 'Saving…' : 'Save identity'}</button><button type="button" className="btn secondary" disabled={saving} onClick={async () => { if (await save()) onContinue(); }}>Save and go to the Nexus</button></div>
+      {status && <p role="status">{status}</p>}<div className="callout"><strong>Pre-assessment</strong><p>{baseline?.submittedAt ? 'Your full baseline has been submitted.' : baseline?.activeRunId ? 'Your baseline draft is saved and ready to continue.' : 'Your baseline is ready to begin.'}</p></div>
+    </section></div></main>;
 }

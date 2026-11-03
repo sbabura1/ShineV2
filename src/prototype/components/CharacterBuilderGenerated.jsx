@@ -178,7 +178,14 @@ async function renderBeacon(values) {
 }
 
 export function IdentityAvatar({ identity, className = '' }) {
-  const current = identity.avatarRenderVersion === AVATAR_RENDER_VERSION ? identity.avatarImage : null;
+  const [rendered, setRendered] = useState(null);
+  const designKey = JSON.stringify(identity.avatarDesign || null);
+  useEffect(() => {
+    let active = true;
+    if (identity.avatarDesign) renderCompleteAvatar(identity.avatarDesign).then(source => { if (active) setRendered(source); }).catch(() => {});
+    return () => { active = false; };
+  }, [designKey]);
+  const current = rendered || (identity.avatarRenderVersion === AVATAR_RENDER_VERSION ? identity.avatarImage : null);
   return <img className={className} src={current || avatarInitial} alt="Your customized avatar" width="34" height="34" />;
 }
 
@@ -224,10 +231,10 @@ export default function CharacterBuilderGenerated({ kind, identity, setIdentity 
     <p className="builder-caption">{avatar ? `${design.body} build · ${design.occupation} · Complete generated character` : 'Your companion, your style'}</p>
     <button type="button" className="btn secondary builder-toggle" aria-expanded={open} onClick={() => setOpen((value) => !value)}>{open ? `Close ${avatar ? 'avatar' : 'Beacon'} editor` : `Edit your ${avatar ? 'avatar' : 'Beacon'}`} <span aria-hidden="true">{open ? '▴' : '▾'}</span></button>
     {open && <div className="builder-fields">
-      <p>{avatar ? 'Choose a complete character render. Heads, bodies and clothing always stay together.' : 'Customize your companion. Your choices save automatically.'}</p>
+      <p>{avatar ? 'Customize your avatar, then save your identity to keep the changes.' : 'Customize your companion, then save your identity to keep the changes.'}</p>
       {fields.map(([field, label, options]) => <label key={field}>{label}<select value={activeDesign[field]} onChange={(event) => (avatar ? updateAvatar : updateBeacon)(field, event.target.value)}>{options.map((option) => <option key={Array.isArray(option) ? option[0] : option} value={Array.isArray(option) ? option[0] : option}>{Array.isArray(option) ? option[1] : option}</option>)}</select></label>)}
-      <button type="button" className="btn good" onClick={() => setOpen(false)}>Save {avatar ? 'avatar' : 'Beacon'}</button>
+      <button type="button" className="btn good" onClick={() => setOpen(false)}>Done editing {avatar ? 'avatar' : 'Beacon'}</button>
     </div>}
-    <small className="builder-saved">✓ Appearance saved</small>
+    <small className="builder-saved">Save your identity to keep your appearance choices.</small>
   </section>;
 }

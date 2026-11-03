@@ -89,9 +89,6 @@ export default function useAuth() {
         setError(query.get('error_description')?.replace(/\+/g, ' ') || query.get('error') || 'Google sign-in did not complete.');
         window.history.replaceState({}, document.title, window.location.pathname);
       }
-      if (import.meta.env.DEV && import.meta.env.VITE_KEEP_DEV_AUTH !== 'true' && !isOAuthCallback) {
-        try { await signOut(); } catch { /* No saved Cognito session to clear. */ }
-      }
       checkAuth();
     };
 
