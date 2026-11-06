@@ -8,9 +8,9 @@
 .sector:disabled, .sector-node:disabled { cursor: not-allowed; opacity: .55; }
 .sector:disabled:hover, .sector-node:disabled:hover { transform: none; }
 .nexus-core { display: grid; place-items: center; text-align: center; }
-.remote-run { max-width: 1150px; }
+.remote-run { width: 100%; max-width: none; padding: 0 clamp(16px, 3vw, 48px) 40px; }
 .remote-run-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
-.remote-run-toolbar:first-child { position: sticky; top: 0; z-index: 3; padding: 12px 0; background: var(--bg); }
+.remote-run-toolbar:first-child { margin-top: 0; padding: 20px 0; border-bottom: 1px solid var(--card-border); }
 .save-indicator { font-size: 14px; color: var(--muted); }
 .save-error, .save-conflict { color: var(--danger, #b94b32); }
 .remote-error { margin: 16px auto; border: 1px solid var(--danger, #b94b32); max-width: 1100px; }
@@ -25,7 +25,7 @@
 .remote-option-list { max-height: 440px; overflow-y: auto; display: grid; gap: 8px; padding: 2px; }
 .remote-likert { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
 .remote-scale-option { border: 1px solid var(--border); border-radius: 8px; padding: 12px 8px; display: flex; gap: 7px; align-items: center; text-align: center; flex-direction: column; cursor: pointer; }
-.remote-scale-option.selected { border-color: var(--accent); background: var(--surface-2); }
+.remote-scale-option.selected { border-color: var(--accent); background: var(--primary-soft); }
 .remote-scale-option input { width: 18px; height: 18px; accent-color: var(--accent); }
 .remote-scale-option span { font-size: 12px; line-height: 1.4; }
 .remote-question:disabled label { cursor: default; }
@@ -34,22 +34,130 @@
 .remote-evidence > label, .remote-follow-up { display: block; margin: 18px 0; }
 .remote-evidence textarea { display: block; margin-top: 8px; }
 .source-table-scroll { overflow-x: auto; margin: 18px 0; max-width: 100%; }
-.source-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.source-table { border-collapse: collapse; width: 100%; min-width: 0; font-size: 14px; }
 .source-table td, .source-table th { border: 1px solid var(--border); padding: 10px 12px; white-space: normal; text-align: left; vertical-align: top; }
 .source-table caption { text-align: left; font-weight: 650; padding: 8px 0; }
+.source-table td, .source-table th { font: inherit; text-transform: none; }
 .source-graph { display: block; width: 100%; max-width: 850px; height: auto; margin: 18px 0; background: white; }
 .source-chart { margin: 20px 0; }
 .source-chart svg { width: 100%; height: auto; color: var(--accent); }
 .source-chart svg text { font-size: 12px; fill: var(--text); }
 .source-chart figcaption { font-weight: 650; }
 .source-paragraph { white-space: pre-line; line-height: 1.65; }
-.remote-score { font-size: 38px; font-weight: 700; }
-.remote-score span { font-size: 20px; color: var(--muted); }
 .remote-result { margin: 20px 0; }
 .track-status-list { list-style: none; padding: 0; margin: 18px 0; }
 .track-status-list li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
 .sector-hero { margin-top: 18px; padding: 28px; }
 .identity-details-card .form-row > label { display: block; }
+
+/* The available canvas after the gutter is split 65% questions / 35% Beacon. */
+.remote-run-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+.remote-mission .remote-run-layout { grid-template-columns: minmax(0, 65fr) minmax(0, 35fr); }
+.remote-run-work { min-width: 0; }
+.remote-run-heading { margin-top: 24px; }
+.remote-run-heading h1 { font-size: clamp(26px, 2.8vw, 34px); overflow-wrap: anywhere; }
+.remote-run-heading p { margin: 8px 0 0; }
+.remote-run-heading .remote-run-context { margin: 0 0 8px; color: var(--text-muted); font-size: 14px; text-transform: capitalize; }
+.remote-question-progress { padding: 18px 0 4px; }
+.remote-progress-labels { display: flex; justify-content: space-between; gap: 8px 20px; flex-wrap: wrap; font-size: 14px; line-height: 1.6; }
+.remote-progress-labels > span { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.remote-question-progress p { margin: 8px 0 0; color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+.remote-question-progress progress, .remote-score-track { display: block; appearance: none; width: 100%; height: 8px; margin: 12px 0; border: 0; border-radius: 4px; overflow: hidden; background: var(--surface-alt); color: var(--primary); }
+.remote-question-progress progress::-webkit-progress-bar, .remote-score-track::-webkit-progress-bar { background: var(--surface-alt); }
+.remote-question-progress progress::-webkit-progress-value { background: var(--primary); border-radius: 4px; }
+.remote-question-progress progress::-moz-progress-bar { background: var(--primary); border-radius: 4px; }
+.remote-question-card:first-of-type { margin-top: 16px; }
+.remote-question-card .remote-question { margin-top: 0; }
+.remote-question-card .remote-question:last-child { margin-bottom: 0; }
+.remote-choice input { accent-color: var(--primary); }
+.remote-choice { font-size: 15px; }
+.remote-result { padding: clamp(20px, 3vw, 32px); }
+.remote-result h2 { margin: 0 0 20px; font-size: 24px; }
+.remote-score-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; max-width: 700px; }
+.remote-score-label { margin: 0 0 4px; color: var(--text-muted); font-size: 14px; }
+.remote-score { margin: 0; font-size: clamp(28px, 3vw, 36px); font-weight: 650; font-variant-numeric: tabular-nums; }
+.remote-score span { color: var(--text-muted); font-size: 14px; font-weight: 400; }
+.remote-score-percentage { display: grid; align-content: center; gap: 4px; text-align: right; }
+.remote-score-percentage strong { font-size: 28px; font-variant-numeric: tabular-nums; }
+.remote-score-percentage span { color: var(--text-muted); font-size: 13px; }
+.remote-score-track { grid-column: 1 / -1; margin: 0 0 12px; color: var(--success); }
+.remote-score-track::-webkit-progress-value { background: var(--success); }
+.remote-score-track::-moz-progress-bar { background: var(--success); }
+.remote-result .cta-row { justify-content: flex-start; flex-wrap: wrap; margin-top: 20px; }
+.mission-beacon { position: sticky; top: 100px; min-width: 0; max-height: calc(100dvh - 116px); overflow-y: auto; padding: 22px; color: var(--text); background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius-panel); scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.mission-beacon header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.mission-beacon h2 { margin: 0; font-size: 20px; }
+.mission-beacon header span { color: var(--text-muted); font-size: 12px; }
+.mission-beacon-image { display: block; width: 148px; height: 148px; object-fit: contain; margin: 18px auto; border-radius: 12px; }
+.mission-beacon-message { margin: 0; font-size: 14px; line-height: 1.65; }
+.mission-beacon-unavailable { margin: 18px 0 12px; padding-top: 16px; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+.mission-beacon-controls { display: grid; gap: 8px; }
+.mission-beacon-tools summary { padding: 4px 0 12px; color: var(--text-muted); font-size: 13px; cursor: pointer; }
+.mission-beacon-tools summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+.mission-beacon-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.mission-beacon-controls button { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 8px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--surface-alt); color: var(--text-muted); font-size: 12px; cursor: not-allowed; opacity: 1; }
+.mission-beacon-controls button:enabled { min-height: 44px; color: var(--text); border-color: var(--border); cursor: pointer; }
+.mission-beacon-controls button:enabled:hover,
+.mission-beacon-controls button[aria-expanded="true"] { border-color: var(--primary); background: var(--primary-soft); }
+.mission-beacon-target { display: grid; gap: 8px; margin-top: 18px; color: var(--text-muted); font-size: 13px; }
+.mission-beacon-target select { width: 100%; min-width: 0; min-height: 44px; font-size: 16px; }
+.mission-beacon-guidance-slot:empty { display: none; }
+.mission-beacon-guidance { margin: 0 0 18px; padding: 16px; background: var(--surface-alt); border-radius: var(--radius-control); overflow-wrap: anywhere; }
+.mission-beacon-guidance-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.mission-beacon-guidance h3 { margin: 0; font-size: 16px; line-height: 1.5; }
+.mission-beacon-guidance-heading button { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; margin: -10px -10px -6px 0; padding: 0; color: var(--text-muted); background: transparent; border: 0; border-radius: 8px; cursor: pointer; }
+.mission-beacon-guidance-heading button:hover { color: var(--text); background: var(--surface); }
+.mission-beacon-guidance p { margin: 12px 0 0; color: var(--text); font-size: 14px; line-height: 1.7; }
+.mission-beacon-guidance .mission-beacon-guidance-target { color: var(--text-muted); font-size: 12px; }
+.mission-beacon-guidance ol { display: grid; gap: 12px; margin: 14px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.7; }
+.sector-mission-card { min-width: 0; }
+.sector-mission-card h3 { min-height: 2.8em; margin: 16px 0; font-size: 20px; line-height: 1.4; }
+.sector-mission-card > label { display: grid; gap: 8px; font-size: 14px; }
+.sector-mission-card select { width: 100%; }
+.sector-mission-card .cta-row { margin-top: auto; padding-top: 20px; justify-content: flex-start; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.sector-mission-card .cta-row .btn { width: 100%; }
+.track-status-list li span:last-child { text-align: right; }
+.topbar { width: 100%; max-width: none; margin: 0; }
+.topbar .nameblock { min-width: 0; overflow-wrap: anywhere; }
+.topbar .profile-pill { max-width: 380px; }
+.topbar .profile-pill .nameblock { overflow: hidden; }
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .topbar { flex-wrap: nowrap; }
+  .topbar-left, .topbar-actions { width: auto; }
+}
+@media (max-width: 1000px) {
+  .remote-mission .remote-run-layout { gap: 20px; }
+  .mission-beacon { padding: 18px; }
+  .mission-beacon-image { width: 120px; height: 120px; }
+  .remote-run .mc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .remote-mission .remote-run-layout { grid-template-columns: minmax(0, 1fr); }
+  .mission-beacon { position: static; grid-row: 1; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 8px 16px; max-height: none; overflow-y: visible; padding: 16px; }
+  .mission-beacon-image { grid-column: 1; grid-row: 1 / span 2; width: 64px; height: 72px; margin: 0; }
+  .mission-beacon header, .mission-beacon-message { grid-column: 2; }
+  .mission-beacon-message { font-size: 13px; }
+  .mission-beacon-unavailable { grid-column: 1 / -1; margin: 8px 0 0; padding-top: 10px; }
+  .mission-beacon-target, .mission-beacon-guidance-slot { grid-column: 1 / -1; }
+  .mission-beacon-tools { grid-column: 1 / -1; }
+  .mission-beacon-tools summary { min-height: 44px; padding: 12px 0; }
+  .mission-beacon-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .mission-beacon-pair { grid-column: 1 / -1; gap: 6px; }
+  .mission-beacon-controls button { min-height: 36px; padding: 6px; }
+  .mission-beacon-controls > button:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .topbar { gap: 12px; padding: 12px 16px; }
+  .topbar .topbar-left, .topbar .topbar-actions { width: 100%; align-items: center; }
+  .topbar .profile-pill { flex: 1; width: auto; min-width: 0; max-width: none; }
+  .topbar .avatar-mini { flex-shrink: 0; }
+  .topbar .nameblock { flex: 1; }
+  .topbar .profile-logout-button { flex-shrink: 0; }
+  .remote-run-toolbar:first-child { padding-top: 16px; }
+  .remote-progress-labels > span { display: block; width: 100%; }
+  .remote-score-summary { gap: 12px; }
+}
 @media (max-width: 700px) {
   .profile-pill .nameblock { display: block; min-width: 0; overflow-wrap: anywhere; }
   .nexus-layout .world-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; height: auto; min-height: 0; padding: 16px; }

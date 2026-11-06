@@ -1,25 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useAuth from './auth/useAuth';
 import Login from './auth/Login';
-import ScalarisApp from './prototype/ScalarisApp';
+import AccountRouter from './auth/AccountRouter';
 import Landing from './prototype/components/Landing';
+import { BeaconLoading } from './components/loading/BeaconLoading';
+import useDelayedLoading from './components/loading/useDelayedLoading';
 
 const readPublicPath = () => {
   const path = window.location.hash.replace(/^#/, '').split('?')[0] || '/';
   return path.startsWith('/') ? path : `/${path}`;
 };
 
-const isPublicPath = (path) => path === '/' || path === '/welcome' || path === '/login';
-
 export default function App() {
   const auth = useAuth();
   const [publicScreen, setPublicScreen] = useState(() => readPublicPath() === '/login' ? 'login' : 'welcome');
   const [authenticatedRouteReady, setAuthenticatedRouteReady] = useState(false);
+  const authLoading = useDelayedLoading(auth.status === 'loading' || (auth.status === 'authenticated' && !authenticatedRouteReady));
+  const loadingAlreadyVisible = useRef(false);
+  useEffect(() => {
+    if (authLoading) loadingAlreadyVisible.current = true;
+    else if (auth.status === 'unauthenticated') loadingAlreadyVisible.current = false;
+  }, [authLoading, auth.status]);
 
   useEffect(() => {
     if (auth.status === 'authenticated') {
-      const path = readPublicPath();
-      if (isPublicPath(path)) window.history.replaceState({ scalaris: true }, '', '#/identity');
       setAuthenticatedRouteReady(true);
       return undefined;
     }
@@ -52,11 +56,12 @@ export default function App() {
   };
 
   if (auth.status === 'authenticated' && authenticatedRouteReady) {
-    return <ScalarisApp key={auth.userId} userId={auth.userId} onLogout={auth.logout} />;
+    return <AccountRouter key={auth.userId} onLogout={auth.logout} loadingAlreadyVisible={loadingAlreadyVisible.current} />;
   }
 
   if (publicScreen === 'login') {
     return (
+      <><div inert={authLoading ? true : undefined}>
       <Login
         onLogin={auth.login}
         onGoogleLogin={auth.loginWithGoogle}
@@ -67,8 +72,10 @@ export default function App() {
         message={auth.message}
         isLoading={auth.status === 'loading'}
       />
+      </div>{authLoading && <BeaconLoading variant="account" fullPage overlay />}</>
     );
   }
 
-  return <div className="app"><Landing onEnter={openLogin} isLoading={auth.status === 'loading'} /></div>;
+  return <><div className="app" inert={authLoading ? true : undefined}><Landing onEnter={openLogin} isLoading={auth.status === 'loading'} /></div>
+    {authLoading && <BeaconLoading variant={readPublicPath() === '/assessments/pre' ? 'assessment' : 'account'} fullPage overlay />}</>;
 }

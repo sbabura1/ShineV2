@@ -7,6 +7,7 @@ import './app-shell.css';
 import './prototype/scalaris-prototype.css';
 import './prototype/theme.css';
 import './prototype/remote.css';
+import './auth/login.css';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

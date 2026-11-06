@@ -1,0 +1,115 @@
+/* Authentication shares the same surfaces, type and controls as the Nexus. */
+.login-page {
+  --shine-ink: var(--text);
+  --shine-muted: var(--text-muted);
+  --shine-line: var(--card-border);
+  --shine-action: #FFCA3A;
+  --shine-action-hover: #F2BB25;
+  --shine-action-ink: #17302E;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  min-height: 100svh;
+  color: var(--text);
+  background: var(--page-background);
+}
+.login-navigation {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 76px;
+  padding: 12px clamp(20px, 4vw, 64px);
+  border: 0;
+  background: var(--topbar-background);
+}
+.login-navigation .brand { text-decoration: none; font-weight: 700; }
+.login-navigation .brand-title { font-size: 16px; }
+.login-navigation .brand-sub { margin-top: 3px; font-size: 12px; font-weight: 400; }
+.shine-brand-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  padding: clamp(28px, 5vw, 72px);
+  padding-top: 16px;
+  gap: 36px;
+  align-items: flex-start;
+  background: transparent;
+  border: 0;
+}
+.shine-brand-panel > * { position: relative; z-index: 1; }
+.shine-brand-panel::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: clamp(420px, 38vw, 640px);
+  height: auto;
+  aspect-ratio: 1;
+  right: -35%;
+  bottom: -40%;
+  border: clamp(48px, 5vw, 72px) solid rgb(255 202 58 / 16%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.shine-logo-lockup { display: flex; flex-direction: column; align-self: flex-start; align-items: center; margin: -32px 0 0 -24px; text-align: center; width: min(470px, 100%); gap: 16px; }
+.shine-logo-art { display: block; width: min(440px, 100%); flex: none; color: var(--text); line-height: 0; }
+.shine-logo-lockup .shine-logo-image { width: 100%; height: auto; padding: 0; border-radius: 0; background: transparent; }
+.shine-logo-fullname { max-width: 390px; color: var(--text); font-size: clamp(18px, 2vw, 24px); font-weight: 700; line-height: 1.3; }
+.shine-hero h1 { max-width: 540px; margin: 0 0 20px; color: var(--text); font-size: clamp(32px, 3.7vw, 52px); line-height: 1.12; letter-spacing: -.03em; text-wrap: balance; }
+.shine-hero p { color: var(--text-muted); font-size: 17px; }
+.shine-support { max-width: 460px; color: var(--text-muted); font-size: 12px; line-height: 1.65; }
+.shine-support .shine-accent-row { display: flex; gap: 10px; margin: 0 0 12px; }
+.shine-accent-row span { display: block; width: 38px; height: 7px; border-radius: 20px; }
+.shine-accent-row span:nth-child(1) { background: #FF383E; }
+.shine-accent-row span:nth-child(2) { background: #FF6A2C; }
+.shine-accent-row span:nth-child(3) { background: var(--shine-action); }
+.shine-accent-row span:nth-child(4) { background: #20AA91; }
+.shine-accent-row span:nth-child(5) { background: #1AA5BC; }
+.shine-login-main { min-width: 0; align-items: flex-start; padding: clamp(24px, 4vw, 64px); padding-top: 16px; background: transparent; }
+.shine-login-card { width: min(480px, 100%); color: var(--text); background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius-panel); box-shadow: none; }
+.shine-card-head { padding: 28px 28px 22px; border-color: var(--card-border); }
+.shine-card-head h2 { color: var(--text); font-size: 28px; }
+.shine-card-head p { color: var(--text-muted); font-size: 15px; }
+.shine-card-content { padding: 24px 28px 28px; }
+.shine-field label { color: var(--text); font-weight: 600; }
+.shine-field input { color: var(--text); background: var(--bg); border-color: var(--border); border-radius: var(--radius-control); font-size: 16px; }
+.shine-field input::placeholder { color: var(--text-muted); opacity: 1; }
+.shine-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.shine-card-content .button { color: var(--shine-action-ink); background: var(--shine-action); border-radius: var(--radius-control); }
+.shine-card-content .button:hover { background: var(--shine-action-hover); }
+.shine-card-content .button-ghost,
+.shine-google-button { color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-control); }
+.shine-card-content .button-ghost:hover,
+.shine-google-button:hover { color: var(--text); background: var(--surface-alt); transform: none; }
+.shine-divider { color: var(--text-muted); }
+.shine-divider::before, .shine-divider::after { background: var(--card-border); }
+.shine-auth-switch { color: var(--text-muted); }
+.shine-auth-switch button { min-height: 44px; color: var(--primary); font-weight: 600; }
+.shine-login-error { color: var(--danger); background: var(--danger-soft); border: 1px solid var(--danger); }
+.shine-login-message { color: var(--success); background: color-mix(in srgb, var(--success) 8%, var(--surface)); border-color: var(--success); }
+@media (max-width: 900px) {
+  .login-page { grid-template-columns: minmax(0, 1fr); }
+  .shine-brand-panel { padding: 12px 24px 0; gap: 20px; border-right: 0; }
+  .shine-logo-lockup { width: 100%; flex-direction: column; align-items: center; margin: -16px 0 0; gap: 14px; }
+  .shine-logo-art { width: min(300px, 100%); }
+  .shine-logo-fullname { max-width: 360px; font-size: 20px; }
+  .shine-hero { max-width: 560px; }
+  .shine-hero h1 { margin-bottom: 10px; font-size: 32px; }
+  .shine-hero p { font-size: 16px; }
+  .shine-support { margin-top: 4px; }
+  .shine-login-main { padding: 16px 24px 40px; }
+}
+@media (max-width: 480px) {
+  .login-navigation { padding-inline: 20px; }
+  .shine-brand-panel { padding-inline: 20px; }
+  .shine-logo-art { width: min(260px, 100%); }
+  .shine-logo-fullname { font-size: 18px; }
+  .shine-login-main { padding-inline: 20px; }
+  .shine-card-head, .shine-card-content { padding: 22px 20px; }
+}

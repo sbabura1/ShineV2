@@ -7,6 +7,7 @@ export default function useRun({ startPath, existingRunId, restart, previousRunI
   const [error, setError] = useState(null);
   const [saveState, setSaveState] = useState('saved');
   const [submitting, setSubmitting] = useState(false);
+  const [loadingPhase, setLoadingPhase] = useState(kind === 'ASSESSMENT' ? 'assessment' : existingRunId ? 'resume' : 'mission');
   const [retryLoad, setRetryLoad] = useState(0);
   const snapshot = useRef(null);
   const pending = useRef({ answers: {}, investigations: {} });
@@ -32,6 +33,7 @@ export default function useRun({ startPath, existingRunId, restart, previousRunI
         const opened = existingRunId ? { run: { runId: existingRunId } } : await api(startPath, {
           method: 'POST', body: restart ? { restart: true, previousRunId } : {}, key: openKey.current,
         });
+        if (!cancelled) setLoadingPhase(kind === 'ASSESSMENT' ? 'assessment' : opened.resumed || existingRunId ? 'resume' : 'mission');
         const id = segment(opened.run.runId);
         const [saved, definition] = await Promise.all([api(`/v1/runs/${id}`), api(`/v1/runs/${id}/content`)]);
         if (!cancelled) { blocked.current = false; commitView({ ...saved, definition }); }
@@ -39,7 +41,7 @@ export default function useRun({ startPath, existingRunId, restart, previousRunI
     }
     load();
     return () => { cancelled = true; mounted.current = false; clearTimeout(timer.current); };
-  }, [startPath, existingRunId, restart, previousRunId, retryLoad, commitView]);
+  }, [startPath, existingRunId, restart, previousRunId, kind, retryLoad, commitView]);
 
   const flush = useCallback(async () => {
     clearTimeout(timer.current);
@@ -98,7 +100,8 @@ export default function useRun({ startPath, existingRunId, restart, previousRunI
     return () => { window.removeEventListener('beforeunload', beforeUnload); document.removeEventListener('visibilitychange', visibility); };
   }, [flush]);
 
-  const leave = async callback => { try { await flush(); await onProgressRef.current?.(); callback(); } catch { /* Keep unsaved work on screen. */ } };
+  // Routed navigation refreshes progress after flushing, and owns its loading UI.
+  const leave = async callback => { try { await flush(); callback(); } catch { /* Keep unsaved work on screen. */ } };
   const submit = async () => {
     setSubmitting(true);
     try {
@@ -121,5 +124,5 @@ export default function useRun({ startPath, existingRunId, restart, previousRunI
     pending.current = { answers: {}, investigations: {} }; inFlight.current = null; blocked.current = false;
     setSaveState('saved'); setRetryLoad(value => value + 1);
   };
-  return { data, error, saveState, submitting, queue, flush, leave, submit, reload };
+  return { data, error, saveState, submitting, loadingPhase, queue, flush, leave, submit, reload };
 }

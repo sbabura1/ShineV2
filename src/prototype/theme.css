@@ -22,6 +22,7 @@
 
   --panel: var(--surface);
   --panel2: var(--surface-alt);
+  --panel-2: var(--surface-alt);
   --line: var(--border);
   --muted: var(--text-muted);
   --cyan: var(--primary);
@@ -77,17 +78,17 @@
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #06101D;
-  --surface: #0C1827;
-  --surface-alt: #11263A;
-  --border: #254663;
-  --text: #EDF7FF;
-  --text-muted: #9CB5C7;
+  --bg: #101112;
+  --surface: #191B1D;
+  --surface-alt: #24272A;
+  --border: #484D52;
+  --text: #F2F4F5;
+  --text-muted: #ADB4BB;
   --primary: #57D8FF;
   --on-primary: #07101C;
-  --secondary: #6B8CFF;
+  --secondary: #9CB5C7;
   --on-secondary: #07101C;
-  --accent: #B48CFF;
+  --accent: #57D8FF;
   --on-accent: #07101C;
   --ring: #57D8FF;
   --success: #79E2A4;
@@ -99,10 +100,10 @@ html[data-theme="dark"] {
   --shadow-surface: 0 10px 34px rgb(0 0 0 / 18%);
   --shadow-raised: 0 12px 35px rgb(0 0 0 / 42%);
   --nexus-core-text: #EDF7FF;
-  --page-background: radial-gradient(circle at 15% 0%, rgb(87 216 255 / 14%), transparent 28%), radial-gradient(circle at 90% 10%, rgb(180 140 255 / 12%), transparent 25%), linear-gradient(180deg, #040914 0%, #07101C 100%);
-  --topbar-background: rgb(4 9 20 / 86%);
-  --card-background: linear-gradient(180deg, rgb(17 38 58 / 90%), rgb(9 22 35 / 95%));
-  --card-border: rgb(255 255 255 / 8%);
+  --page-background: var(--bg);
+  --topbar-background: var(--bg);
+  --card-background: var(--surface);
+  --card-border: #34383C;
   --button-primary: #57D8FF;
   --button-primary-hover: #79E5FF;
   --on-button-primary: #07101C;
@@ -116,20 +117,20 @@ html[data-theme="dark"] {
   --secondary-button-bg: transparent;
   --secondary-button-text: var(--text);
   --secondary-button-border: var(--border);
-  --skill-chip-bg: rgb(87 216 255 / 7%);
-  --skill-chip-text: #DFF8FF;
-  --skill-chip-border: rgb(87 216 255 / 20%);
-  --card-glow: var(--shadow-surface);
-  --world-background: radial-gradient(circle at 50% 50%, rgb(87 216 255 / 12%), transparent 20%), radial-gradient(circle at 20% 20%, rgb(180 140 255 / 7%), transparent 18%), rgb(7 17 29 / 78%);
-  --node-background: linear-gradient(180deg, rgb(28 65 91 / 97%), rgb(12 31 49 / 98%));
+  --skill-chip-bg: var(--surface-alt);
+  --skill-chip-text: var(--text);
+  --skill-chip-border: var(--border);
+  --card-glow: none;
+  --world-background: var(--surface);
+  --node-background: var(--surface-alt);
   --node-border: rgb(255 255 255 / 15%);
   --node-shadow: 0 10px 28px rgb(0 0 0 / 34%), 0 0 22px rgb(87 216 255 / 8%);
   --core-background: radial-gradient(circle, #71E7FF 0%, #2F6F93 35%, #10263C 68%, #07101C 100%);
   --network-stroke: rgb(87 216 255 / 26%);
-  --network-cross-stroke: rgb(180 140 255 / 28%);
+  --network-cross-stroke: rgb(173 180 187 / 28%);
 }
 
-html {
+:root {
   background: var(--bg);
 }
 
@@ -364,7 +365,7 @@ p,
   border-color: transparent;
 }
 
-:where(input, select, textarea) {
+input, select, textarea {
   min-height: 42px;
   color: var(--text);
   background: var(--surface);
@@ -372,7 +373,7 @@ p,
   border-radius: var(--radius-control);
 }
 
-:where(input, select, textarea):focus {
+input:focus, select:focus, textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-soft);
 }
@@ -884,7 +885,8 @@ td[data-numeric],
 .sector-hero h1 { font-family: var(--font-heading); }
 
 .mission-card-grid {
-  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(240px, 0.75fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   align-items: stretch;
   gap: 14px;
 }
@@ -1010,7 +1012,7 @@ html[data-theme="dark"] .showcase-pricing-card { border-color: color-mix(in srgb
   .showcase-controls { grid-template-columns: 1fr; }
   .world-map { min-height: 650px; }
   .mission-card-grid { grid-template-columns: 1fr 1fr; }
-  .sector-mission-card.active { grid-column: 1 / -1; }
+  .sector-mission-card.active { grid-column: auto; }
 }
 
 @media (max-width: 760px) {

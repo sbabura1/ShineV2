@@ -8,6 +8,7 @@ import feminineTiedAtlas from '../assets/characters/avatar-complete-feminine-tie
 import avatarInitial from '../assets/characters/avatar-initial-v2.png';
 import beaconBase from '../assets/characters/beacon-base.png';
 import { AVATAR_DEFAULT, AVATAR_FIELDS, BEACON_DEFAULT, BEACON_FIELDS } from '../characterOptions';
+import { selectedBeacon } from '../beacons';
 
 export { AVATAR_DEFAULT, BEACON_DEFAULT } from '../characterOptions';
 
@@ -187,6 +188,18 @@ export function IdentityAvatar({ identity, className = '' }) {
   }, [designKey]);
   const current = rendered || (identity.avatarRenderVersion === AVATAR_RENDER_VERSION ? identity.avatarImage : null);
   return <img className={className} src={current || avatarInitial} alt="Your customized avatar" width="34" height="34" />;
+}
+
+export function IdentityBeacon({ identity = {}, className = '' }) {
+  const [rendered, setRendered] = useState(null);
+  const designKey = JSON.stringify(identity.beaconDesign || null);
+  useEffect(() => {
+    let active = true;
+    setRendered(null);
+    if (identity.beaconDesign) renderBeacon(identity.beaconDesign).then(source => { if (active) setRendered(source); }).catch(() => {});
+    return () => { active = false; };
+  }, [designKey]);
+  return <img className={className} src={rendered || selectedBeacon(identity).src} alt="Your Beacon companion" width="148" height="148" />;
 }
 
 export default function CharacterBuilderGenerated({ kind, identity, setIdentity }) {

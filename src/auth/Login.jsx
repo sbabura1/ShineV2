@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { ArrowLeft, LockKeyhole, Sparkles } from 'lucide-react';
-import shineLogo from '../assets/shine-logo.png';
+import { ArrowLeft, LockKeyhole, Moon, Sparkles, Sun } from 'lucide-react';
+import ShineLogo from './ShineLogo';
 import Button from '../components/ui/Button';
+import { useTheme } from '../prototype/utils/theme';
 
 export default function Login({ onLogin, onGoogleLogin, onSignUp, onConfirmSignIn, onConfirmSignUp, error, message, isLoading }) {
+  const { theme, toggleTheme } = useTheme();
   const [view, setView] = useState('signIn');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -84,21 +86,25 @@ export default function Login({ onLogin, onGoogleLogin, onSignUp, onConfirmSignI
   const isSignUp = view === 'signUp';
   const isNewPassword = view === 'newPassword';
   const title = isSignIn ? 'Welcome back' : isSignUp ? 'Create account' : isNewPassword ? 'Set new password' : 'Check your email';
-  const copy = isSignIn ? 'Sign in with your SHINE account.' : isSignUp ? 'Create your SHINE account with AWS Cognito.' : isNewPassword ? 'Cognito requires a permanent password before your first sign-in finishes.' : 'Enter the confirmation code Cognito sent to your email.';
+  const copy = isSignIn ? 'Sign in with your SHINE account.' : isSignUp ? 'Create your student account to begin exploring Scalaris. Faculty accounts are provided by an administrator.' : isNewPassword ? 'Set a permanent password to finish signing in.' : 'Enter the confirmation code sent to your email.';
 
   return (
     <main className="login-page">
+      <nav className="login-navigation" aria-label="Welcome navigation">
+        <a className="brand" href="#/welcome"><span className="planet-mark" aria-hidden="true" /><span><span className="brand-title">SCALARIS</span><span className="brand-sub">The Nexus</span></span></a>
+        <button className="theme-toggle-icon" type="button" onClick={toggleTheme} aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>{theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}</button>
+      </nav>
       <aside className="shine-brand-panel">
         <div className="shine-logo-lockup">
-          <img className="shine-logo-image" src={shineLogo} alt="SHINE" />
+          <span className="shine-logo-art"><ShineLogo /></span>
           <p className="shine-logo-fullname">STEM Hub for Innovation in Numeracy Education</p>
         </div>
         <div className="shine-hero">
           <h1>Quantitative reasoning starts here.</h1>
           <p>Sign in to access the SHINE learning and research experience.</p>
-          <div className="shine-accent-row" aria-hidden="true"><span /><span /><span /><span /><span /></div>
         </div>
         <div className="shine-support">
+          <div className="shine-accent-row" aria-hidden="true"><span /><span /><span /><span /><span /></div>
           The SHINE project is supported by the National Science Foundation (NSF) Division of Equity for Excellence in STEM Award #2450045.
         </div>
       </aside>

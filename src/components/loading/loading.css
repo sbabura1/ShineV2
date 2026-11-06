@@ -1,0 +1,71 @@
+.beacon-loading, .beacon-loading-placeholder {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  min-height: calc(100svh - 88px);
+  width: 100%;
+  color: var(--text);
+  background: var(--page-background);
+}
+.beacon-loading { position: relative; display: grid; place-items: center; padding: 40px 24px; }
+.beacon-loading--full, .beacon-loading-placeholder--full { min-height: 100svh; }
+.beacon-loading--full { padding-top: 112px; padding-bottom: 64px; }
+.beacon-loading--overlay { position: fixed; inset: 0; z-index: 60; height: 100dvh; overflow-y: auto; }
+body:has(.beacon-loading--overlay) { overflow: hidden; }
+.beacon-loading-brand { position: absolute; top: 28px; left: clamp(24px, 4vw, 64px); display: flex; align-items: center; gap: 12px; }
+.beacon-loading-brand .planet-mark { width: 36px; height: 36px; flex-shrink: 0; }
+.beacon-loading-brand strong { display: block; font-size: 14px; font-weight: 750; letter-spacing: .1em; }
+.beacon-loading-brand > span > span { display: block; margin-top: 3px; color: var(--text-muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.beacon-loading-content { width: min(600px, 100%); text-align: center; }
+.beacon-loading-stage { position: relative; width: 320px; height: 296px; max-width: 100%; margin: 0 auto 28px; transform: scale(.8); transform-origin: center; }
+.beacon-loading-character { position: relative; z-index: 1; width: 280px; height: 280px; margin: 0 auto; transform-origin: 50% 90%; animation: beacon-loading-hop 2800ms var(--ease-in-out) infinite; }
+.beacon-loading-character img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.beacon-loading-bulb { position: absolute; top: 8.8%; left: 45.3%; width: 10px; height: 10px; border-radius: 50%; background: #FFD166; transform: translate(-50%, -50%); animation: beacon-loading-thought 2800ms var(--ease-in-out) infinite; }
+.beacon-loading-ground { position: absolute; bottom: 11px; left: calc(50% - 66px); width: 132px; height: 10px; border-radius: 50%; background: color-mix(in srgb, var(--text) 12%, transparent); animation: beacon-loading-ground 2800ms var(--ease-in-out) infinite; }
+.beacon-loading-symbol { position: absolute; color: var(--primary); font-size: 32px; font-weight: 500; line-height: 1; animation: beacon-loading-symbol 4200ms var(--ease-in-out) infinite; }
+.beacon-loading-symbol--plus { top: 94px; left: 28px; }
+.beacon-loading-symbol--percent { top: 45px; right: 24px; color: var(--gold-color); font-size: 25px; animation-delay: -1400ms; }
+.beacon-loading-symbol--equals { right: 23px; bottom: 60px; color: var(--text-muted); font-size: 27px; animation-delay: -2800ms; }
+.beacon-loading-status h1 { display: inline; margin: 0; color: var(--text); font-size: clamp(25px, 3vw, 32px); font-weight: 650; line-height: 1.25; letter-spacing: -.025em; text-wrap: balance; }
+.beacon-loading-status > p { margin: 14px 0 0; color: var(--text-muted); font-size: 15px; line-height: 1.65; text-wrap: balance; }
+.beacon-loading-title-end { white-space: nowrap; }
+.beacon-loading-dots { display: inline-flex; gap: 4px; margin-left: 7px; vertical-align: baseline; white-space: nowrap; }
+.beacon-loading-dots i { display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); animation: beacon-loading-dot 1200ms var(--ease-in-out) infinite; }
+.beacon-loading-dots i:nth-child(2) { animation-delay: 160ms; }
+.beacon-loading-dots i:nth-child(3) { animation-delay: 320ms; }
+.beacon-loading-moment { max-width: 480px; min-height: 120px; margin: 40px auto 0; }
+.beacon-loading-moment-label { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--gold-color); font-size: 13px; font-weight: 600; }
+.beacon-loading-moment > p { margin: 12px 0 0; color: var(--text); font-size: clamp(17px, 2vw, 20px); line-height: 1.65; text-wrap: pretty; animation: beacon-loading-moment 180ms var(--ease-out) both; }
+.beacon-loading-footnote { margin: 24px 0 0; color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+.beacon-loading-back { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 12px; padding: 8px 14px; color: var(--text-muted); background: transparent; border: 0; border-radius: var(--radius-control); font-size: 13px; cursor: pointer; }
+.beacon-loading-back:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) { .beacon-loading-back:hover { color: var(--text); background: var(--surface-alt); } }
+@keyframes beacon-loading-hop {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  22% { transform: translateY(-5px) rotate(0deg); }
+  45% { transform: translateY(-18px) rotate(2deg); }
+  68% { transform: translateY(-5px) rotate(-1deg); }
+  84% { transform: translateY(0) rotate(-2deg); }
+}
+@keyframes beacon-loading-ground { 0%, 84%, 100% { transform: scaleX(1); opacity: .8; } 45% { transform: scaleX(.78); opacity: .45; } }
+@keyframes beacon-loading-thought { 0%, 22%, 84%, 100% { opacity: .25; } 45%, 68% { opacity: 1; } }
+@keyframes beacon-loading-symbol { 0%, 100% { transform: translateY(0) rotate(-8deg); opacity: .45; } 50% { transform: translateY(-8px) rotate(5deg); opacity: .9; } }
+@keyframes beacon-loading-dot { 0%, 65%, 100% { transform: translateY(0); opacity: .35; } 32% { transform: translateY(-3px); opacity: 1; } }
+@keyframes beacon-loading-moment { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 600px) {
+  .beacon-loading { min-height: calc(100svh - 140px); padding: 32px 24px; }
+  .beacon-loading--full { min-height: 100svh; padding-top: 100px; padding-bottom: 40px; }
+  .beacon-loading-brand { top: 24px; left: 24px; }
+  .beacon-loading-stage { width: 280px; height: 262px; margin-bottom: 24px; }
+  .beacon-loading-character { width: 248px; height: 248px; }
+  .beacon-loading-symbol--plus { left: 14px; }
+  .beacon-loading-symbol--percent { right: 12px; }
+  .beacon-loading-symbol--equals { right: 10px; }
+  .beacon-loading-moment { margin-top: 32px; min-height: 140px; }
+  .beacon-loading-footnote { margin-top: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beacon-loading-character, .beacon-loading-ground, .beacon-loading-symbol, .beacon-loading-bulb, .beacon-loading-dots i { animation: none; transform: none; }
+  .beacon-loading-bulb { transform: translate(-50%, -50%); opacity: .7; }
+  .beacon-loading-symbol { opacity: .6; }
+  .beacon-loading-moment > p { animation: none; }
+}

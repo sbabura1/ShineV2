@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import useRun from '../../api/useRun';
 import Question from './Question';
 import ContentBlocks from './ContentBlocks';
+import MissionBeacon from './MissionBeacon';
+import { questionProgress } from './progress';
+import DelayedBeaconLoading from '../loading/BeaconLoading';
 
 function Evidence({ question, value = {}, onChange, disabled }) {
   const set = (key, next) => onChange({ ...value, [key]: next });
@@ -32,11 +35,14 @@ function Evidence({ question, value = {}, onChange, disabled }) {
   </fieldset>;
 }
 
-export default function LearningRun({ kind, displayTitle, startPath, existingRunId, restart, previousRunId, onBack, onProgress, onGuard, nextMission, onNextMission, onRestart, sectorCompleted, onNexus }) {
+export default function LearningRun({ kind, displayTitle, identity, startPath, existingRunId, restart, previousRunId, onBack, onProgress, onGuard, nextMission, onNextMission, onRestart, sectorCompleted, onNexus }) {
   const state = useRun({ kind, startPath, existingRunId, restart, previousRunId, onProgress });
-  const { data, error, saveState, submitting, queue, flush, leave, submit, reload } = state;
+  const { data, error, saveState, submitting, loadingPhase, queue, flush, leave, submit, reload } = state;
   const [page, setPage] = useState(0);
   const initialized = useRef(null);
+  useEffect(() => {
+    if (['COMPLETED', 'PENDING_REVIEW'].includes(data?.run.status)) window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [data?.run.status]);
   useEffect(() => { onGuard?.(flush); return () => onGuard?.(null); }, [flush, onGuard]);
   useEffect(() => {
     if (!data || initialized.current === data.run.runId) return;
@@ -46,8 +52,9 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
       : data.definition.questions.findIndex(question => question.id === data.run.currentQuestionId || question.responses?.some(response => response.id === data.run.currentQuestionId));
     setPage(Math.max(0, index));
   }, [data]);
-  if (!data) return <main className="page"><section className="card remote-loading" role={error ? 'alert' : 'status'}>
-    <h1>{error ? 'Unable to open your saved work' : 'Opening your saved work…'}</h1>
+  if (!data && !error) return <DelayedBeaconLoading variant={loadingPhase} name={displayTitle} onBack={onBack} />;
+  if (!data) return <main className="page"><section className="card remote-loading" role="alert">
+    <h1>Unable to open your saved work</h1>
     {error && <><p>{error.message}</p><button type="button" className="btn" onClick={reload}>Retry</button></>}
     <button type="button" className="btn secondary" onClick={onBack}>Back</button>
   </section></main>;
@@ -59,6 +66,8 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
   const totalPages = sections ? sections.length : definition.questions.length;
   const current = sections ? sections[page] : definition.questions[page];
   const pageQuestions = sections ? current.questions : [current];
+  const progress = questionProgress(definition, answers);
+  const isMission = kind === 'MISSION';
   const statusLabels = { saved: 'All changes saved', unsaved: 'Unsaved changes', saving: 'Saving…', error: 'Changes not saved', conflict: 'Saved work changed in another session' };
   const answer = (id, value) => queue({ answers: { [id]: value } });
   const changePage = next => {
@@ -66,10 +75,10 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
     if (editable) queue(sections ? { currentStep: sections[next].id } : { currentQuestionId: definition.questions[next].id });
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
-  return <main className="page remote-run">
+  return <main className={`page remote-run ${isMission ? 'remote-mission' : 'remote-assessment'}`}>
     <div className="remote-run-toolbar"><button type="button" className="btn secondary" onClick={() => leave(onBack)}>← Save and return</button>
       {editable && <span role="status" aria-live="polite" className={`save-indicator save-${saveState}`}>{statusLabels[saveState]}</span>}</div>
-    <header className="section-title"><div><div className="eyebrow">{kind === 'ASSESSMENT' ? 'Pre-assessment' : `${definition.sectorId} · ${definition.difficultyLabel}`}</div>
+    <header className="section-title remote-run-heading"><div><p className="remote-run-context">{kind === 'ASSESSMENT' ? 'Pre-assessment' : `${definition.sectorId} · ${definition.difficultyLabel}`}</p>
       <h1>{definition.title || displayTitle || 'Mission'}</h1><p>{sections ? `Part ${page + 1} of ${totalPages}` : `Activity ${page + 1} of ${totalPages}`}</p></div></header>
     {error && <section className="callout remote-error" role="alert"><p>{error.message}</p>
       {saveState === 'error' && <button type="button" className="btn" onClick={() => flush().catch(() => {})}>Retry save</button>}
@@ -77,7 +86,11 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
     </section>}
     {(completed || pendingReview) && <section className="card remote-result" aria-label="Submission result">
       <h2>{completed ? 'Completed' : 'Submitted for review'}</h2>
-      {run.result?.maximumScore != null && <p className="remote-score">{run.result.score} / {run.result.maximumScore} <span>{run.result.percentage}%</span></p>}
+      {run.result?.maximumScore > 0 && <div className="remote-score-summary">
+        <div><p className="remote-score-label">Your score</p><p className="remote-score">{run.result.score} / {run.result.maximumScore} <span>points</span></p></div>
+        <div className="remote-score-percentage"><strong>{run.result.percentage}%</strong><span>Overall score</span></div>
+        <progress className="remote-score-track" aria-label="Overall score" value={run.result.score} max={run.result.maximumScore} />
+      </div>}
       {pendingReview && <p>Your responses and investigation work are saved. Completion will be updated after review.</p>}
       {run.result?.feedback && <p>{run.result.feedback}</p>}
       <div className="cta-row">
@@ -87,6 +100,12 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
       </div>
     </section>}
     {run.status === 'CHANGES_REQUESTED' && <section className="callout"><h2>Changes requested</h2><p>{run.result?.feedback || 'Review your investigation and submit the updated work.'}</p></section>}
+    <div className="remote-run-layout"><div className="remote-run-work">
+    <section className="remote-question-progress" aria-label={isMission ? 'Mission progress' : 'Assessment progress'}>
+      <div className="remote-progress-labels"><strong>{isMission ? 'Mission progress' : 'Assessment progress'}</strong><span aria-live="polite" aria-atomic="true">{progress.answered} of {progress.total} questions answered <span className="remote-progress-remaining">· {progress.remaining} left</span></span></div>
+      <progress value={progress.answered} max={progress.total || 1} aria-label="Questions answered" />
+      {current.type === 'investigation' && <p>Progress counts written responses. Complete the investigation work before submitting.</p>}
+    </section>
     {sections && <nav className="remote-section-nav" aria-label="Assessment parts">{sections.map((section, index) => <button type="button" key={section.id} className={`btn ${page === index ? '' : 'secondary'}`} aria-current={page === index ? 'step' : undefined} onClick={() => changePage(index)}>{section.title}</button>)}</nav>}
     {sections && page === 0 && <section className="card remote-introduction">
       {definition.instructions.map((instruction, index) => <p key={index}>{instruction}</p>)}
@@ -106,5 +125,6 @@ export default function LearningRun({ kind, displayTitle, startPath, existingRun
     <footer className="remote-run-toolbar"><button type="button" className="btn secondary" disabled={page === 0} onClick={() => changePage(page - 1)}>Previous</button>
       {page < totalPages - 1 ? <button type="button" className="btn" onClick={() => changePage(page + 1)}>Continue</button> : editable && <button type="button" className="btn" disabled={submitting} onClick={submit}>{submitting ? 'Submitting…' : kind === 'ASSESSMENT' ? 'Submit full baseline' : 'Submit mission'}</button>}
     </footer>
+    </div>{isMission && <MissionBeacon key={`${run.runId}:${current.id}`} identity={identity} question={current} />}</div>
   </main>;
 }

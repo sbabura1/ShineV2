@@ -1,0 +1,12 @@
+.faculty-app { min-height: 100svh; }
+.faculty-topbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; min-height: 76px; padding: 14px clamp(20px, 3vw, 48px); background: var(--topbar-background); border-bottom: 1px solid var(--card-border); }
+.faculty-topbar .brand { text-decoration: none; }
+.faculty-topbar .brand-title { font-size: 16px; font-weight: 750; }
+.faculty-topbar .brand-sub { margin-top: 3px; font-size: 12px; }
+.faculty-account-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; min-width: 0; }
+.faculty-account-name { max-width: 260px; color: var(--text-muted); font-size: 14px; overflow-wrap: anywhere; }
+.faculty-account-actions .btn { display: inline-flex; align-items: center; gap: 8px; }
+.faculty-dashboard { min-height: calc(100svh - 76px); padding-top: 40px; }
+.faculty-dashboard h1 { margin: 0; font-size: clamp(24px, 3vw, 32px); font-weight: 600; letter-spacing: -.02em; }
+.faculty-error { margin-top: 24px; color: var(--danger); line-height: 1.6; }
+@media (max-width: 600px) { .faculty-account-actions { width: 100%; justify-content: flex-start; } .faculty-account-name { flex: 1; } .faculty-dashboard { padding-top: 28px; } }
