@@ -1,0 +1,2220 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "assessmentId": "post-gamification",
+  "status": "draft",
+  "source": {
+    "file": "SHINE ASSESSMENTS.docx",
+    "sha256": "3ec1fdf78dfceae46978559ea01a2078951066dc2c062de13a769919378f40fd",
+    "assessmentNumber": 2,
+    "textView": "insertions_included_deletions_excluded",
+    "locatorConvention": "blockIndex is zero-based; tableRow is one-based including header rows"
+  },
+  "title": "Assessment 2: After the Gamification Platform",
+  "administration": {
+    "stage": "after_all_required_sectors_before_independent_study",
+    "sourceTimingNote": "Administer after students complete the platform and before they complete the independent study.",
+    "policyStatus": "needs_review",
+    "assessmentRequiredAccordingToSource": true,
+    "unlockRule": {
+      "type": "all_required_sectors_complete",
+      "sectorIdsSource": "published_configuration"
+    },
+    "estimatedDurationMinutes": null,
+    "attemptLimit": null,
+    "autosavePolicy": null,
+    "resultVisibility": null,
+    "questionOrder": "source_order",
+    "optionOrder": "source_order"
+  },
+  "instructions": [
+    "INSTRUCTIONS:  This assessment is a required activity for all students participating in the SHINE Project and it is also being used for research purposes by the SHINE project leadership team (Drs. Esther Isabelle Wilder, Gregory Broberg, Eduardo Vianna, and Toni Watt).  If you wish to be a participant in the SHINE Research Program, you must complete the Institutional Research Board (IRB) consent form prior to completing this assessment.  Please complete this assessment on your own and in one sitting.  Please try your best on every item."
+  ],
+  "participantFields": [
+    {
+      "id": "name",
+      "label": "Name",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 486
+      }
+    },
+    {
+      "id": "student-id",
+      "label": "Student ID",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 487
+      }
+    },
+    {
+      "id": "instructor-mentor",
+      "label": "Instructor Name/Mentor",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 488
+      }
+    },
+    {
+      "id": "assessment-date",
+      "label": "Date",
+      "type": "date",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 489
+      }
+    },
+    {
+      "id": "gamification-completion-date",
+      "label": "Gamification Completion Date",
+      "type": "date",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 490
+      }
+    }
+  ],
+  "scales": [
+    {
+      "id": "agreement-7",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7,
+      "options": [
+        {
+          "value": 1,
+          "label": "Disagree strongly"
+        },
+        {
+          "value": 2,
+          "label": "Disagree somewhat"
+        },
+        {
+          "value": 3,
+          "label": "Disagree slightly"
+        },
+        {
+          "value": 4,
+          "label": "Neither agree nor disagree"
+        },
+        {
+          "value": 5,
+          "label": "Agree slightly"
+        },
+        {
+          "value": 6,
+          "label": "Agree somewhat"
+        },
+        {
+          "value": 7,
+          "label": "Agree strongly"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "image1",
+      "path": "assets/image1.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image2",
+      "path": "assets/image2.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image3",
+      "path": "assets/image3.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image10",
+      "path": "assets/image10.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image11",
+      "path": "assets/image11.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image14",
+      "path": "assets/image14.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "post-gamification-stimulus-001",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 1-3 use the table below. Eight students reported where they live and how many practice activities they completed.",
+          "source": {
+            "blockIndex": 518
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Student",
+              "Residence",
+              "Activities completed"
+            ],
+            [
+              "1",
+              "On campus",
+              "12"
+            ],
+            [
+              "2",
+              "Commuter",
+              "9"
+            ],
+            [
+              "3",
+              "On campus",
+              "15"
+            ],
+            [
+              "4",
+              "Commuter",
+              "6"
+            ],
+            [
+              "5",
+              "On campus",
+              "9"
+            ],
+            [
+              "6",
+              "Commuter",
+              "12"
+            ],
+            [
+              "7",
+              "On campus",
+              "6"
+            ],
+            [
+              "8",
+              "Commuter",
+              "3"
+            ]
+          ],
+          "source": {
+            "blockIndex": 519
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-gamification-stimulus-002",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 5-7 concern whether students with prior spreadsheet experience were more likely to complete an optional platform challenge. Sixteen students participated: 6 had prior experience and 10 did not. Three experienced students and 6 students without prior experience completed the challenge.",
+          "source": {
+            "blockIndex": 544
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-gamification-stimulus-003",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Question 8 uses the graph below.",
+          "source": {
+            "blockIndex": 574
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image3",
+          "alt": "post-gamification-stimulus-003: Activities Completed on a Platform Skills Check. Frequency bar chart.",
+          "source": {
+            "blockIndex": 575
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-gamification-stimulus-004",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 9-10 use the graph below.",
+          "source": {
+            "blockIndex": 582
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image1",
+          "alt": "post-gamification-stimulus-004: Completion Time Across Six Weekly Practice Rounds. Line chart for Group A and Group B.",
+          "source": {
+            "blockIndex": 583
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-gamification-stimulus-005",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 11-12 use the table below. It compares students who completed the platform with all students who began it.",
+          "source": {
+            "blockIndex": 596
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Residence of Platform Completers and All Platform Users",
+          "source": {
+            "blockIndex": 597
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Residence",
+              "Platform completers",
+              "All platform users"
+            ],
+            [
+              "On campus",
+              "46%",
+              "40%"
+            ],
+            [
+              "Commuter",
+              "39%",
+              "45%"
+            ],
+            [
+              "Online",
+              "15%",
+              "15%"
+            ]
+          ],
+          "source": {
+            "blockIndex": 598
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-gamification-stimulus-006",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 17-18 use the table below, based on a survey about recommending the platform.",
+          "source": {
+            "blockIndex": 636
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Would Recommend Platform by Completion Group",
+          "source": {
+            "blockIndex": 637
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Would recommend",
+              "Higher completion",
+              "Lower completion",
+              "Total"
+            ],
+            [
+              "Yes",
+              "84",
+              "60",
+              "144"
+            ],
+            [
+              "No",
+              "36",
+              "60",
+              "96"
+            ],
+            [
+              "Total",
+              "120",
+              "120",
+              "240"
+            ]
+          ],
+          "source": {
+            "blockIndex": 638
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "attitudes",
+      "title": "Attitudinal Questions",
+      "sourcePartNumber": 1,
+      "instructions": [
+        "For each statement, select the response that best represents how you feel at this point. Use the same scale for every statement."
+      ],
+      "questions": [
+        {
+          "id": "post-gamification-attitudes-001",
+          "sourceNumber": 1,
+          "type": "likert",
+          "prompt": "I am comfortable entering data into a spreadsheet such as Excel or Google Sheets.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 2
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-002",
+          "sourceNumber": 2,
+          "type": "likert",
+          "prompt": "I feel confident using spreadsheet software to carry out simple data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 3
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-003",
+          "sourceNumber": 3,
+          "type": "likert",
+          "prompt": "I am comfortable calculating percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 4
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-004",
+          "sourceNumber": 4,
+          "type": "likert",
+          "prompt": "I feel confident interpreting percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 5
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-005",
+          "sourceNumber": 5,
+          "type": "likert",
+          "prompt": "I am comfortable working with rates and ratios.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 6
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-006",
+          "sourceNumber": 6,
+          "type": "likert",
+          "prompt": "I feel confident reading bivariate tables that compare two variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 7
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-007",
+          "sourceNumber": 7,
+          "type": "likert",
+          "prompt": "I feel confident distinguishing between row percentages and column percentages in a table.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 8
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-008",
+          "sourceNumber": 8,
+          "type": "likert",
+          "prompt": "I feel confident identifying independent and dependent variables in a research question.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 9
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-009",
+          "sourceNumber": 9,
+          "type": "likert",
+          "prompt": "I feel confident reading and interpreting graphs.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 10
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-010",
+          "sourceNumber": 10,
+          "type": "likert",
+          "prompt": "I feel confident choosing appropriate ways to summarize and present data based on the variables and research question.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 11
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-011",
+          "sourceNumber": 11,
+          "type": "likert",
+          "prompt": "I feel confident interpreting the direction and strength of a correlation between two variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 12
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-012",
+          "sourceNumber": 12,
+          "type": "likert",
+          "prompt": "I feel confident determining whether a relationship between two variables provides evidence of causation.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 13
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-013",
+          "sourceNumber": 13,
+          "type": "likert",
+          "prompt": "I feel confident explaining the results of quantitative analysis in words.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 14
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-014",
+          "sourceNumber": 14,
+          "type": "likert",
+          "prompt": "I am interested in learning more about quantitative data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 15
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-015",
+          "sourceNumber": 15,
+          "type": "likert",
+          "prompt": "It is fun to work with spreadsheet software.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 16
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-016",
+          "sourceNumber": 16,
+          "type": "likert",
+          "prompt": "I find working with data and numbers enjoyable.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 17
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-017",
+          "sourceNumber": 17,
+          "type": "likert",
+          "prompt": "I enjoy quantitative problems that challenge me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 18
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-018",
+          "sourceNumber": 18,
+          "type": "likert",
+          "prompt": "Courses that require working with data and numbers are stressful for me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 19
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-019",
+          "sourceNumber": 19,
+          "type": "likert",
+          "prompt": "Data analysis is a difficult skill.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 20
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-020",
+          "sourceNumber": 20,
+          "type": "likert",
+          "prompt": "Data analysis is boring.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 21
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-021",
+          "sourceNumber": 21,
+          "type": "likert",
+          "prompt": "I try to avoid taking math and quantitative courses.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 22
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-022",
+          "sourceNumber": 22,
+          "type": "likert",
+          "prompt": "I plan to take the bare minimum number of math or statistics courses I need to take in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 23
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-023",
+          "sourceNumber": 23,
+          "type": "likert",
+          "prompt": "Data analysis is helpful for understanding content in non-math classes.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 24
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-024",
+          "sourceNumber": 24,
+          "type": "likert",
+          "prompt": "Data analysis is an important skill to learn in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 25
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-025",
+          "sourceNumber": 25,
+          "type": "likert",
+          "prompt": "The best way to learn data analysis is through class projects.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 26
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-026",
+          "sourceNumber": 26,
+          "type": "likert",
+          "prompt": "Learning to analyze data is worth the effort.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 27
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-027",
+          "sourceNumber": 27,
+          "type": "likert",
+          "prompt": "Data analysis skills will be useful for my future education or career.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 28
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-028",
+          "sourceNumber": 28,
+          "type": "likert",
+          "prompt": "Being good at data analysis will help me make decisions about issues that matter to me or my community.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 29
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-029",
+          "sourceNumber": 29,
+          "type": "likert",
+          "prompt": "All people have the ability to improve their quantitative skills.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 30
+          }
+        },
+        {
+          "id": "post-gamification-attitudes-030",
+          "sourceNumber": 30,
+          "type": "likert",
+          "prompt": "I think of myself as a math/quantitative person.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 496,
+            "tableRow": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Experience with the Gamification Platform",
+      "sourcePartNumber": 2,
+      "instructions": [
+        "Instructions:  Use the same 1-7 agreement scale shown in Part 1."
+      ],
+      "questions": [
+        {
+          "id": "post-gamification-experience-001",
+          "sourceNumber": 1,
+          "type": "likert",
+          "prompt": "The gamification platform was easy to navigate.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 2
+          }
+        },
+        {
+          "id": "post-gamification-experience-002",
+          "sourceNumber": 2,
+          "type": "likert",
+          "prompt": "The instructions for the activities were clear.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 3
+          }
+        },
+        {
+          "id": "post-gamification-experience-003",
+          "sourceNumber": 3,
+          "type": "likert",
+          "prompt": "The feedback helped me understand why an answer was correct or incorrect.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 4
+          }
+        },
+        {
+          "id": "post-gamification-experience-004",
+          "sourceNumber": 4,
+          "type": "likert",
+          "prompt": "Being able to try again without a penalty helped me learn.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 5
+          }
+        },
+        {
+          "id": "post-gamification-experience-005",
+          "sourceNumber": 5,
+          "type": "likert",
+          "prompt": "The real-world scenarios made the quantitative skills more meaningful.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 6
+          }
+        },
+        {
+          "id": "post-gamification-experience-006",
+          "sourceNumber": 6,
+          "type": "likert",
+          "prompt": "The progress indicators motivated me to continue.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 7
+          }
+        },
+        {
+          "id": "post-gamification-experience-007",
+          "sourceNumber": 7,
+          "type": "likert",
+          "prompt": "The activities were an appropriate length.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 8
+          }
+        },
+        {
+          "id": "post-gamification-experience-008",
+          "sourceNumber": 8,
+          "type": "likert",
+          "prompt": "The level of challenge was appropriate for me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 9
+          }
+        },
+        {
+          "id": "post-gamification-experience-009",
+          "sourceNumber": 9,
+          "type": "likert",
+          "prompt": "The platform worked reliably on the device I used.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 10
+          }
+        },
+        {
+          "id": "post-gamification-experience-010",
+          "sourceNumber": 10,
+          "type": "likert",
+          "prompt": "The platform increased my confidence in working with quantitative information.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 11
+          }
+        },
+        {
+          "id": "post-gamification-experience-011",
+          "sourceNumber": 11,
+          "type": "likert",
+          "prompt": "What I practiced on the platform helped me work through new examples.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 12
+          }
+        },
+        {
+          "id": "post-gamification-experience-012",
+          "sourceNumber": 12,
+          "type": "likert",
+          "prompt": "I would recommend using this platform in another course.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 13
+          }
+        },
+        {
+          "id": "post-gamification-experience-013",
+          "sourceNumber": 13,
+          "type": "likert",
+          "prompt": "The gamification platform strengthened my identity as a math/quantitative person.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 499,
+            "tableRow": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": "Platform Reflection",
+      "sourcePartNumber": 2,
+      "instructions": [],
+      "questions": [
+        {
+          "id": "post-gamification-reflection-001",
+          "sourceNumber": 1,
+          "type": "long_text",
+          "prompt": "What did you like most about the gamification platform, and why?",
+          "required": null,
+          "source": {
+            "blockIndex": 501
+          }
+        },
+        {
+          "id": "post-gamification-reflection-002",
+          "sourceNumber": 2,
+          "type": "long_text",
+          "prompt": "Which activity, feature, or real-world scenario was most engaging or useful to you?",
+          "required": null,
+          "source": {
+            "blockIndex": 504
+          }
+        },
+        {
+          "id": "post-gamification-reflection-003",
+          "sourceNumber": 3,
+          "type": "long_text",
+          "prompt": "Describe one quantitative idea that you understand better after using the platform.",
+          "required": null,
+          "source": {
+            "blockIndex": 507
+          }
+        },
+        {
+          "id": "post-gamification-reflection-004",
+          "sourceNumber": 4,
+          "type": "long_text",
+          "prompt": "What is one feature that could make the platform even more useful or engaging for future students?",
+          "required": null,
+          "source": {
+            "blockIndex": 510
+          }
+        },
+        {
+          "id": "post-gamification-reflection-005",
+          "sourceNumber": 5,
+          "type": "long_text",
+          "prompt": "After completing the gamification platform, do you feel your identity as a quantitative researcher or math/quantitative person has changed?  If so, please describe.",
+          "required": null,
+          "source": {
+            "blockIndex": 513
+          }
+        }
+      ]
+    },
+    {
+      "id": "cognitive",
+      "title": "Cognitive Questions",
+      "sourcePartNumber": 3,
+      "titleOrigin": "source",
+      "instructions": [
+        "Select the best answer for each question. A calculator and spreadsheet software may be used for this portion of the assessment, but please do not use any artificial intelligence to look up the answers.  We use this assessment to evaluate the effectiveness of our program and to design instructional practices that best serve students, but not to evaluate individual students.  Your performance on the assessment does not affect your standing in the SHINE program."
+      ],
+      "questions": [
+        {
+          "id": "post-gamification-cognitive-001",
+          "sourceNumber": 1,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Student 1 is a commuter.",
+              "content": [],
+              "source": {
+                "blockIndex": 522
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Student 4 completed 9 activities.",
+              "content": [],
+              "source": {
+                "blockIndex": 523
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Student 6 is a commuter and completed 12 activities.",
+              "content": [],
+              "source": {
+                "blockIndex": 524
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Student 7 is a commuter and completed 6 activities.",
+              "content": [],
+              "source": {
+                "blockIndex": 525
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 521
+          },
+          "skillId": "row_level_table_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-002",
+          "sourceNumber": 2,
+          "type": "single_choice",
+          "prompt": "What is the average number of activities completed by commuters?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "6",
+              "content": [],
+              "source": {
+                "blockIndex": 528
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "7.5",
+              "content": [],
+              "source": {
+                "blockIndex": 529
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "9",
+              "content": [],
+              "source": {
+                "blockIndex": 530
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "10.5",
+              "content": [],
+              "source": {
+                "blockIndex": 531
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 527
+          },
+          "skillId": "subgroup_mean",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-003",
+          "sourceNumber": 3,
+          "type": "single_choice",
+          "prompt": "What percentage of on-campus students completed 12 activities or more?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 534
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 535
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 536
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "75%",
+              "content": [],
+              "source": {
+                "blockIndex": 537
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 533
+          },
+          "skillId": "conditional_percentage",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-004",
+          "sourceNumber": 4,
+          "type": "single_choice",
+          "prompt": "A researcher asks whether the number of practice modules a student completes predicts the student’s accuracy on a later skills check. Which variables are the independent and dependent variables?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Independent variable: accuracy; dependent variable: modules completed",
+              "content": [],
+              "source": {
+                "blockIndex": 540
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Independent variable: modules completed; dependent variable: accuracy",
+              "content": [],
+              "source": {
+                "blockIndex": 541
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Both variables are independent variables",
+              "content": [],
+              "source": {
+                "blockIndex": 542
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The variables cannot be identified from the question",
+              "content": [],
+              "source": {
+                "blockIndex": 543
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 539
+          },
+          "skillId": "independent_dependent_variables",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-005",
+          "sourceNumber": 5,
+          "type": "single_choice",
+          "prompt": "Which table shown below would be most helpful if your objective is to compare the rates of completion of the platform challenge among those with prior spreadsheet experience vs. those without prior spreadsheet experience?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Prior experience",
+                      "No prior experience"
+                    ],
+                    [
+                      "Completed the challenge",
+                      "50%",
+                      "60%"
+                    ],
+                    [
+                      "Did not",
+                      "50%",
+                      "40%"
+                    ],
+                    [
+                      "Total",
+                      "100%",
+                      "100%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 547
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 546
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Prior experience",
+                      "No prior experience"
+                    ],
+                    [
+                      "Completed the challenge",
+                      "33.3%",
+                      "66.7%"
+                    ],
+                    [
+                      "Did not",
+                      "42.9%",
+                      "57.1%"
+                    ],
+                    [
+                      "Total",
+                      "37.5%",
+                      "62.5%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 550
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 549
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Prior experience",
+                      "No prior experience"
+                    ],
+                    [
+                      "Completed the challenge",
+                      "3",
+                      "6"
+                    ],
+                    [
+                      "Did not",
+                      "3",
+                      "4"
+                    ],
+                    [
+                      "Total",
+                      "6",
+                      "10"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 553
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 552
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "All three tables are equally useful for comparing rates between the groups.",
+              "content": [],
+              "source": {
+                "blockIndex": 555
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 545
+          },
+          "skillId": "bivariate_table_selection",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-006",
+          "sourceNumber": 6,
+          "type": "single_choice",
+          "prompt": "Which graph shown below would be most helpful if your objective is to compare the rates of completion of the platform challenge among those with prior spreadsheet experience vs. those without prior spreadsheet experience?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image10",
+                  "alt": "post-gamification-cognitive-006, option A: Proportion completing the challenge by prior spreadsheet experience. Bar chart.",
+                  "source": {
+                    "blockIndex": 559
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 558
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image11",
+                  "alt": "post-gamification-cognitive-006, option B: Proportion of challenge completers by prior spreadsheet experience. Bar chart.",
+                  "source": {
+                    "blockIndex": 562
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 561
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image14",
+                  "alt": "post-gamification-cognitive-006, option C: Number of challenge completers by prior spreadsheet experience. Bar chart.",
+                  "source": {
+                    "blockIndex": 564
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 563
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image2",
+                  "alt": "post-gamification-cognitive-006, option D: Proportion completing the challenge among all students. Bar chart.",
+                  "source": {
+                    "blockIndex": 566
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 565
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 556
+          },
+          "skillId": "bivariate_graph_selection",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-007",
+          "sourceNumber": 7,
+          "type": "single_choice",
+          "prompt": "Which conclusion is best supported by the data?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Students with prior experience were more likely to complete the challenge: 60% compared with 50%.",
+              "content": [],
+              "source": {
+                "blockIndex": 569
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Students without prior experience were more likely to complete the challenge: 60% compared with 50%.",
+              "content": [],
+              "source": {
+                "blockIndex": 570
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "The two groups completed the challenge at the same rate.",
+              "content": [],
+              "source": {
+                "blockIndex": 571
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The data show that prior experience causes students to complete the challenge.",
+              "content": [],
+              "source": {
+                "blockIndex": 572
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 568
+          },
+          "skillId": "bivariate_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-008",
+          "sourceNumber": 8,
+          "type": "single_choice",
+          "prompt": "Based on the graph, how many students completed 10 or more activities?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-003"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "6",
+              "content": [],
+              "source": {
+                "blockIndex": 577
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "10",
+              "content": [],
+              "source": {
+                "blockIndex": 578
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "17",
+              "content": [],
+              "source": {
+                "blockIndex": 579
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "25",
+              "content": [],
+              "source": {
+                "blockIndex": 580
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 576
+          },
+          "skillId": "bar_graph_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-009",
+          "sourceNumber": 9,
+          "type": "single_choice",
+          "prompt": "How many minutes did Group A take in Round 4?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "27",
+              "content": [],
+              "source": {
+                "blockIndex": 585
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "31",
+              "content": [],
+              "source": {
+                "blockIndex": 586
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "34",
+              "content": [],
+              "source": {
+                "blockIndex": 587
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "35",
+              "content": [],
+              "source": {
+                "blockIndex": 588
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 584
+          },
+          "skillId": "line_graph_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-010",
+          "sourceNumber": 10,
+          "type": "single_choice",
+          "prompt": "Which statement best describes the pattern in the graph?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Completion time increased in both groups.",
+              "content": [],
+              "source": {
+                "blockIndex": 591
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Completion time decreased in both groups, and the decrease was larger in Group A.",
+              "content": [],
+              "source": {
+                "blockIndex": 592
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Only Group B became faster.",
+              "content": [],
+              "source": {
+                "blockIndex": 593
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "There was no relationship between practice round and completion time.",
+              "content": [],
+              "source": {
+                "blockIndex": 594
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 590
+          },
+          "skillId": "line_graph_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-011",
+          "sourceNumber": 11,
+          "type": "single_choice",
+          "prompt": "What percentage of students who did not complete the platform were on-campus students?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "34%",
+              "content": [],
+              "source": {
+                "blockIndex": 601
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 602
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "46%",
+              "content": [],
+              "source": {
+                "blockIndex": 603
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Cannot be determined from the data",
+              "content": [],
+              "source": {
+                "blockIndex": 604
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 600
+          },
+          "skillId": "percentage_table_limits",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-012",
+          "sourceNumber": 12,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "On-campus students made up a larger percentage of platform completers than of all platform users.",
+              "content": [],
+              "source": {
+                "blockIndex": 607
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Commuters made up a larger percentage of platform completers than of all platform users.",
+              "content": [],
+              "source": {
+                "blockIndex": 608
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Online students made up a smaller percentage of platform completers than of all platform users.",
+              "content": [],
+              "source": {
+                "blockIndex": 609
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The table shows that living on campus caused students to complete the platform.",
+              "content": [],
+              "source": {
+                "blockIndex": 610
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 606
+          },
+          "skillId": "percentage_table_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-013",
+          "sourceNumber": 13,
+          "type": "single_choice",
+          "prompt": "A platform recorded 6 requests for technical help during 2,000 completed activities. What percentage of the observations does this represent?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "0.03%",
+              "content": [],
+              "source": {
+                "blockIndex": 613
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "0.3%",
+              "content": [],
+              "source": {
+                "blockIndex": 614
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "3%",
+              "content": [],
+              "source": {
+                "blockIndex": 615
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "30%",
+              "content": [],
+              "source": {
+                "blockIndex": 616
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 612
+          },
+          "skillId": "percentage_rate",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-014",
+          "sourceNumber": 14,
+          "type": "single_choice",
+          "prompt": "Which statement correctly interprets 0.08%?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "About 8 out of every 10,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 619
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "About 8 out of every 1,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 620
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "About 8 out of every 100.",
+              "content": [],
+              "source": {
+                "blockIndex": 621
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "About 80 out of every 1,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 622
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 618
+          },
+          "skillId": "percentage_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-015",
+          "sourceNumber": 15,
+          "type": "single_choice",
+          "prompt": "Students earned 24 data-interpretation badges and 16 spreadsheet badges. What is the simplified ratio of the first quantity to the second?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "2:3",
+              "content": [],
+              "source": {
+                "blockIndex": 625
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "3:2",
+              "content": [],
+              "source": {
+                "blockIndex": 626
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "6:4",
+              "content": [],
+              "source": {
+                "blockIndex": 627
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "24:40",
+              "content": [],
+              "source": {
+                "blockIndex": 628
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 624
+          },
+          "skillId": "ratios",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-016",
+          "sourceNumber": 16,
+          "type": "single_choice",
+          "prompt": "The number of students completing a bonus level increased from 60 to 75. What was the percentage increase?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "15%",
+              "content": [],
+              "source": {
+                "blockIndex": 631
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "20%",
+              "content": [],
+              "source": {
+                "blockIndex": 632
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 633
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 634
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 630
+          },
+          "skillId": "percentage_change",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-017",
+          "sourceNumber": 17,
+          "type": "single_choice",
+          "prompt": "Among students in the higher-completion group, what percentage would recommend the platform?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "35%",
+              "content": [],
+              "source": {
+                "blockIndex": 641
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 642
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "60%",
+              "content": [],
+              "source": {
+                "blockIndex": 643
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "70%",
+              "content": [],
+              "source": {
+                "blockIndex": 644
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 640
+          },
+          "skillId": "column_percentage",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-018",
+          "sourceNumber": 18,
+          "type": "single_choice",
+          "prompt": "Which statement correctly compares the “Yes” percentages within the two groups?",
+          "required": null,
+          "stimulusIds": [
+            "post-gamification-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "70% of the higher-completion group and 50% of the lower-completion group would recommend the platform.",
+              "content": [],
+              "source": {
+                "blockIndex": 647
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50% of the higher-completion group and 70% of the lower-completion group would recommend the platform.",
+              "content": [],
+              "source": {
+                "blockIndex": 648
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "35% of the higher-completion group and 25% of the lower-completion group would recommend the platform.",
+              "content": [],
+              "source": {
+                "blockIndex": 649
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The groups cannot be compared because the table contains counts.",
+              "content": [],
+              "source": {
+                "blockIndex": 650
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 646
+          },
+          "skillId": "column_percentage_comparison",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-019",
+          "sourceNumber": 19,
+          "type": "single_choice",
+          "prompt": "Assume you entered survey data about prior spreadsheet experience and favorite type of platform activity into Excel or Google Sheets. You want to compare the percentage distribution of favorite activity types according to prior spreadsheet experience. Which specific spreadsheet command would allow you to do this?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Drop Cap",
+              "content": [],
+              "source": {
+                "blockIndex": 653
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Pivot Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 654
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Quick Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 655
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Correlation",
+              "content": [],
+              "source": {
+                "blockIndex": 656
+              }
+            },
+            {
+              "id": "E",
+              "label": "E",
+              "text": "Flash Fill",
+              "content": [],
+              "source": {
+                "blockIndex": 657
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 652
+          },
+          "skillId": "spreadsheet_pivot_tables",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-gamification-cognitive-020",
+          "sourceNumber": 20,
+          "type": "single_choice",
+          "prompt": "A researcher records the number of platform practice rounds completed and the number of errors on a later skills check for five students. Based on the data below, which is the best estimate of the correlation?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Practice rounds",
+                  "Errors"
+                ],
+                [
+                  "",
+                  ""
+                ],
+                [
+                  "1",
+                  "18"
+                ],
+                [
+                  "2",
+                  "15"
+                ],
+                [
+                  "3",
+                  "12"
+                ],
+                [
+                  "4",
+                  "9"
+                ],
+                [
+                  "5",
+                  "6"
+                ]
+              ],
+              "source": {
+                "blockIndex": 660
+              }
+            }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "+0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 663
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "+0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 664
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "-0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 665
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "-0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 666
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 659
+          },
+          "skillId": "correlation",
+          "skillMappingStatus": "source_map"
+        }
+      ]
+    }
+  ]
+}

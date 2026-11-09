@@ -1,0 +1,29 @@
+.hero.landing-entry {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.petal-title-source { display: inline-block; white-space: nowrap; }
+.landing-entry--leaving .cta-row .btn { cursor: progress; }
+.landing-entry-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.petal-dissolve-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.petal-letter-fragment {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  backface-visibility: visible;
+  transform-origin: 38% 62%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-dissolve-layer { display: none; }
+}

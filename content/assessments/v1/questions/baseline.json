@@ -1,0 +1,3618 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "assessmentId": "baseline",
+  "status": "draft",
+  "source": {
+    "file": "SHINE ASSESSMENTS.docx",
+    "sha256": "3ec1fdf78dfceae46978559ea01a2078951066dc2c062de13a769919378f40fd",
+    "assessmentNumber": 1,
+    "textView": "insertions_included_deletions_excluded",
+    "locatorConvention": "blockIndex is zero-based; tableRow is one-based including header rows"
+  },
+  "title": "Assessment 1: Baseline (Before SHINE Activities)",
+  "administration": {
+    "stage": "before_shine_activities",
+    "sourceTimingNote": "NOTE:  Administer before students use the gamification platform or begin the independent study.",
+    "policyStatus": "needs_review",
+    "assessmentRequiredAccordingToSource": true,
+    "unlockRule": {
+      "type": "before_shine_activities"
+    },
+    "estimatedDurationMinutes": 60,
+    "attemptLimit": null,
+    "autosavePolicy": null,
+    "resultVisibility": null,
+    "questionOrder": "source_order",
+    "optionOrder": "source_order"
+  },
+  "instructions": [
+    "INSTRUCTIONS: This assessment is a required activity for all students participating in the SHINE Project and it is also being used for research purposes by the SHINE Project leadership team (Drs. Esther Isabelle Wilder, Gregory Broberg, Eduardo Vianna, and Toni Watt). If you wish to be a participant in the SHINE Research Program, you must complete the Institutional Review Board (IRB) consent form prior to completing this assessment. Please complete this assessment on your own and in one sitting. It should take you approximately one hour to finish. Please try your best on every item."
+  ],
+  "participantFields": [
+    {
+      "id": "name",
+      "label": "Name",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 14
+      }
+    },
+    {
+      "id": "student-id",
+      "label": "Student ID",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 15
+      }
+    },
+    {
+      "id": "instructor-mentor",
+      "label": "Instructor Name/Mentor",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 16
+      }
+    },
+    {
+      "id": "assessment-date",
+      "label": "Date",
+      "type": "date",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 17
+      }
+    }
+  ],
+  "scales": [
+    {
+      "id": "agreement-7",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7,
+      "options": [
+        {
+          "value": 1,
+          "label": "Disagree strongly"
+        },
+        {
+          "value": 2,
+          "label": "Disagree somewhat"
+        },
+        {
+          "value": 3,
+          "label": "Disagree slightly"
+        },
+        {
+          "value": 4,
+          "label": "Neither agree nor disagree"
+        },
+        {
+          "value": 5,
+          "label": "Agree slightly"
+        },
+        {
+          "value": 6,
+          "label": "Agree somewhat"
+        },
+        {
+          "value": 7,
+          "label": "Agree strongly"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "image4",
+      "path": "assets/image4.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image5",
+      "path": "assets/image5.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image8",
+      "path": "assets/image8.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image12",
+      "path": "assets/image12.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image17",
+      "path": "assets/image17.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image18",
+      "path": "assets/image18.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image19",
+      "path": "assets/image19.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "baseline-stimulus-001",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 1-3 use the table below. Eight students reported their enrollment status and the number of hours they studied last week.",
+          "source": {
+            "blockIndex": 28
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Student",
+              "Enrollment status",
+              "Study hours"
+            ],
+            [
+              "1",
+              "Full-time",
+              "8"
+            ],
+            [
+              "2",
+              "Part-time",
+              "6"
+            ],
+            [
+              "3",
+              "Full-time",
+              "10"
+            ],
+            [
+              "4",
+              "Part-time",
+              "4"
+            ],
+            [
+              "5",
+              "Full-time",
+              "12"
+            ],
+            [
+              "6",
+              "Part-time",
+              "8"
+            ],
+            [
+              "7",
+              "Full-time",
+              "6"
+            ],
+            [
+              "8",
+              "Part-time",
+              "10"
+            ]
+          ],
+          "source": {
+            "blockIndex": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-002",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 7-9 use the data below. Please assume you are undertaking research to investigate whether males or females are more likely to wear masks on the subway during the time of COVID-19 when no vaccine exists and the mayor of NYC recommends that everyone wears masks.  You randomly sample ten people and get the following results:",
+          "source": {
+            "blockIndex": 68
+          }
+        },
+        {
+          "type": "list",
+          "items": [
+            "the 1st person is a male wearing a mask",
+            "the 2nd person is a male not wearing a mask",
+            "the 3rd person is a female wearing a mask",
+            "the 4th person is a male wearing a mask",
+            "the 5th person is a female wearing a mask",
+            "the 6th person is a male wearing a mask",
+            "the 7th person is a female not wearing a mask",
+            "the 8th person is a male not wearing a mask",
+            "the 9th person is a female wearing a mask",
+            "the 10th person is a female wearing a mask"
+          ],
+          "source": {
+            "blockIndex": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-003",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Question 10 uses the graph below.",
+          "source": {
+            "blockIndex": 141
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image18",
+          "alt": "baseline-stimulus-003: Scores on a Quantitative Skills Check. Frequency bar chart.",
+          "source": {
+            "blockIndex": 142
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-004",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 11-12 use the graph below.",
+          "source": {
+            "blockIndex": 149
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image12",
+          "alt": "baseline-stimulus-004: Data-entry Errors Across Six Weekly Practice Sessions. Line chart for Section A and Section B.",
+          "source": {
+            "blockIndex": 150
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-005",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 13-14 use the table below. It compares students who participated in tutoring with all students at the college.",
+          "source": {
+            "blockIndex": 163
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Class-Year Composition of Tutoring Participants and All Students"
+            ],
+            [
+              "Class Year",
+              "Tutoring Participants",
+              "All students"
+            ],
+            [
+              "First-year",
+              "48%",
+              "42%"
+            ],
+            [
+              "Transfer",
+              "32%",
+              "38%"
+            ],
+            [
+              "Continuing",
+              "20%",
+              "20%"
+            ]
+          ],
+          "source": {
+            "blockIndex": 165
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-006",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 20-21 use the table below, based on a survey about use of a library database.",
+          "source": {
+            "blockIndex": 208
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Library Database Use by Enrollment Status"
+            ],
+            [
+              "Used database",
+              "Full-time",
+              "Part-time",
+              "Total"
+            ],
+            [
+              "Yes",
+              "105",
+              "80",
+              "185"
+            ],
+            [
+              "No",
+              "35",
+              "80",
+              "115"
+            ],
+            [
+              "Total",
+              "140",
+              "160",
+              "300"
+            ]
+          ],
+          "source": {
+            "blockIndex": 211
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-007",
+      "content": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Tutoring sessions",
+              "Quiz score"
+            ],
+            [
+              "1",
+              "62"
+            ],
+            [
+              "2",
+              "68"
+            ],
+            [
+              "3",
+              "74"
+            ],
+            [
+              "4",
+              "80"
+            ],
+            [
+              "5",
+              "86"
+            ]
+          ],
+          "source": {
+            "blockIndex": 253
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-008",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Base your answer to the following question on the table below.  A college reports the average score on the same assessment for students in two programs.",
+          "source": {
+            "blockIndex": 267
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Program",
+              "Number of students",
+              "Average"
+            ],
+            [
+              "Program A",
+              "25",
+              "88"
+            ],
+            [
+              "Program B",
+              "75",
+              "72"
+            ]
+          ],
+          "source": {
+            "blockIndex": 269
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "attitudes",
+      "title": "Attitudinal Questions",
+      "sourcePartNumber": 1,
+      "instructions": [
+        "For each statement, select the response that best represents how you feel at this point. Use the same scale for every statement."
+      ],
+      "questions": [
+        {
+          "id": "baseline-attitudes-001",
+          "sourceNumber": 1,
+          "type": "likert",
+          "prompt": "I am comfortable entering data into a spreadsheet such as Excel or Google Sheets.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 2
+          }
+        },
+        {
+          "id": "baseline-attitudes-002",
+          "sourceNumber": 2,
+          "type": "likert",
+          "prompt": "I feel confident using spreadsheet software to carry out simple data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 3
+          }
+        },
+        {
+          "id": "baseline-attitudes-003",
+          "sourceNumber": 3,
+          "type": "likert",
+          "prompt": "I am comfortable calculating percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 4
+          }
+        },
+        {
+          "id": "baseline-attitudes-004",
+          "sourceNumber": 4,
+          "type": "likert",
+          "prompt": "I feel confident interpreting percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 5
+          }
+        },
+        {
+          "id": "baseline-attitudes-005",
+          "sourceNumber": 5,
+          "type": "likert",
+          "prompt": "I am comfortable working with ratios.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 6
+          }
+        },
+        {
+          "id": "baseline-attitudes-006",
+          "sourceNumber": 6,
+          "type": "likert",
+          "prompt": "I feel confident reading bivariate tables that compare two variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 7
+          }
+        },
+        {
+          "id": "baseline-attitudes-007",
+          "sourceNumber": 7,
+          "type": "likert",
+          "prompt": "I feel confident distinguishing between row percentages and column percentages in a table.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 8
+          }
+        },
+        {
+          "id": "baseline-attitudes-008",
+          "sourceNumber": 8,
+          "type": "likert",
+          "prompt": "I feel confident identifying independent and dependent variables in a research question.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 9
+          }
+        },
+        {
+          "id": "baseline-attitudes-009",
+          "sourceNumber": 9,
+          "type": "likert",
+          "prompt": "I feel confident reading and interpreting graphs.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 10
+          }
+        },
+        {
+          "id": "baseline-attitudes-010",
+          "sourceNumber": 10,
+          "type": "likert",
+          "prompt": "I feel confident choosing appropriate ways to summarize and present data based on research questions.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 11
+          }
+        },
+        {
+          "id": "baseline-attitudes-011",
+          "sourceNumber": 11,
+          "type": "likert",
+          "prompt": "I feel confident interpreting or calculating rates.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 12
+          }
+        },
+        {
+          "id": "baseline-attitudes-012",
+          "sourceNumber": 12,
+          "type": "likert",
+          "prompt": "I feel confident I understand the meaning of a standard deviation.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 13
+          }
+        },
+        {
+          "id": "baseline-attitudes-013",
+          "sourceNumber": 13,
+          "type": "likert",
+          "prompt": "I feel confident interpreting correlations between two variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 14
+          }
+        },
+        {
+          "id": "baseline-attitudes-014",
+          "sourceNumber": 14,
+          "type": "likert",
+          "prompt": "I feel confident determining whether a relationship between two variables provides evidence of causation.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 15
+          }
+        },
+        {
+          "id": "baseline-attitudes-015",
+          "sourceNumber": 15,
+          "type": "likert",
+          "prompt": "I feel confident explaining the results of quantitative analysis in words.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 16
+          }
+        },
+        {
+          "id": "baseline-attitudes-016",
+          "sourceNumber": 16,
+          "type": "likert",
+          "prompt": "I am interested in learning more about quantitative data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 17
+          }
+        },
+        {
+          "id": "baseline-attitudes-017",
+          "sourceNumber": 17,
+          "type": "likert",
+          "prompt": "It is fun to work with spreadsheet software.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 18
+          }
+        },
+        {
+          "id": "baseline-attitudes-018",
+          "sourceNumber": 18,
+          "type": "likert",
+          "prompt": "I find working with data and numbers enjoyable.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 19
+          }
+        },
+        {
+          "id": "baseline-attitudes-019",
+          "sourceNumber": 19,
+          "type": "likert",
+          "prompt": "I enjoy quantitative problems that challenge me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 20
+          }
+        },
+        {
+          "id": "baseline-attitudes-020",
+          "sourceNumber": 20,
+          "type": "likert",
+          "prompt": "Courses that require working with data and numbers are stressful for me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 21
+          }
+        },
+        {
+          "id": "baseline-attitudes-021",
+          "sourceNumber": 21,
+          "type": "likert",
+          "prompt": "Data analysis is a difficult skill.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 22
+          }
+        },
+        {
+          "id": "baseline-attitudes-022",
+          "sourceNumber": 22,
+          "type": "likert",
+          "prompt": "Data analysis is boring.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 23
+          }
+        },
+        {
+          "id": "baseline-attitudes-023",
+          "sourceNumber": 23,
+          "type": "likert",
+          "prompt": "I try to avoid taking math and quantitative courses.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 24
+          }
+        },
+        {
+          "id": "baseline-attitudes-024",
+          "sourceNumber": 24,
+          "type": "likert",
+          "prompt": "I plan to take the bare minimum number of quantitative courses (such as math or statistics) I need to take in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 25
+          }
+        },
+        {
+          "id": "baseline-attitudes-025",
+          "sourceNumber": 25,
+          "type": "likert",
+          "prompt": "Data analysis is helpful for understanding content in non-math classes.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 26
+          }
+        },
+        {
+          "id": "baseline-attitudes-026",
+          "sourceNumber": 26,
+          "type": "likert",
+          "prompt": "Data analysis is an important skill to learn in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 27
+          }
+        },
+        {
+          "id": "baseline-attitudes-027",
+          "sourceNumber": 27,
+          "type": "likert",
+          "prompt": "The best way to learn data analysis is through research projects.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 28
+          }
+        },
+        {
+          "id": "baseline-attitudes-028",
+          "sourceNumber": 28,
+          "type": "likert",
+          "prompt": "Learning to analyze data is worth the effort.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 29
+          }
+        },
+        {
+          "id": "baseline-attitudes-029",
+          "sourceNumber": 29,
+          "type": "likert",
+          "prompt": "Data analysis skills will be useful for my future education or career.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 30
+          }
+        },
+        {
+          "id": "baseline-attitudes-030",
+          "sourceNumber": 30,
+          "type": "likert",
+          "prompt": "Being good at data analysis will help me make decisions about issues that matter to me or my community.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 31
+          }
+        },
+        {
+          "id": "baseline-attitudes-031",
+          "sourceNumber": 31,
+          "type": "likert",
+          "prompt": "All people have the ability to improve their quantitative skills.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 32
+          }
+        },
+        {
+          "id": "baseline-attitudes-032",
+          "sourceNumber": 32,
+          "type": "likert",
+          "prompt": "I think of myself as a math/quantitative person.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 23,
+            "tableRow": 33
+          }
+        }
+      ]
+    },
+    {
+      "id": "cognitive",
+      "title": "Cognitive Questions",
+      "sourcePartNumber": 2,
+      "titleOrigin": "inferred_from_document_sequence_missing_printed_heading",
+      "instructions": [
+        "Select the best answer for each question. A calculator and spreadsheet software may be used for this portion of the assessment, but please do not use artificial intelligence to look up the answers. We use this assessment to evaluate the effectiveness of our program and to design instructional practices that best serve students, but not to evaluate individual students. Your performance on the assessment will not affect your standing in the SHINE Project."
+      ],
+      "questions": [
+        {
+          "id": "baseline-cognitive-001",
+          "sourceNumber": 1,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Student 1 is part-time",
+              "content": [],
+              "source": {
+                "blockIndex": 32
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Student 4 studied 8 hours",
+              "content": [],
+              "source": {
+                "blockIndex": 33
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Student 5 is full-time and studied 12 hours",
+              "content": [],
+              "source": {
+                "blockIndex": 34
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Student 7 is part-time and studied 6 hours",
+              "content": [],
+              "source": {
+                "blockIndex": 35
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 31
+          },
+          "skillId": "row_level_table_reading",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-002",
+          "sourceNumber": 2,
+          "type": "single_choice",
+          "prompt": "What is the average number of study hours among part-time students?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "6",
+              "content": [],
+              "source": {
+                "blockIndex": 38
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "7",
+              "content": [],
+              "source": {
+                "blockIndex": 39
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "8",
+              "content": [],
+              "source": {
+                "blockIndex": 40
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "9",
+              "content": [],
+              "source": {
+                "blockIndex": 41
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 37
+          },
+          "skillId": "subgroup_mean",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-003",
+          "sourceNumber": 3,
+          "type": "single_choice",
+          "prompt": "What percentage of full-time students studied 10 hours or more?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 44
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 45
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 46
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "75%",
+              "content": [],
+              "source": {
+                "blockIndex": 47
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 43
+          },
+          "skillId": "conditional_percentage",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-004",
+          "sourceNumber": 4,
+          "type": "single_choice",
+          "prompt": "A researcher asks whether the number of tutoring sessions a student attends predicts the student’s quiz score. Which variables are the independent and dependent variables?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Independent variable: quiz score; dependent variable: tutoring sessions",
+              "content": [],
+              "source": {
+                "blockIndex": 51
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Independent variable: tutoring sessions; dependent variable: quiz score",
+              "content": [],
+              "source": {
+                "blockIndex": 52
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Both variables are dependent variables",
+              "content": [],
+              "source": {
+                "blockIndex": 53
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The variables cannot be identified from the question",
+              "content": [],
+              "source": {
+                "blockIndex": 54
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 50
+          },
+          "skillId": "independent_dependent_variables",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-005",
+          "sourceNumber": 5,
+          "type": "single_choice",
+          "prompt": "A researcher is interested in whether the amount of time college students spend working for pay is related to the amount of time they spend studying.  Which of the following is the best quantitative research question for the study?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "How many college students work for pay and study?",
+              "content": [],
+              "source": {
+                "blockIndex": 57
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "How do students feel about working while attending college?",
+              "content": [],
+              "source": {
+                "blockIndex": 58
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Is the number of hours students work for pay each week related to the number of hours they study each week?",
+              "content": [],
+              "source": {
+                "blockIndex": 59
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Should college students work a certain number of hours while attending college?",
+              "content": [],
+              "source": {
+                "blockIndex": 60
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 56
+          },
+          "skillId": "quantitative_research_question",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-006",
+          "sourceNumber": 6,
+          "type": "single_choice",
+          "prompt": "Which of the following would be an appropriate hypothesis if you are interested in whether the amount of time college students spend working for pay is related to the amount of time they spend studying?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "College students have many responsibilities",
+              "content": [],
+              "source": {
+                "blockIndex": 63
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Students who work more hours per week will, on average, report fewer hours of study",
+              "content": [],
+              "source": {
+                "blockIndex": 64
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Employment is an important issue for college students",
+              "content": [],
+              "source": {
+                "blockIndex": 65
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Some students work and some students do not",
+              "content": [],
+              "source": {
+                "blockIndex": 66
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 62
+          },
+          "skillId": "hypothesis_formulation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-007",
+          "sourceNumber": 7,
+          "type": "single_choice",
+          "prompt": "If you were to input these data into Excel or Google Sheets in order to analyze the data, which would be the best way to do that?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "M",
+                      "mask",
+                      "M",
+                      "no mask",
+                      "F",
+                      "mask",
+                      "M",
+                      "mask",
+                      "F",
+                      "mask",
+                      "M",
+                      "mask",
+                      "F",
+                      "no mask",
+                      "M",
+                      "no mask",
+                      "F",
+                      "mask",
+                      "F",
+                      "mask"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 85
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 84
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Person",
+                      "Person 1",
+                      "Person 2",
+                      "Person 3",
+                      "Person 4",
+                      "Person 5",
+                      "Person 6",
+                      "Person 7",
+                      "Person 8",
+                      "Person 9",
+                      "Person 10"
+                    ],
+                    [
+                      "Gender",
+                      "M",
+                      "M",
+                      "F",
+                      "M",
+                      "F",
+                      "M",
+                      "F",
+                      "M",
+                      "F",
+                      "F"
+                    ],
+                    [
+                      "Wearing Mask",
+                      "Yes",
+                      "No",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "No",
+                      "No",
+                      "Yes",
+                      "Yes"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 88
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 87
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Person",
+                      "Gender",
+                      "Wearing Mask"
+                    ],
+                    [
+                      "Person 1",
+                      "M",
+                      "Yes"
+                    ],
+                    [
+                      "Person 2",
+                      "M",
+                      "No"
+                    ],
+                    [
+                      "Person 3",
+                      "F",
+                      "Yes"
+                    ],
+                    [
+                      "Person 4",
+                      "M",
+                      "Yes"
+                    ],
+                    [
+                      "Person 5",
+                      "F",
+                      "Yes"
+                    ],
+                    [
+                      "Person 6",
+                      "M",
+                      "Yes"
+                    ],
+                    [
+                      "Person 7",
+                      "F",
+                      "No"
+                    ],
+                    [
+                      "Person 8",
+                      "M",
+                      "No"
+                    ],
+                    [
+                      "Person 9",
+                      "F",
+                      "Yes"
+                    ],
+                    [
+                      "Person 10",
+                      "F",
+                      "Yes"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 91
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 90
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Female",
+                      "F",
+                      "F",
+                      "F",
+                      "F",
+                      "F",
+                      "",
+                      ""
+                    ],
+                    [
+                      "Male",
+                      "M",
+                      "M",
+                      "M",
+                      "M",
+                      "M",
+                      "",
+                      ""
+                    ],
+                    [
+                      "Not Wearing Mask",
+                      "No",
+                      "No",
+                      "No",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ],
+                    [
+                      "Wearing Mask",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "Yes",
+                      "Yes"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 94
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 93
+              }
+            },
+            {
+              "id": "E",
+              "label": "E",
+              "text": "A and B are equally appropriate and are the best way to represent the data",
+              "content": [],
+              "source": {
+                "blockIndex": 96
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 82
+          },
+          "skillId": "spreadsheet_data_organization",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-008",
+          "sourceNumber": 8,
+          "type": "single_choice",
+          "prompt": "Which of the following tables would be the best way to represent the data you gathered on mask wearing if your goal is to compare rates of mask wearing by gender?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Mask Wearing by Gender"
+                    ],
+                    [
+                      "",
+                      "Not Wearing Mask",
+                      "Wearing Mask",
+                      "Total"
+                    ],
+                    [
+                      "Females",
+                      "33%",
+                      "57%",
+                      "50%"
+                    ],
+                    [
+                      "Males",
+                      "67%",
+                      "43%",
+                      "50%"
+                    ],
+                    [
+                      "Total",
+                      "100%",
+                      "100%",
+                      "100%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 103
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 102
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Mask Wearing by Gender"
+                    ],
+                    [
+                      "",
+                      "Female",
+                      "Male",
+                      "Total"
+                    ],
+                    [
+                      "Not Wearing Mask",
+                      "33%",
+                      "67%",
+                      "100%"
+                    ],
+                    [
+                      "Wearing Mask",
+                      "57%",
+                      "43%",
+                      "100%"
+                    ],
+                    [
+                      "Total",
+                      "50%",
+                      "50%",
+                      "100%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 106
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 105
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Mask Wearing by Gender"
+                    ],
+                    [
+                      "",
+                      "Female",
+                      "Male",
+                      "Total"
+                    ],
+                    [
+                      "Not Wearing Mask",
+                      "20%",
+                      "40%",
+                      "30%"
+                    ],
+                    [
+                      "Wearing Mask",
+                      "80%",
+                      "60%",
+                      "70%"
+                    ],
+                    [
+                      "Total",
+                      "100%",
+                      "100%",
+                      "100%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 109
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 108
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Both A and B",
+              "content": [],
+              "source": {
+                "blockIndex": 111
+              }
+            },
+            {
+              "id": "E",
+              "label": "E",
+              "text": "All are equally appropriate",
+              "content": [],
+              "source": {
+                "blockIndex": 112
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 100
+          },
+          "skillId": "bivariate_table_selection",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-009",
+          "sourceNumber": 9,
+          "type": "single_choice",
+          "prompt": "Which of the following graphs (or set of graphs) would be the best way to represent the data you gathered on mask wearing if your goal is to compare males and females?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "text": "Mask Wearing by Gender",
+                  "source": {
+                    "blockIndex": 118
+                  }
+                },
+                {
+                  "type": "image",
+                  "assetId": "image5",
+                  "alt": "baseline-cognitive-009, option A: Wearing Masks. Pie chart with Female, Male and Total categories.",
+                  "source": {
+                    "blockIndex": 119
+                  }
+                },
+                {
+                  "type": "image",
+                  "assetId": "image8",
+                  "alt": "baseline-cognitive-009, option A: Not Wearing Masks. Pie chart with Female, Male and Total categories.",
+                  "source": {
+                    "blockIndex": 119
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 117
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image19",
+                  "alt": "baseline-cognitive-009, option B: Mask Wearing by Gender. Two-series line chart.",
+                  "source": {
+                    "blockIndex": 122
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 121
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image17",
+                  "alt": "baseline-cognitive-009, option C: Mask Wearing by Gender. Bar chart for Female, Male and Total categories.",
+                  "source": {
+                    "blockIndex": 128
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 127
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image4",
+                  "alt": "baseline-cognitive-009, option D: Mask Wearing by Gender. Combination chart with bars and a line.",
+                  "source": {
+                    "blockIndex": 131
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 130
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 115
+          },
+          "skillId": "bivariate_graph_selection",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-010",
+          "sourceNumber": 10,
+          "type": "single_choice",
+          "prompt": "Based on the graph, how many students scored 80 or higher?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-003"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "5",
+              "content": [],
+              "source": {
+                "blockIndex": 144
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "8",
+              "content": [],
+              "source": {
+                "blockIndex": 145
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "14",
+              "content": [],
+              "source": {
+                "blockIndex": 146
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "20",
+              "content": [],
+              "source": {
+                "blockIndex": 147
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 143
+          },
+          "skillId": "bar_graph_reading",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-011",
+          "sourceNumber": 11,
+          "type": "single_choice",
+          "prompt": "How many errors did Section A make in Session 4?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "8",
+              "content": [],
+              "source": {
+                "blockIndex": 153
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "10",
+              "content": [],
+              "source": {
+                "blockIndex": 154
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "13",
+              "content": [],
+              "source": {
+                "blockIndex": 155
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "14",
+              "content": [],
+              "source": {
+                "blockIndex": 156
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 152
+          },
+          "skillId": "line_graph_reading",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-012",
+          "sourceNumber": 12,
+          "type": "single_choice",
+          "prompt": "Which statement best describes the pattern in the graph?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Errors increased in both sections",
+              "content": [],
+              "source": {
+                "blockIndex": 158
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Errors decreased in both sections, and the decrease was larger in Section A",
+              "content": [],
+              "source": {
+                "blockIndex": 159
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Only Section B improved",
+              "content": [],
+              "source": {
+                "blockIndex": 160
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "There was no relationship between session number and errors",
+              "content": [],
+              "source": {
+                "blockIndex": 161
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 157
+          },
+          "skillId": "line_graph_interpretation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-013",
+          "sourceNumber": 13,
+          "type": "single_choice",
+          "prompt": "What percentage of non-tutoring participants were first-year students?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "36%",
+              "content": [],
+              "source": {
+                "blockIndex": 168
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "52%",
+              "content": [],
+              "source": {
+                "blockIndex": 169
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "58%",
+              "content": [],
+              "source": {
+                "blockIndex": 170
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Cannot be determined from the data",
+              "content": [],
+              "source": {
+                "blockIndex": 171
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 167
+          },
+          "skillId": "percentage_table_limits",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-014",
+          "sourceNumber": 14,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "First-year students made up a larger percentage of tutoring participants than of all students",
+              "content": [],
+              "source": {
+                "blockIndex": 174
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Transfer students made up a larger percentage of tutoring participants than of all students",
+              "content": [],
+              "source": {
+                "blockIndex": 175
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Continuing students made up a smaller percentage of tutoring participants than of all students",
+              "content": [],
+              "source": {
+                "blockIndex": 176
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The table shows that tutoring caused students to remain in college",
+              "content": [],
+              "source": {
+                "blockIndex": 177
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 173
+          },
+          "skillId": "percentage_table_interpretation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-015",
+          "sourceNumber": 15,
+          "type": "single_choice",
+          "prompt": "A campus clinic recorded 3 flu cases among 1,000 students during one month. What percentage of the observations does this represent?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "0.03%",
+              "content": [],
+              "source": {
+                "blockIndex": 180
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "0.3%",
+              "content": [],
+              "source": {
+                "blockIndex": 181
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "3%",
+              "content": [],
+              "source": {
+                "blockIndex": 182
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "30%",
+              "content": [],
+              "source": {
+                "blockIndex": 183
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 179
+          },
+          "skillId": "percentage_rate",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-016",
+          "sourceNumber": 16,
+          "type": "single_choice",
+          "prompt": "Which statement correctly interprets 0.07%?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "About 7 out of every 10,000",
+              "content": [],
+              "source": {
+                "blockIndex": 186
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "About 7 out of every 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 187
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "About 7 out of every 100",
+              "content": [],
+              "source": {
+                "blockIndex": 188
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "About 70 out of every 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 189
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 185
+          },
+          "skillId": "percentage_interpretation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-017",
+          "sourceNumber": 17,
+          "type": "single_choice",
+          "prompt": "A city with 80,000 residents reported 240 burglaries during one year.  What was the burglary rate per 1,000 residents?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "0.3 per 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 191
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "3 per 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 192
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "30 per 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 193
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "300 per 1,000",
+              "content": [],
+              "source": {
+                "blockIndex": 194
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 190
+          },
+          "skillId": "rates",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-018",
+          "sourceNumber": 18,
+          "type": "single_choice",
+          "prompt": "In a workshop, 18 students used laptops and 12 used tablets. What is the simplified ratio of the first quantity to the second?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "2:3",
+              "content": [],
+              "source": {
+                "blockIndex": 197
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "3:2",
+              "content": [],
+              "source": {
+                "blockIndex": 198
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "6:4",
+              "content": [],
+              "source": {
+                "blockIndex": 199
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "18:30",
+              "content": [],
+              "source": {
+                "blockIndex": 200
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 196
+          },
+          "skillId": "ratios",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-019",
+          "sourceNumber": 19,
+          "type": "single_choice",
+          "prompt": "The number of students attending a review session increased from 40 to 50. What was the percentage increase?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "10%",
+              "content": [],
+              "source": {
+                "blockIndex": 203
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "20%",
+              "content": [],
+              "source": {
+                "blockIndex": 204
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 205
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 206
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 202
+          },
+          "skillId": "percentage_change",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-020",
+          "sourceNumber": 20,
+          "type": "single_choice",
+          "prompt": "Among full-time students, what percentage used the database?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "35%",
+              "content": [],
+              "source": {
+                "blockIndex": 214
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 215
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "65%",
+              "content": [],
+              "source": {
+                "blockIndex": 216
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "75%",
+              "content": [],
+              "source": {
+                "blockIndex": 217
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 213
+          },
+          "skillId": "column_percentage",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-021",
+          "sourceNumber": 21,
+          "type": "single_choice",
+          "prompt": "Which statement correctly compares the “No” percentages within the two groups?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "75% of full-time students and 50% of part-time students didn’t use the database.",
+              "content": [],
+              "source": {
+                "blockIndex": 220
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50% of full-time students and 70% of part-time students didn’t use the database.",
+              "content": [],
+              "source": {
+                "blockIndex": 221
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "25% of full-time students and 50% of part-time students didn’t use the database.",
+              "content": [],
+              "source": {
+                "blockIndex": 222
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The groups cannot be compared because the total population counts differs for the two groups.",
+              "content": [],
+              "source": {
+                "blockIndex": 223
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 219
+          },
+          "skillId": "column_percentage_comparison",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-022",
+          "sourceNumber": 22,
+          "type": "single_choice",
+          "prompt": "Assume you entered survey data about gender and preferred way of studying into Excel or Google Sheets. You want to compare the percentage distribution of preferred study methods according to gender. Which specific spreadsheet command would allow you to do this?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Drop Cap",
+              "content": [],
+              "source": {
+                "blockIndex": 226
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Pivot Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 227
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Quick Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 228
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Correlation",
+              "content": [],
+              "source": {
+                "blockIndex": 229
+              }
+            },
+            {
+              "id": "E",
+              "label": "E",
+              "text": "Compare Variables",
+              "content": [],
+              "source": {
+                "blockIndex": 230
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 225
+          },
+          "skillId": "spreadsheet_pivot_tables",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-023",
+          "sourceNumber": 23,
+          "type": "single_choice",
+          "prompt": "A community clinic records the following waiting times in minutes: 8, 8, 9, 10, 11, 12, 45. Which measure would give the most useful description of a typical waiting time?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Mean",
+              "content": [],
+              "source": {
+                "blockIndex": 233
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Median",
+              "content": [],
+              "source": {
+                "blockIndex": 234
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Mode",
+              "content": [],
+              "source": {
+                "blockIndex": 235
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Range",
+              "content": [],
+              "source": {
+                "blockIndex": 236
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 232
+          },
+          "skillId": "typical_value_with_outlier",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-024",
+          "sourceNumber": 24,
+          "type": "single_choice",
+          "prompt": "Please base your answer to the following question on the table below showing the age distributions of patients at two urgent care clinics.  The table shows the ages of patients treated at two urgent care clinics in the last hour before closing.",
+          "required": null,
+          "stimulusIds": [],
+          "content": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Age Distribution of Patients at Urgent Care Clinics"
+                ],
+                [
+                  "Clinic A",
+                  "Clinic B"
+                ],
+                [
+                  "48",
+                  "25"
+                ],
+                [
+                  "49",
+                  "40"
+                ],
+                [
+                  "50",
+                  "50"
+                ],
+                [
+                  "51",
+                  "60"
+                ],
+                [
+                  "52",
+                  "75"
+                ]
+              ],
+              "source": {
+                "blockIndex": 240
+              }
+            }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Clinic A has the larger standard deviation because the ages of the patients are closer together",
+              "content": [],
+              "source": {
+                "blockIndex": 242
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Clinic B has the larger standard deviation because the ages of the patients are more spread out",
+              "content": [],
+              "source": {
+                "blockIndex": 243
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "The two clinics have the same standard deviation because they have the same mean",
+              "content": [],
+              "source": {
+                "blockIndex": 244
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Standard deviation cannot be compared unless the sample sizes are different",
+              "content": [],
+              "source": {
+                "blockIndex": 245
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 238
+          },
+          "skillId": "standard_deviation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-025",
+          "sourceNumber": 25,
+          "type": "single_choice",
+          "prompt": "A researcher wants to study 'social isolation.' Which is the best example of operationalizing social isolation?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Asking whether social isolation is a serious problem",
+              "content": [],
+              "source": {
+                "blockIndex": 248
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Defining social isolation as the number of social interactions a person reports during the past seven days",
+              "content": [],
+              "source": {
+                "blockIndex": 249
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Explaining why people sometimes feel isolated",
+              "content": [],
+              "source": {
+                "blockIndex": 250
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Asking participants what the word 'isolation' means to them",
+              "content": [],
+              "source": {
+                "blockIndex": 251
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 247
+          },
+          "skillId": "operationalization",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-026",
+          "sourceNumber": 26,
+          "type": "single_choice",
+          "prompt": "A researcher records the number of tutoring sessions attended and the quiz score for five students. Based on the data, which is the best estimate of the correlation?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-007"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "+0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 255
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "+0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 256
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "-0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 257
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "-0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 258
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 254
+          },
+          "skillId": "correlation",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-027",
+          "sourceNumber": 27,
+          "type": "single_choice",
+          "prompt": "Researchers find that students who attend tutoring tend to earn higher grades. Students with stronger prior academic preparation may also be more likely to attend tutoring. Why might researchers control for prior academic preparation?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "To determine whether tutoring is still related to grades after differences in prior preparation are taken into account",
+              "content": [],
+              "source": {
+                "blockIndex": 262
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "To make all students academically equivalent",
+              "content": [],
+              "source": {
+                "blockIndex": 263
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "To ensure that tutoring causes higher grades",
+              "content": [],
+              "source": {
+                "blockIndex": 264
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "To remove students with lower grades from the study",
+              "content": [],
+              "source": {
+                "blockIndex": 265
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 260
+          },
+          "skillId": "controlling_for_variables",
+          "skillMappingStatus": "proposed_needs_review"
+        },
+        {
+          "id": "baseline-cognitive-028",
+          "sourceNumber": 28,
+          "type": "single_choice",
+          "prompt": "Based on the table above, what is the average score of all 100 students?",
+          "required": null,
+          "stimulusIds": [
+            "baseline-stimulus-008"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "76",
+              "content": [],
+              "source": {
+                "blockIndex": 272
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "78",
+              "content": [],
+              "source": {
+                "blockIndex": 273
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "80",
+              "content": [],
+              "source": {
+                "blockIndex": 274
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "82",
+              "content": [],
+              "source": {
+                "blockIndex": 275
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 271
+          },
+          "skillId": "weighted_mean",
+          "skillMappingStatus": "proposed_needs_review"
+        }
+      ]
+    },
+    {
+      "id": "demographics",
+      "title": "Socio-Demographic Questions",
+      "sourcePartNumber": 3,
+      "instructions": [],
+      "questions": [
+        {
+          "id": "baseline-demographics-001",
+          "sourceNumber": 1,
+          "type": "text",
+          "prompt": "What is your sex/gender?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 277
+          }
+        },
+        {
+          "id": "baseline-demographics-002",
+          "sourceNumber": 2,
+          "type": "single_choice",
+          "prompt": "What is the racial/ethnic group to which you most closely identify?  (Please pick one only.)",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 280
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "Asian or Pacific Islander"
+            },
+            {
+              "id": "option-002",
+              "text": "Black/African American"
+            },
+            {
+              "id": "option-003",
+              "text": "Hispanic or Latina/Latino/Latinx"
+            },
+            {
+              "id": "option-004",
+              "text": "Native American, Alaskan Native, Aleut"
+            },
+            {
+              "id": "option-005",
+              "text": "White/Caucasian"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-003",
+          "sourceNumber": 3,
+          "type": "single_choice",
+          "prompt": "Are you a US citizen or a permanent resident (green card holder)?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 288
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "No"
+            },
+            {
+              "id": "option-002",
+              "text": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-004",
+          "sourceNumber": 4,
+          "type": "single_choice",
+          "prompt": "Is English your first language or a first language?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 293
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "No"
+            },
+            {
+              "id": "option-002",
+              "text": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-005",
+          "sourceNumber": 5,
+          "type": "single_choice",
+          "prompt": "Were you born outside the United States?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 298
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "No"
+            },
+            {
+              "id": "option-002",
+              "text": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-006",
+          "sourceNumber": 6,
+          "type": "single_choice",
+          "prompt": "Do you speak a language other than English at home?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 303
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "No"
+            },
+            {
+              "id": "option-002",
+              "text": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-007",
+          "sourceNumber": 7,
+          "type": "single_choice",
+          "prompt": "Among your parent(s) and/or guardian(s), what is the highest level of education they achieved?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 308
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "Less than High School"
+            },
+            {
+              "id": "option-002",
+              "text": "High School Graduate"
+            },
+            {
+              "id": "option-003",
+              "text": "Some College"
+            },
+            {
+              "id": "option-004",
+              "text": "Associate’s Degree or Community College Degree"
+            },
+            {
+              "id": "option-005",
+              "text": "Bachelor’s Degree or Four-Year College Degree"
+            },
+            {
+              "id": "option-006",
+              "text": "Some Graduate School"
+            },
+            {
+              "id": "option-007",
+              "text": "Graduate Degree (master’s, doctorate, etc.)"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-008",
+          "sourceNumber": 8,
+          "type": "single_choice",
+          "prompt": "What is your current family income?  For purposes of this question, please report all income that you jointly share or pool together with others for financial purposes. If you don’t share with anyone, please report your income alone.",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 318
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "Less than $20,000"
+            },
+            {
+              "id": "option-002",
+              "text": "$20,000 to $29,999"
+            },
+            {
+              "id": "option-003",
+              "text": "$30,000 to $39,999"
+            },
+            {
+              "id": "option-004",
+              "text": "$40,000 to $59,999"
+            },
+            {
+              "id": "option-005",
+              "text": "$60,000 to $79,999"
+            },
+            {
+              "id": "option-006",
+              "text": "$80,000 to $100,000"
+            },
+            {
+              "id": "option-007",
+              "text": "Above $100,000"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-009",
+          "sourceNumber": 9,
+          "type": "single_choice",
+          "prompt": "Do you currently receive financial aid to attend college?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 328
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "No"
+            },
+            {
+              "id": "option-002",
+              "text": "Yes"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-010",
+          "sourceNumber": 10,
+          "type": "single_choice",
+          "prompt": "How many hours do you work for pay each week?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 333
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "0"
+            },
+            {
+              "id": "option-002",
+              "text": "1-10"
+            },
+            {
+              "id": "option-003",
+              "text": "11-20"
+            },
+            {
+              "id": "option-004",
+              "text": "21-30"
+            },
+            {
+              "id": "option-005",
+              "text": "31+"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-011",
+          "sourceNumber": 11,
+          "type": "single_choice",
+          "prompt": "How many hours do you do unpaid caregiving each week?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 341
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "0"
+            },
+            {
+              "id": "option-002",
+              "text": "1-10"
+            },
+            {
+              "id": "option-003",
+              "text": "11-20"
+            },
+            {
+              "id": "option-004",
+              "text": "21-30"
+            },
+            {
+              "id": "option-005",
+              "text": "31+"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-012",
+          "sourceNumber": 12,
+          "type": "integer",
+          "prompt": "What year were you born?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 349
+          },
+          "presentation": {
+            "widget": "select",
+            "yearRange": null,
+            "status": "needs_policy_decision"
+          }
+        },
+        {
+          "id": "baseline-demographics-013",
+          "sourceNumber": 13,
+          "type": "multiple_choice",
+          "prompt": "What is your current major?  Please select all that apply.  (If the title of the major isn’t exactly what yours is but it is very close, please select it.)",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 353
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "Accounting"
+            },
+            {
+              "id": "option-002",
+              "text": "African American Studies"
+            },
+            {
+              "id": "option-003",
+              "text": "Anthropology"
+            },
+            {
+              "id": "option-004",
+              "text": "Aquatic and fishery sciences"
+            },
+            {
+              "id": "option-005",
+              "text": "Architecture or Architectural design"
+            },
+            {
+              "id": "option-006",
+              "text": "Art history"
+            },
+            {
+              "id": "option-007",
+              "text": "Art"
+            },
+            {
+              "id": "option-008",
+              "text": "Astronomy"
+            },
+            {
+              "id": "option-009",
+              "text": "Atmospheric sciences"
+            },
+            {
+              "id": "option-010",
+              "text": "Biochemistry"
+            },
+            {
+              "id": "option-011",
+              "text": "Bioengineering"
+            },
+            {
+              "id": "option-012",
+              "text": "Biology (including marine, molecular, etc.)"
+            },
+            {
+              "id": "option-013",
+              "text": "Botany"
+            },
+            {
+              "id": "option-014",
+              "text": "Business"
+            },
+            {
+              "id": "option-015",
+              "text": "Chemical engineering"
+            },
+            {
+              "id": "option-016",
+              "text": "Chemistry"
+            },
+            {
+              "id": "option-017",
+              "text": "Cinematography"
+            },
+            {
+              "id": "option-018",
+              "text": "Civil and environmental engineering"
+            },
+            {
+              "id": "option-019",
+              "text": "Classics"
+            },
+            {
+              "id": "option-020",
+              "text": "Communication"
+            },
+            {
+              "id": "option-021",
+              "text": "Comparative literature"
+            },
+            {
+              "id": "option-022",
+              "text": "Computer engineering or computer science"
+            },
+            {
+              "id": "option-023",
+              "text": "Construction management"
+            },
+            {
+              "id": "option-024",
+              "text": "Criminal science and forensics"
+            },
+            {
+              "id": "option-025",
+              "text": "Criminology"
+            },
+            {
+              "id": "option-026",
+              "text": "Dance"
+            },
+            {
+              "id": "option-027",
+              "text": "Design"
+            },
+            {
+              "id": "option-028",
+              "text": "Digital arts"
+            },
+            {
+              "id": "option-029",
+              "text": "Drama, including acting, writing, theatre."
+            },
+            {
+              "id": "option-030",
+              "text": "Earth and space science"
+            },
+            {
+              "id": "option-031",
+              "text": "Ecology"
+            },
+            {
+              "id": "option-032",
+              "text": "Economics"
+            },
+            {
+              "id": "option-033",
+              "text": "Education, including early childhood and special education"
+            },
+            {
+              "id": "option-034",
+              "text": "Electrical engineering"
+            },
+            {
+              "id": "option-035",
+              "text": "English"
+            },
+            {
+              "id": "option-036",
+              "text": "Environmental science"
+            },
+            {
+              "id": "option-037",
+              "text": "Ethnic studies"
+            },
+            {
+              "id": "option-038",
+              "text": "Film studies"
+            },
+            {
+              "id": "option-039",
+              "text": "Finance"
+            },
+            {
+              "id": "option-040",
+              "text": "Food science, including nutrition science"
+            },
+            {
+              "id": "option-041",
+              "text": "Foreign language and literature"
+            },
+            {
+              "id": "option-042",
+              "text": "Genetics"
+            },
+            {
+              "id": "option-043",
+              "text": "Geography"
+            },
+            {
+              "id": "option-044",
+              "text": "Geology"
+            },
+            {
+              "id": "option-045",
+              "text": "Health sciences"
+            },
+            {
+              "id": "option-046",
+              "text": "History"
+            },
+            {
+              "id": "option-047",
+              "text": "Industrial engineering"
+            },
+            {
+              "id": "option-048",
+              "text": "International studies"
+            },
+            {
+              "id": "option-049",
+              "text": "Kinesiology, including sports medicine and exercise biology"
+            },
+            {
+              "id": "option-050",
+              "text": "Library science"
+            },
+            {
+              "id": "option-051",
+              "text": "Linguistics"
+            },
+            {
+              "id": "option-052",
+              "text": "Management"
+            },
+            {
+              "id": "option-053",
+              "text": "Materials science and engineering"
+            },
+            {
+              "id": "option-054",
+              "text": "Mathematics"
+            },
+            {
+              "id": "option-055",
+              "text": "Mechanical engineering"
+            },
+            {
+              "id": "option-056",
+              "text": "Medical technology"
+            },
+            {
+              "id": "option-057",
+              "text": "Music, including performance, composition, history, music education, and recording technology"
+            },
+            {
+              "id": "option-058",
+              "text": "Nursing"
+            },
+            {
+              "id": "option-059",
+              "text": "Oceanography"
+            },
+            {
+              "id": "option-060",
+              "text": "Philosophy"
+            },
+            {
+              "id": "option-061",
+              "text": "Physics"
+            },
+            {
+              "id": "option-062",
+              "text": "Physiology"
+            },
+            {
+              "id": "option-063",
+              "text": "Political science"
+            },
+            {
+              "id": "option-064",
+              "text": "Psychology"
+            },
+            {
+              "id": "option-065",
+              "text": "Religious studies"
+            },
+            {
+              "id": "option-066",
+              "text": "Resource management, including forestry and wildlife management"
+            },
+            {
+              "id": "option-067",
+              "text": "Rhetoric"
+            },
+            {
+              "id": "option-068",
+              "text": "Social justice"
+            },
+            {
+              "id": "option-069",
+              "text": "Social welfare or social work"
+            },
+            {
+              "id": "option-070",
+              "text": "Sociology"
+            },
+            {
+              "id": "option-071",
+              "text": "Speech, language, and hearing sciences and disorders"
+            },
+            {
+              "id": "option-072",
+              "text": "Statistics"
+            },
+            {
+              "id": "option-073",
+              "text": "Technical communication, a field that includes tech writing"
+            },
+            {
+              "id": "option-074",
+              "text": "Urban Studies or City Planning"
+            },
+            {
+              "id": "option-075",
+              "text": "Women’s Studies"
+            },
+            {
+              "id": "option-076",
+              "text": "Undecided"
+            },
+            {
+              "id": "option-077",
+              "text": "Other: Please specify"
+            }
+          ],
+          "followUp": {
+            "whenOptionId": "option-077",
+            "field": {
+              "id": "other-major",
+              "type": "text",
+              "prompt": "Please specify",
+              "required": null
+            }
+          }
+        },
+        {
+          "id": "baseline-demographics-014",
+          "sourceNumber": 14,
+          "type": "single_choice",
+          "prompt": "Which of the following grades best represents your average grade in college?  If you don’t know, please estimate.  If you are a first-semester college student, please indicate your average grade in high school.",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 433
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "A+"
+            },
+            {
+              "id": "option-002",
+              "text": "A"
+            },
+            {
+              "id": "option-003",
+              "text": "A-"
+            },
+            {
+              "id": "option-004",
+              "text": "B+"
+            },
+            {
+              "id": "option-005",
+              "text": "B"
+            },
+            {
+              "id": "option-006",
+              "text": "B-"
+            },
+            {
+              "id": "option-007",
+              "text": "C+"
+            },
+            {
+              "id": "option-008",
+              "text": "C"
+            },
+            {
+              "id": "option-009",
+              "text": "C-"
+            },
+            {
+              "id": "option-010",
+              "text": "D+"
+            },
+            {
+              "id": "option-011",
+              "text": "D"
+            },
+            {
+              "id": "option-012",
+              "text": "F"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-015",
+          "sourceNumber": 15,
+          "type": "single_choice",
+          "prompt": "Thinking about the math and statistics courses you’ve taken, please provide an estimate of the average grade you’ve received in such courses (please reflect both on high school and college):",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 447
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "A+"
+            },
+            {
+              "id": "option-002",
+              "text": "A"
+            },
+            {
+              "id": "option-003",
+              "text": "A-"
+            },
+            {
+              "id": "option-004",
+              "text": "B+"
+            },
+            {
+              "id": "option-005",
+              "text": "B"
+            },
+            {
+              "id": "option-006",
+              "text": "B-"
+            },
+            {
+              "id": "option-007",
+              "text": "C+"
+            },
+            {
+              "id": "option-008",
+              "text": "C"
+            },
+            {
+              "id": "option-009",
+              "text": "C-"
+            },
+            {
+              "id": "option-010",
+              "text": "D+"
+            },
+            {
+              "id": "option-011",
+              "text": "D"
+            },
+            {
+              "id": "option-012",
+              "text": "F"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-016",
+          "sourceNumber": 16,
+          "type": "single_choice",
+          "prompt": "How many college credits have you earned to date?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 461
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "0 to 30"
+            },
+            {
+              "id": "option-002",
+              "text": "31 to 60"
+            },
+            {
+              "id": "option-003",
+              "text": "61 to 90"
+            },
+            {
+              "id": "option-004",
+              "text": "91 and above"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-017",
+          "sourceNumber": 17,
+          "type": "single_choice",
+          "prompt": "Do you currently receive accommodations at your college/university for a disability?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 468
+          },
+          "options": [
+            {
+              "id": "option-001",
+              "text": "Yes"
+            },
+            {
+              "id": "option-002",
+              "text": "No"
+            }
+          ]
+        },
+        {
+          "id": "baseline-demographics-018",
+          "sourceNumber": 18,
+          "type": "email",
+          "prompt": "Please provide an email address where we can reach you for follow up information. Please provide an email address that can be used to reach you even after you have graduated.",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 473
+          }
+        },
+        {
+          "id": "baseline-demographics-019",
+          "sourceNumber": 19,
+          "type": "phone",
+          "prompt": "Please provide a phone number where we can reach you for follow up information.",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 477
+          }
+        },
+        {
+          "id": "baseline-demographics-020",
+          "sourceNumber": 20,
+          "type": "long_text",
+          "prompt": "Do you have any comments about this questionnaire or about your participation in this research study?",
+          "required": null,
+          "dataClassification": "restricted_student_information",
+          "source": {
+            "blockIndex": 481
+          }
+        }
+      ]
+    }
+  ]
+}

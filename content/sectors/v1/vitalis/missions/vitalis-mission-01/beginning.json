@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "missionId": "vitalis-mission-01",
+  "difficulty": "beginning",
+  "difficultyLabel": "Beginner",
+  "status": "draft",
+  "questions": [
+    {
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-01",
+      "sourcePreAssessmentQuestionNumber": 1,
+      "skillId": "row_level_table_reading",
+      "skillLabel": "Table interpretation",
+      "id": "vitalis-q001-beginning",
+      "type": "single_choice",
+      "prompt": "Compare the minutes waited to see a nurse. Which statement uses all the values correctly?",
+      "instructions": [
+        "Choose one answer."
+      ],
+      "required": null,
+      "depthOfKnowledge": {
+        "level": 2,
+        "scope": "item"
+      },
+      "content": [
+        {
+          "type": "table",
+          "title": "minutes waited to see a nurse",
+          "headerRowCount": 1,
+          "rows": [
+            [
+              "Group",
+              "Values"
+            ],
+            [
+              "A",
+              "8, 10, 12"
+            ],
+            [
+              "B",
+              "6, 10, 14"
+            ]
+          ],
+          "dataOrigin": "source_practice_example"
+        },
+        {
+          "type": "paragraph",
+          "text": "A = Clinic A; B = Clinic B."
+        }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "The groups have no value in common."
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "Each group has two values at least 10; their values overlap."
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "Every value in A is higher than every value in B."
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Only A has two values at least 10."
+        }
+      ],
+      "source": {
+        "id": "sector-workbook",
+        "sheet": "Assessment Map",
+        "cell": "E114"
+      },
+      "support": {
+        "hint": "Check each statement against both rows, including any values the groups share.",
+        "stuck": {
+          "introduction": "Compare the groups one feature at a time.",
+          "steps": [
+            "Write Clinic A's values and Clinic B's values on separate lines.",
+            "Mark values that appear in both groups, then count values at least 10 in each group. Include 10 itself.",
+            "Check every part of each statement. Reject a statement if either part disagrees with the data."
+          ]
+        }
+      }
+    },
+    {
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-01",
+      "sourcePreAssessmentQuestionNumber": 8,
+      "skillId": "bivariate_table_selection",
+      "skillLabel": "Bivariate table selection and within-group percentages",
+      "id": "vitalis-q008-beginning",
+      "type": "single_choice",
+      "prompt": "At a clinic, Yes means the case got a checkup. Which percentages answer: What share within each group met the goal?",
+      "instructions": [
+        "Choose one answer."
+      ],
+      "required": null,
+      "depthOfKnowledge": {
+        "level": 2,
+        "scope": "item"
+      },
+      "content": [
+        {
+          "type": "table",
+          "title": "Goal results",
+          "headerRowCount": 1,
+          "rows": [
+            [
+              "Group",
+              "Yes",
+              "No"
+            ],
+            [
+              "A",
+              "8",
+              "2"
+            ],
+            [
+              "B",
+              "6",
+              "4"
+            ]
+          ],
+          "dataOrigin": "source_practice_example"
+        },
+        {
+          "type": "paragraph",
+          "text": "A = Clinic A; B = Clinic B."
+        }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "A 20% and B 40%; compare the No shares."
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "A 80% and B 60%; divide by each group total."
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "A 40% and B 30%; divide by all 20 cases."
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "A 57% and B 43%; divide by all 14 Yes cases."
+        }
+      ],
+      "source": {
+        "id": "sector-workbook",
+        "sheet": "Assessment Map",
+        "cell": "E118"
+      },
+      "support": {
+        "hint": "A share within a group uses that group's total, including both Yes and No cases.",
+        "stuck": {
+          "introduction": "Build a separate checkup percentage for each clinic.",
+          "steps": [
+            "For Clinic A, add Yes and No to find its total number of cases.",
+            "Divide A's Yes count by A's total and multiply by 100. Repeat using only Clinic B's counts.",
+            "Compare your two percentages with the options, checking that each denominator represents the requested group."
+          ]
+        }
+      }
+    }
+  ],
+  "stimuli": []
+}

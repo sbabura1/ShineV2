@@ -4,3 +4,13 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Generated design previews and local tooling state.
+/.taste-skill/
+/artifacts/
+
+# This repository is public; assessment keys and answer-bearing authoring tools stay local.
+/content/assessments/*/private/
+/content/sectors/*/*/private/
+/scripts/build-shine-assessments.mjs
+/scripts/validate-vitalis-content.mjs

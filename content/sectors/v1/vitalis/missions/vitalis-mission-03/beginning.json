@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "missionId": "vitalis-mission-03",
+  "difficulty": "beginning",
+  "difficultyLabel": "Beginner",
+  "status": "draft",
+  "questions": [
+    {
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-03",
+      "sourcePreAssessmentQuestionNumber": 4,
+      "skillId": "independent_dependent_variables",
+      "skillLabel": "Independent and dependent variables",
+      "id": "vitalis-q004-beginning",
+      "type": "single_choice",
+      "prompt": "A study links health classes attended with health quiz score. Which choice best separates the two measures from a fair starting condition?",
+      "instructions": [
+        "Choose one answer."
+      ],
+      "required": null,
+      "depthOfKnowledge": {
+        "level": 2,
+        "scope": "item"
+      },
+      "content": [
+        {
+          "type": "table",
+          "title": "Study measures",
+          "headerRowCount": 1,
+          "rows": [
+            [
+              "Measure",
+              "Recorded for each case"
+            ],
+            [
+              "First",
+              "health classes attended"
+            ],
+            [
+              "Second",
+              "health quiz score"
+            ]
+          ],
+          "dataOrigin": "source_practice_example"
+        }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "Compare the first measure, record the second, and match starting conditions."
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "Compare the second measure and ignore starting conditions."
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "Use the first measure as both the factor and the result."
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Use different starting conditions to make any effect larger."
+        }
+      ],
+      "source": {
+        "id": "sector-workbook",
+        "sheet": "Assessment Map",
+        "cell": "E117"
+      },
+      "support": {
+        "hint": "Identify the factor being compared, the outcome being measured, and what should be similar before the comparison.",
+        "stuck": {
+          "introduction": "Separate the study's measures from its starting conditions.",
+          "steps": [
+            "Ask which recorded measure represents exposure to the health classes.",
+            "Ask which recorded measure represents the outcome the study wants to explain.",
+            "Check whether an option compares the factor and outcome while accounting for relevant differences that existed before the classes."
+          ]
+        }
+      }
+    },
+    {
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-03",
+      "sourcePreAssessmentQuestionNumber": 27,
+      "skillId": "controlling_for_variables",
+      "skillLabel": "Controlling for a confounding variable",
+      "id": "vitalis-q027-beginning",
+      "type": "single_choice",
+      "prompt": "At a clinic, what changes when people have similar starting scores?",
+      "instructions": [
+        "Choose one answer."
+      ],
+      "required": null,
+      "depthOfKnowledge": {
+        "level": 2,
+        "scope": "item"
+      },
+      "content": [
+        {
+          "type": "table",
+          "title": "Same 0–100 test",
+          "headerRowCount": 1,
+          "rows": [
+            [
+              "Comparison",
+              "Program",
+              "Other"
+            ],
+            [
+              "Overall mean",
+              "85",
+              "75"
+            ],
+            [
+              "Low starting score",
+              "70",
+              "72"
+            ],
+            [
+              "High starting score",
+              "90",
+              "92"
+            ]
+          ],
+          "dataOrigin": "source_practice_example"
+        }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "The numbers prove the program causes a two-point loss for everyone."
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "The program is lower in both matched groups; overall means may mislead."
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "The program is better for every group because 85 is above 75."
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Matching starting scores removes the need to compare results."
+        }
+      ],
+      "source": {
+        "id": "sector-workbook",
+        "sheet": "Assessment Map",
+        "cell": "E127"
+      },
+      "support": {
+        "hint": "Read the comparisons within similar starting-score groups as well as the overall comparison.",
+        "stuck": {
+          "introduction": "Compare like starting conditions before judging the overall pattern.",
+          "steps": [
+            "Record the overall Program and Other means without treating that comparison as a causal conclusion.",
+            "Compare Program with Other separately within the low-starting-score group and the high-starting-score group.",
+            "Check which statement respects all three comparisons and avoids claiming an effect for every individual."
+          ]
+        }
+      }
+    }
+  ],
+  "stimuli": []
+}

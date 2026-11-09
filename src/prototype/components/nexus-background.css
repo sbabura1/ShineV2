@@ -1,0 +1,56 @@
+.hero.landing-entry {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.landing-entry > .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.nexus-stream-background {
+  --stream-blue: #4a8ed1;
+  --stream-cyan: #48d7e9;
+  --stream-ice: #b0d4ec;
+  --stream-gold: #e0b463;
+  --stream-mint: #65c6a1;
+  --stream-rose: #d883b6;
+  --stream-coral: #d98b70;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  opacity: .85;
+}
+
+.nexus-stream-background svg { display: block; width: 100%; height: 100%; }
+.nexus-light-fiber--blue { color: var(--stream-blue); }
+.nexus-light-fiber--cyan { color: var(--stream-cyan); }
+.nexus-light-fiber--ice { color: var(--stream-ice); }
+.nexus-light-fiber--gold { color: var(--stream-gold); }
+.nexus-light-fiber--mint { color: var(--stream-mint); }
+.nexus-light-fiber--rose { color: var(--stream-rose); }
+.nexus-light-fiber--coral { color: var(--stream-coral); }
+.nexus-light-pulse { opacity: .8; }
+
+html[data-theme="light"] .nexus-stream-background {
+  --stream-blue: #1b6197;
+  --stream-cyan: #087c95;
+  --stream-ice: #3879a4;
+  --stream-gold: #98651c;
+  --stream-mint: #247a5a;
+  --stream-rose: #a14c80;
+  --stream-coral: #b35f40;
+  opacity: .65;
+}
+
+@media (max-width: 600px) {
+  .nexus-light-fiber:nth-child(even) { display: none; }
+  .nexus-stream-background { opacity: .7; }
+}
+

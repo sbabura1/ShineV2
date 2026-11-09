@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "skills": [
+    {
+      "id": "row_level_table_reading",
+      "name": "Table interpretation",
+      "sourcePreAssessmentQuestionNumber": 1,
+      "missionId": "vitalis-mission-01",
+      "questionIds": {
+        "beginning": "vitalis-q001-beginning",
+        "intermediate": "vitalis-q001-intermediate",
+        "advanced": "vitalis-q001-advanced"
+      }
+    },
+    {
+      "id": "subgroup_mean",
+      "name": "Conditional mean",
+      "sourcePreAssessmentQuestionNumber": 2,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q002-beginning",
+        "intermediate": "vitalis-q002-intermediate",
+        "advanced": "vitalis-q002-advanced"
+      }
+    },
+    {
+      "id": "conditional_percentage",
+      "name": "Conditional percentages",
+      "sourcePreAssessmentQuestionNumber": 3,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q003-beginning",
+        "intermediate": "vitalis-q003-intermediate",
+        "advanced": "vitalis-q003-advanced"
+      }
+    },
+    {
+      "id": "independent_dependent_variables",
+      "name": "Independent and dependent variables",
+      "sourcePreAssessmentQuestionNumber": 4,
+      "missionId": "vitalis-mission-03",
+      "questionIds": {
+        "beginning": "vitalis-q004-beginning",
+        "intermediate": "vitalis-q004-intermediate",
+        "advanced": "vitalis-q004-advanced"
+      }
+    },
+    {
+      "id": "bivariate_table_selection",
+      "name": "Bivariate table selection and within-group percentages",
+      "sourcePreAssessmentQuestionNumber": 8,
+      "missionId": "vitalis-mission-01",
+      "questionIds": {
+        "beginning": "vitalis-q008-beginning",
+        "intermediate": "vitalis-q008-intermediate",
+        "advanced": "vitalis-q008-advanced"
+      }
+    },
+    {
+      "id": "percentage_table_limits",
+      "name": "Denominators and limits of percentage inference",
+      "sourcePreAssessmentQuestionNumber": 13,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q013-beginning",
+        "intermediate": "vitalis-q013-intermediate",
+        "advanced": "vitalis-q013-advanced"
+      }
+    },
+    {
+      "id": "percentage_table_interpretation",
+      "name": "Comparing percentage distributions",
+      "sourcePreAssessmentQuestionNumber": 14,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q014-beginning",
+        "intermediate": "vitalis-q014-intermediate",
+        "advanced": "vitalis-q014-advanced"
+      }
+    },
+    {
+      "id": "percentage_rate",
+      "name": "Calculating a small percentage",
+      "sourcePreAssessmentQuestionNumber": 15,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q015-beginning",
+        "intermediate": "vitalis-q015-intermediate",
+        "advanced": "vitalis-q015-advanced"
+      }
+    },
+    {
+      "id": "rates",
+      "name": "Population-standardized rates",
+      "sourcePreAssessmentQuestionNumber": 17,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q017-beginning",
+        "intermediate": "vitalis-q017-intermediate",
+        "advanced": "vitalis-q017-advanced"
+      }
+    },
+    {
+      "id": "column_percentage",
+      "name": "Calculating within-group percentages",
+      "sourcePreAssessmentQuestionNumber": 20,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q020-beginning",
+        "intermediate": "vitalis-q020-intermediate",
+        "advanced": "vitalis-q020-advanced"
+      }
+    },
+    {
+      "id": "column_percentage_comparison",
+      "name": "Comparing within-group percentages",
+      "sourcePreAssessmentQuestionNumber": 21,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q021-beginning",
+        "intermediate": "vitalis-q021-intermediate",
+        "advanced": "vitalis-q021-advanced"
+      }
+    },
+    {
+      "id": "typical_value_with_outlier",
+      "name": "Selecting a measure of center with an outlier",
+      "sourcePreAssessmentQuestionNumber": 23,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q023-beginning",
+        "intermediate": "vitalis-q023-intermediate",
+        "advanced": "vitalis-q023-advanced"
+      }
+    },
+    {
+      "id": "standard_deviation",
+      "name": "Interpreting standard deviation and variance",
+      "sourcePreAssessmentQuestionNumber": 24,
+      "missionId": "vitalis-mission-02",
+      "questionIds": {
+        "beginning": "vitalis-q024-beginning",
+        "intermediate": "vitalis-q024-intermediate",
+        "advanced": "vitalis-q024-advanced"
+      }
+    },
+    {
+      "id": "controlling_for_variables",
+      "name": "Controlling for a confounding variable",
+      "sourcePreAssessmentQuestionNumber": 27,
+      "missionId": "vitalis-mission-03",
+      "questionIds": {
+        "beginning": "vitalis-q027-beginning",
+        "intermediate": "vitalis-q027-intermediate",
+        "advanced": "vitalis-q027-advanced"
+      }
+    }
+  ]
+}

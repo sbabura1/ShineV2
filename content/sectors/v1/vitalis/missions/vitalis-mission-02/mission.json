@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "id": "vitalis-mission-02",
+  "title": "The Care Comparison",
+  "titleStatus": "proposed_in_source",
+  "missionType": "comparison",
+  "order": 2,
+  "status": "draft",
+  "questionFiles": {
+    "beginning": "missions/vitalis-mission-02/beginning.json",
+    "intermediate": "missions/vitalis-mission-02/intermediate.json",
+    "advanced": "missions/vitalis-mission-02/advanced.json"
+  },
+  "skillIds": [
+    "subgroup_mean",
+    "conditional_percentage",
+    "percentage_table_limits",
+    "percentage_table_interpretation",
+    "percentage_rate",
+    "rates",
+    "column_percentage",
+    "column_percentage_comparison",
+    "typical_value_with_outlier",
+    "standard_deviation"
+  ],
+  "sourcePreAssessmentQuestionNumbers": [
+    2,
+    3,
+    13,
+    14,
+    15,
+    17,
+    20,
+    21,
+    23,
+    24
+  ],
+  "preMissionSprintId": null,
+  "sprintSourceStatus": "not_defined_in_supplied_files",
+  "completion": {
+    "requiredDifficultyLevels": null,
+    "passingPercentage": null,
+    "attemptLimit": null,
+    "advancedRequiresInvestigationEvidence": true
+  },
+  "source": {
+    "id": "sector-workbook",
+    "sheet": "Sector Reference",
+    "cell": "G13"
+  }
+}

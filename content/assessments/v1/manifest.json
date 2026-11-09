@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "v1-draft",
+  "status": "draft",
+  "publishable": false,
+  "sourceFile": "SHINE ASSESSMENTS.docx",
+  "sourceSha256": "3ec1fdf78dfceae46978559ea01a2078951066dc2c062de13a769919378f40fd",
+  "assessments": [
+    {
+      "assessmentId": "baseline",
+      "questionFile": "questions/baseline.json",
+      "privateScoringFile": "private/baseline.scoring.json",
+      "stage": "before_shine_activities",
+      "sectionCounts": {
+        "attitudes": 32,
+        "cognitive": 28,
+        "demographics": 20
+      },
+      "totalQuestions": 80,
+      "participantFieldCount": 4,
+      "assetCount": 7
+    },
+    {
+      "assessmentId": "post-gamification",
+      "questionFile": "questions/post-gamification.json",
+      "privateScoringFile": "private/post-gamification.scoring.json",
+      "stage": "after_all_required_sectors_before_independent_study",
+      "sectionCounts": {
+        "attitudes": 30,
+        "experience": 13,
+        "reflection": 5,
+        "cognitive": 20
+      },
+      "totalQuestions": 68,
+      "participantFieldCount": 5,
+      "assetCount": 6
+    },
+    {
+      "assessmentId": "post-research",
+      "questionFile": "questions/post-research.json",
+      "privateScoringFile": "private/post-research.scoring.json",
+      "stage": "after_independent_research_project",
+      "sectionCounts": {
+        "attitudes": 26,
+        "experience": 20,
+        "reflection": 6,
+        "cognitive": 20
+      },
+      "totalQuestions": 72,
+      "participantFieldCount": 4,
+      "assetCount": 6
+    }
+  ],
+  "totalQuestions": 220,
+  "assetCount": 19,
+  "publicationBlockers": [
+    "source-assessments-await-revision",
+    "required-and-consent-policy",
+    "attitude-comparability"
+  ]
+}

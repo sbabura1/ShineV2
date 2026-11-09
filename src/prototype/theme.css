@@ -283,9 +283,7 @@ p,
 
 .hero {
   color: var(--text);
-  background:
-    radial-gradient(circle at center, color-mix(in srgb, var(--primary) 8%, transparent), transparent 35%),
-    linear-gradient(transparent 65%, rgb(0 0 0 / 28%));
+  background: var(--bg);
 }
 
 .nexus-word { color: var(--text); }

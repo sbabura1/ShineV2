@@ -1,0 +1,2251 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "assessmentId": "post-research",
+  "status": "draft",
+  "source": {
+    "file": "SHINE ASSESSMENTS.docx",
+    "sha256": "3ec1fdf78dfceae46978559ea01a2078951066dc2c062de13a769919378f40fd",
+    "assessmentNumber": 3,
+    "textView": "insertions_included_deletions_excluded",
+    "locatorConvention": "blockIndex is zero-based; tableRow is one-based including header rows"
+  },
+  "title": "Assessment 3: After the Full SHINE Project",
+  "administration": {
+    "stage": "after_independent_research_project",
+    "sourceTimingNote": "NOTE:  Administer after students complete the independent study using real-world data.",
+    "policyStatus": "needs_review",
+    "assessmentRequiredAccordingToSource": true,
+    "unlockRule": {
+      "type": "independent_research_project_complete"
+    },
+    "estimatedDurationMinutes": null,
+    "attemptLimit": null,
+    "autosavePolicy": null,
+    "resultVisibility": null,
+    "questionOrder": "source_order",
+    "optionOrder": "source_order"
+  },
+  "instructions": [
+    "INSTRUCTIONS:  This assessment is a required activity for all students participating in the SHINE Project and it is also being used for research purposes by the SHINE project leadership team (Drs. Esther Isabelle Wilder, Gregory Broberg, Eduardo Vianna, and Toni Watt).  If you wish to be a participant in the SHINE Research Program, you must complete the Institutional Research Board (IRB) consent form prior to completing this assessment.  Please complete this assessment on your own and in one sitting.  Please try your best on every item."
+  ],
+  "participantFields": [
+    {
+      "id": "name",
+      "label": "Name",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 670
+      }
+    },
+    {
+      "id": "student-id",
+      "label": "Student ID",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 671
+      }
+    },
+    {
+      "id": "instructor-mentor",
+      "label": "Instructor Name/Mentor",
+      "type": "text",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 672
+      }
+    },
+    {
+      "id": "assessment-date",
+      "label": "Date",
+      "type": "date",
+      "required": null,
+      "dataClassification": "restricted_student_information",
+      "source": {
+        "blockIndex": 673
+      }
+    }
+  ],
+  "scales": [
+    {
+      "id": "agreement-7",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7,
+      "options": [
+        {
+          "value": 1,
+          "label": "Disagree strongly"
+        },
+        {
+          "value": 2,
+          "label": "Disagree somewhat"
+        },
+        {
+          "value": 3,
+          "label": "Disagree slightly"
+        },
+        {
+          "value": 4,
+          "label": "Neither agree nor disagree"
+        },
+        {
+          "value": 5,
+          "label": "Agree slightly"
+        },
+        {
+          "value": 6,
+          "label": "Agree somewhat"
+        },
+        {
+          "value": 7,
+          "label": "Agree strongly"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "image6",
+      "path": "assets/image6.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image7",
+      "path": "assets/image7.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image9",
+      "path": "assets/image9.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image13",
+      "path": "assets/image13.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image15",
+      "path": "assets/image15.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    },
+    {
+      "id": "image16",
+      "path": "assets/image16.gif",
+      "mediaType": "image/gif",
+      "source": "extracted_original_document_media"
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "post-research-stimulus-001",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 1-3 use the table below. Eight students reported their entry pathway and the number of data sources they reviewed.",
+          "source": {
+            "blockIndex": 705
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Student",
+              "Entry pathway",
+              "Sources reviewed"
+            ],
+            [
+              "1",
+              "First-year",
+              "5"
+            ],
+            [
+              "2",
+              "Transfer",
+              "8"
+            ],
+            [
+              "3",
+              "First-year",
+              "11"
+            ],
+            [
+              "4",
+              "Transfer",
+              "5"
+            ],
+            [
+              "5",
+              "First-year",
+              "8"
+            ],
+            [
+              "6",
+              "Transfer",
+              "11"
+            ],
+            [
+              "7",
+              "First-year",
+              "14"
+            ],
+            [
+              "8",
+              "Transfer",
+              "8"
+            ]
+          ],
+          "source": {
+            "blockIndex": 706
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-research-stimulus-002",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 5-7 concern whether students who worked with a peer mentor were more likely to submit a revised analysis. Twenty students participated: 8 worked with a mentor and 12 did not. Five mentored students and 9 students without a mentor submitted a revision.",
+          "source": {
+            "blockIndex": 732
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-research-stimulus-003",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Question 8 uses the graph below.",
+          "source": {
+            "blockIndex": 763
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image16",
+          "alt": "post-research-stimulus-003: Number of Sources Reviewed for Independent Studies. Frequency bar chart.",
+          "source": {
+            "blockIndex": 764
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-research-stimulus-004",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 9-10 use the graph below.",
+          "source": {
+            "blockIndex": 772
+          }
+        },
+        {
+          "type": "image",
+          "assetId": "image6",
+          "alt": "post-research-stimulus-004: Missing Graph Labels Across Six Weekly Drafts. Line chart for Workshop and Comparison groups.",
+          "source": {
+            "blockIndex": 773
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-research-stimulus-005",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 11-12 use the table below. It compares students who presented their research with all students who completed projects.",
+          "source": {
+            "blockIndex": 786
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Entry Pathway of Research Presenters and All Project Students",
+          "source": {
+            "blockIndex": 787
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Entry pathway",
+              "Research presenters",
+              "All project students"
+            ],
+            [
+              "First-year",
+              "44%",
+              "38%"
+            ],
+            [
+              "Transfer",
+              "36%",
+              "42%"
+            ],
+            [
+              "Continuing",
+              "20%",
+              "20%"
+            ]
+          ],
+          "source": {
+            "blockIndex": 788
+          }
+        }
+      ]
+    },
+    {
+      "id": "post-research-stimulus-006",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 17-18 use the table below, based on whether students used feedback to revise a conclusion.",
+          "source": {
+            "blockIndex": 826
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Revised Conclusion by Feedback Group",
+          "source": {
+            "blockIndex": 827
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Revised conclusion",
+              "Received feedback",
+              "No feedback",
+              "Total"
+            ],
+            [
+              "Yes",
+              "98",
+              "70",
+              "168"
+            ],
+            [
+              "No",
+              "42",
+              "70",
+              "112"
+            ],
+            [
+              "Total",
+              "140",
+              "140",
+              "280"
+            ]
+          ],
+          "source": {
+            "blockIndex": 828
+          }
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "attitudes",
+      "title": "Attitudinal Questions",
+      "sourcePartNumber": 1,
+      "instructions": [
+        "For each statement, select the response that best represents how you feel at this point. Use the same scale for every statement."
+      ],
+      "questions": [
+        {
+          "id": "post-research-attitudes-001",
+          "sourceNumber": 1,
+          "type": "likert",
+          "prompt": "I am comfortable entering data into a spreadsheet such as Excel or Google Sheets.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 2
+          }
+        },
+        {
+          "id": "post-research-attitudes-002",
+          "sourceNumber": 2,
+          "type": "likert",
+          "prompt": "I feel confident using spreadsheet software to carry out simple data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 3
+          }
+        },
+        {
+          "id": "post-research-attitudes-003",
+          "sourceNumber": 3,
+          "type": "likert",
+          "prompt": "I am comfortable calculating percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 4
+          }
+        },
+        {
+          "id": "post-research-attitudes-004",
+          "sourceNumber": 4,
+          "type": "likert",
+          "prompt": "I feel confident interpreting percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 5
+          }
+        },
+        {
+          "id": "post-research-attitudes-005",
+          "sourceNumber": 5,
+          "type": "likert",
+          "prompt": "I am comfortable working with rates and ratios.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 6
+          }
+        },
+        {
+          "id": "post-research-attitudes-006",
+          "sourceNumber": 6,
+          "type": "likert",
+          "prompt": "I feel confident reading bivariate tables that compare two variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 7
+          }
+        },
+        {
+          "id": "post-research-attitudes-007",
+          "sourceNumber": 7,
+          "type": "likert",
+          "prompt": "I feel confident reading and interpreting graphs.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 8
+          }
+        },
+        {
+          "id": "post-research-attitudes-008",
+          "sourceNumber": 8,
+          "type": "likert",
+          "prompt": "I feel confident distinguishing between row percentages and column percentages in a table.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 9
+          }
+        },
+        {
+          "id": "post-research-attitudes-009",
+          "sourceNumber": 9,
+          "type": "likert",
+          "prompt": "I feel confident explaining the results of quantitative analysis in words.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 10
+          }
+        },
+        {
+          "id": "post-research-attitudes-010",
+          "sourceNumber": 10,
+          "type": "likert",
+          "prompt": "I am interested in learning more about quantitative data analysis.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 11
+          }
+        },
+        {
+          "id": "post-research-attitudes-011",
+          "sourceNumber": 11,
+          "type": "likert",
+          "prompt": "It is fun to work with spreadsheet software.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 12
+          }
+        },
+        {
+          "id": "post-research-attitudes-012",
+          "sourceNumber": 12,
+          "type": "likert",
+          "prompt": "I find working with data and numbers enjoyable.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 13
+          }
+        },
+        {
+          "id": "post-research-attitudes-013",
+          "sourceNumber": 13,
+          "type": "likert",
+          "prompt": "I enjoy quantitative problems that challenge me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 14
+          }
+        },
+        {
+          "id": "post-research-attitudes-014",
+          "sourceNumber": 14,
+          "type": "likert",
+          "prompt": "Courses that require working with data and numbers are stressful for me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 15
+          }
+        },
+        {
+          "id": "post-research-attitudes-015",
+          "sourceNumber": 15,
+          "type": "likert",
+          "prompt": "Data analysis is a difficult skill.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 16
+          }
+        },
+        {
+          "id": "post-research-attitudes-016",
+          "sourceNumber": 16,
+          "type": "likert",
+          "prompt": "Data analysis is boring.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 17
+          }
+        },
+        {
+          "id": "post-research-attitudes-017",
+          "sourceNumber": 17,
+          "type": "likert",
+          "prompt": "I try to avoid taking math and quantitative courses.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 18
+          }
+        },
+        {
+          "id": "post-research-attitudes-018",
+          "sourceNumber": 18,
+          "type": "likert",
+          "prompt": "I plan to take the bare minimum number of math or statistics courses I need to take in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 19
+          }
+        },
+        {
+          "id": "post-research-attitudes-019",
+          "sourceNumber": 19,
+          "type": "likert",
+          "prompt": "Data analysis is helpful for understanding content in non-math classes.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 20
+          }
+        },
+        {
+          "id": "post-research-attitudes-020",
+          "sourceNumber": 20,
+          "type": "likert",
+          "prompt": "Data analysis is an important skill to learn in college.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 21
+          }
+        },
+        {
+          "id": "post-research-attitudes-021",
+          "sourceNumber": 21,
+          "type": "likert",
+          "prompt": "The best way to learn data analysis is through class projects.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 22
+          }
+        },
+        {
+          "id": "post-research-attitudes-022",
+          "sourceNumber": 22,
+          "type": "likert",
+          "prompt": "Learning to analyze data is worth the effort.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 23
+          }
+        },
+        {
+          "id": "post-research-attitudes-023",
+          "sourceNumber": 23,
+          "type": "likert",
+          "prompt": "Data analysis skills will be useful for my future education or career.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 24
+          }
+        },
+        {
+          "id": "post-research-attitudes-024",
+          "sourceNumber": 24,
+          "type": "likert",
+          "prompt": "Being good at data analysis will help me make decisions about issues that matter to me or my community.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 25
+          }
+        },
+        {
+          "id": "post-research-attitudes-025",
+          "sourceNumber": 25,
+          "type": "likert",
+          "prompt": "All people have the ability to improve their quantitative skills.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 26
+          }
+        },
+        {
+          "id": "post-research-attitudes-026",
+          "sourceNumber": 26,
+          "type": "likert",
+          "prompt": "I think of myself as a math/quantitative person.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 679,
+            "tableRow": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Experience with the Independent Study",
+      "sourcePartNumber": 2,
+      "instructions": [
+        "Note:  Use the same 1-7 agreement scale shown in Part 1."
+      ],
+      "questions": [
+        {
+          "id": "post-research-experience-001",
+          "sourceNumber": 1,
+          "type": "likert",
+          "prompt": "The topic of my independent study was meaningful to me.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 2
+          }
+        },
+        {
+          "id": "post-research-experience-002",
+          "sourceNumber": 2,
+          "type": "likert",
+          "prompt": "I had a meaningful role in developing or refining the research question.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 3
+          }
+        },
+        {
+          "id": "post-research-experience-003",
+          "sourceNumber": 3,
+          "type": "likert",
+          "prompt": "Working with real-world data made the project more interesting.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 4
+          }
+        },
+        {
+          "id": "post-research-experience-004",
+          "sourceNumber": 4,
+          "type": "likert",
+          "prompt": "The project helped me identify independent and dependent variables.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 5
+          }
+        },
+        {
+          "id": "post-research-experience-005",
+          "sourceNumber": 5,
+          "type": "likert",
+          "prompt": "The project strengthened my ability to calculate and interpret rates, ratios, or percentages.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 6
+          }
+        },
+        {
+          "id": "post-research-experience-006",
+          "sourceNumber": 6,
+          "type": "likert",
+          "prompt": "Making tables helped me recognize patterns in the data.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 7
+          }
+        },
+        {
+          "id": "post-research-experience-007",
+          "sourceNumber": 7,
+          "type": "likert",
+          "prompt": "Making graphs helped me communicate the results.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 8
+          }
+        },
+        {
+          "id": "post-research-experience-008",
+          "sourceNumber": 8,
+          "type": "likert",
+          "prompt": "The project strengthened my ability to interpret bivariate relationships.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 9
+          }
+        },
+        {
+          "id": "post-research-experience-009",
+          "sourceNumber": 9,
+          "type": "likert",
+          "prompt": "My mentor was available when I needed guidance.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 10
+          }
+        },
+        {
+          "id": "post-research-experience-010",
+          "sourceNumber": 10,
+          "type": "likert",
+          "prompt": "The feedback I received from my mentor improved my project.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 11
+          }
+        },
+        {
+          "id": "post-research-experience-011",
+          "sourceNumber": 11,
+          "type": "likert",
+          "prompt": "I felt comfortable asking my mentor questions.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 12
+          }
+        },
+        {
+          "id": "post-research-experience-012",
+          "sourceNumber": 12,
+          "type": "likert",
+          "prompt": "My mentor encouraged me to make my own research decisions.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 13
+          }
+        },
+        {
+          "id": "post-research-experience-013",
+          "sourceNumber": 13,
+          "type": "likert",
+          "prompt": "Overall, working with my mentor was a positive experience.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 14
+          }
+        },
+        {
+          "id": "post-research-experience-014",
+          "sourceNumber": 14,
+          "type": "likert",
+          "prompt": "The project strengthened my identity as a STEM researcher.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 15
+          }
+        },
+        {
+          "id": "post-research-experience-015",
+          "sourceNumber": 15,
+          "type": "likert",
+          "prompt": "The project increased my interest in taking additional STEM or data-focused courses.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 16
+          }
+        },
+        {
+          "id": "post-research-experience-016",
+          "sourceNumber": 16,
+          "type": "likert",
+          "prompt": "The project increased my interest in participating in research again.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 17
+          }
+        },
+        {
+          "id": "post-research-experience-017",
+          "sourceNumber": 17,
+          "type": "likert",
+          "prompt": "The project influenced my thinking about my future educational goals.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 18
+          }
+        },
+        {
+          "id": "post-research-experience-018",
+          "sourceNumber": 18,
+          "type": "likert",
+          "prompt": "The project influenced my thinking about possible careers.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 19
+          }
+        },
+        {
+          "id": "post-research-experience-019",
+          "sourceNumber": 19,
+          "type": "likert",
+          "prompt": "I would be interested in completing another project that uses real-world data.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 20
+          }
+        },
+        {
+          "id": "post-research-experience-020",
+          "sourceNumber": 20,
+          "type": "likert",
+          "prompt": "I would recommend completing an independent research project like this to other students.",
+          "scaleId": "agreement-7",
+          "required": null,
+          "source": {
+            "blockIndex": 682,
+            "tableRow": 21
+          }
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": "Project Reflection",
+      "sourcePartNumber": 2,
+      "instructions": [],
+      "questions": [
+        {
+          "id": "post-research-reflection-001",
+          "sourceNumber": 1,
+          "type": "long_text",
+          "prompt": "Briefly state your research question or project topic, your most important finding, and the quantitative evidence that best supports it.",
+          "required": null,
+          "source": {
+            "blockIndex": 684
+          }
+        },
+        {
+          "id": "post-research-reflection-002",
+          "sourceNumber": 2,
+          "type": "long_text",
+          "prompt": "What was the most valuable or interesting part of completing your own research project?",
+          "required": null,
+          "source": {
+            "blockIndex": 687
+          }
+        },
+        {
+          "id": "post-research-reflection-003",
+          "sourceNumber": 3,
+          "type": "long_text",
+          "prompt": "Describe your experience working with your mentor. What did your mentor do that was most helpful?",
+          "required": null,
+          "source": {
+            "blockIndex": 690
+          }
+        },
+        {
+          "id": "post-research-reflection-004",
+          "sourceNumber": 4,
+          "type": "long_text",
+          "prompt": "Did this experience affect the way you think about yourself as a STEM researcher? Please explain.",
+          "required": null,
+          "source": {
+            "blockIndex": 693
+          }
+        },
+        {
+          "id": "post-research-reflection-005",
+          "sourceNumber": 5,
+          "type": "long_text",
+          "prompt": "Did this experience affect your future educational or career aspirations? If so, how?",
+          "required": null,
+          "source": {
+            "blockIndex": 696
+          }
+        },
+        {
+          "id": "post-research-reflection-006",
+          "sourceNumber": 6,
+          "type": "long_text",
+          "prompt": "How did the gamification platform prepare you for the independent study, if at all?",
+          "required": null,
+          "source": {
+            "blockIndex": 699
+          }
+        }
+      ]
+    },
+    {
+      "id": "cognitive",
+      "title": "Cognitive Questions",
+      "sourcePartNumber": 3,
+      "titleOrigin": "source",
+      "instructions": [
+        "Select the best answer for each question. A calculator and spreadsheet software may be used for this portion of the assessment, but please do not use any artificial intelligence to look up the answers.  We use this assessment to evaluate the effectiveness of our program and to design instructional practices that best serve students, but not to evaluate individual students.  Your performance on the assessment does not affect your standing in the SHINE program."
+      ],
+      "questions": [
+        {
+          "id": "post-research-cognitive-001",
+          "sourceNumber": 1,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Student 1 is a transfer student.",
+              "content": [],
+              "source": {
+                "blockIndex": 709
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Student 4 reviewed 8 sources.",
+              "content": [],
+              "source": {
+                "blockIndex": 710
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Student 6 is a transfer student and reviewed 11 sources.",
+              "content": [],
+              "source": {
+                "blockIndex": 711
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Student 7 is a transfer student and reviewed 14 sources.",
+              "content": [],
+              "source": {
+                "blockIndex": 712
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 708
+          },
+          "skillId": "row_level_table_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-002",
+          "sourceNumber": 2,
+          "type": "single_choice",
+          "prompt": "What is the average number of sources reviewed by transfer students?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "7",
+              "content": [],
+              "source": {
+                "blockIndex": 715
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "8",
+              "content": [],
+              "source": {
+                "blockIndex": 716
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "9",
+              "content": [],
+              "source": {
+                "blockIndex": 717
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "10",
+              "content": [],
+              "source": {
+                "blockIndex": 718
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 714
+          },
+          "skillId": "subgroup_mean",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-003",
+          "sourceNumber": 3,
+          "type": "single_choice",
+          "prompt": "What percentage of first-year students reviewed 11 sources or more?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-001"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 721
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 722
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 723
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "75%",
+              "content": [],
+              "source": {
+                "blockIndex": 724
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 720
+          },
+          "skillId": "conditional_percentage",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-004",
+          "sourceNumber": 4,
+          "type": "single_choice",
+          "prompt": "A researcher asks whether the number of hours spent analyzing data predicts confidence in explaining the project findings. Which variables are the independent and dependent variables?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Independent variable: confidence; dependent variable: analysis hours",
+              "content": [],
+              "source": {
+                "blockIndex": 727
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Independent variable: analysis hours; dependent variable: confidence",
+              "content": [],
+              "source": {
+                "blockIndex": 728
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Both variables are dependent variables",
+              "content": [],
+              "source": {
+                "blockIndex": 729
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The variables cannot be identified from the question",
+              "content": [],
+              "source": {
+                "blockIndex": 730
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 726
+          },
+          "skillId": "independent_dependent_variables",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-005",
+          "sourceNumber": 5,
+          "type": "single_choice",
+          "prompt": "Which table shown below would be most helpful if your objective is to compare the rates of submission of a revised analysis among those who worked with a mentor vs. those who didn’t?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Worked with mentor",
+                      "No mentor"
+                    ],
+                    [
+                      "Submitted a revision",
+                      "62.5%",
+                      "75%"
+                    ],
+                    [
+                      "Did not",
+                      "37.5%",
+                      "25%"
+                    ],
+                    [
+                      "Total",
+                      "100%",
+                      "100%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 735
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 734
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Worked with mentor",
+                      "No mentor"
+                    ],
+                    [
+                      "Submitted a revision",
+                      "35.7%",
+                      "64.3%"
+                    ],
+                    [
+                      "Did not",
+                      "50%",
+                      "50%"
+                    ],
+                    [
+                      "Total",
+                      "40%",
+                      "60%"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 738
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 737
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "table",
+                  "rows": [
+                    [
+                      "Outcome",
+                      "Worked with mentor",
+                      "No mentor"
+                    ],
+                    [
+                      "Submitted a revision",
+                      "5",
+                      "9"
+                    ],
+                    [
+                      "Did not",
+                      "3",
+                      "3"
+                    ],
+                    [
+                      "Total",
+                      "8",
+                      "12"
+                    ]
+                  ],
+                  "source": {
+                    "blockIndex": 741
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 740
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "All three tables are equally useful for comparing rates between the groups.",
+              "content": [],
+              "source": {
+                "blockIndex": 743
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 733
+          },
+          "skillId": "bivariate_table_selection",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-006",
+          "sourceNumber": 6,
+          "type": "single_choice",
+          "prompt": "Which graph shown below would be most helpful if your objective is to compare the rates of submission of a revised analysis among those who worked with a mentor vs. those who didn’t?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image9",
+                  "alt": "post-research-cognitive-006, option A: Proportion submitting a revision by mentor status. Bar chart.",
+                  "source": {
+                    "blockIndex": 749
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 748
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image13",
+                  "alt": "post-research-cognitive-006, option B: Proportion of revision submitters by mentor status. Bar chart.",
+                  "source": {
+                    "blockIndex": 751
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 750
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image7",
+                  "alt": "post-research-cognitive-006, option C: Number of revision submitters by mentor status. Bar chart.",
+                  "source": {
+                    "blockIndex": 753
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 752
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "",
+              "content": [
+                {
+                  "type": "image",
+                  "assetId": "image15",
+                  "alt": "post-research-cognitive-006, option D: Proportion submitting a revision among all students. Bar chart.",
+                  "source": {
+                    "blockIndex": 755
+                  }
+                }
+              ],
+              "source": {
+                "blockIndex": 754
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 746
+          },
+          "skillId": "bivariate_graph_selection",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-007",
+          "sourceNumber": 7,
+          "type": "single_choice",
+          "prompt": "Which conclusion is best supported by the data?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-002"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Mentored students were more likely to submit a revision: 75% compared with 62.5%.",
+              "content": [],
+              "source": {
+                "blockIndex": 758
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Students without mentors were more likely to submit a revision: 75% compared with 62.5%.",
+              "content": [],
+              "source": {
+                "blockIndex": 759
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "The two groups submitted revisions at the same rate.",
+              "content": [],
+              "source": {
+                "blockIndex": 760
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The data show that mentoring causes students to submit a revision.",
+              "content": [],
+              "source": {
+                "blockIndex": 761
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 757
+          },
+          "skillId": "bivariate_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-008",
+          "sourceNumber": 8,
+          "type": "single_choice",
+          "prompt": "Based on the graph, how many students reviewed 9 or more sources?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-003"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "7",
+              "content": [],
+              "source": {
+                "blockIndex": 766
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "12",
+              "content": [],
+              "source": {
+                "blockIndex": 767
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "20",
+              "content": [],
+              "source": {
+                "blockIndex": 768
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "25",
+              "content": [],
+              "source": {
+                "blockIndex": 769
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 765
+          },
+          "skillId": "bar_graph_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-009",
+          "sourceNumber": 9,
+          "type": "single_choice",
+          "prompt": "How many missing labels did the workshop group have in Weekly Draft 4?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "6",
+              "content": [],
+              "source": {
+                "blockIndex": 775
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "8",
+              "content": [],
+              "source": {
+                "blockIndex": 776
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "10",
+              "content": [],
+              "source": {
+                "blockIndex": 777
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "11",
+              "content": [],
+              "source": {
+                "blockIndex": 778
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 774
+          },
+          "skillId": "line_graph_reading",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-010",
+          "sourceNumber": 10,
+          "type": "single_choice",
+          "prompt": "Which statement best describes the pattern in the graph?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-004"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Missing labels increased in both groups.",
+              "content": [],
+              "source": {
+                "blockIndex": 781
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Missing labels decreased in both groups, and the decrease was larger in the workshop group.",
+              "content": [],
+              "source": {
+                "blockIndex": 782
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Only the comparison group improved.",
+              "content": [],
+              "source": {
+                "blockIndex": 783
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "There was no relationship between weekly draft number and missing labels.",
+              "content": [],
+              "source": {
+                "blockIndex": 784
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 780
+          },
+          "skillId": "line_graph_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-011",
+          "sourceNumber": 11,
+          "type": "single_choice",
+          "prompt": "What percentage of students who did not present their research were first-year students?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "32%",
+              "content": [],
+              "source": {
+                "blockIndex": 791
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "38%",
+              "content": [],
+              "source": {
+                "blockIndex": 792
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "44%",
+              "content": [],
+              "source": {
+                "blockIndex": 793
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Cannot be determined from the data",
+              "content": [],
+              "source": {
+                "blockIndex": 794
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 790
+          },
+          "skillId": "percentage_table_limits",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-012",
+          "sourceNumber": 12,
+          "type": "single_choice",
+          "prompt": "Which statement is supported by the table?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-005"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "First-year students made up a larger percentage of research presenters than of all project students.",
+              "content": [],
+              "source": {
+                "blockIndex": 796
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Transfer students made up a larger percentage of research presenters than of all project students.",
+              "content": [],
+              "source": {
+                "blockIndex": 797
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Continuing students made up a smaller percentage of research presenters than of all project students.",
+              "content": [],
+              "source": {
+                "blockIndex": 798
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The table shows that presenting research caused students to complete their projects.",
+              "content": [],
+              "source": {
+                "blockIndex": 799
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 795
+          },
+          "skillId": "percentage_table_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-013",
+          "sourceNumber": 13,
+          "type": "single_choice",
+          "prompt": "Across several projects, 9 records were missing a value out of 3,000 records examined. What percentage of the observations does this represent?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "0.03%",
+              "content": [],
+              "source": {
+                "blockIndex": 802
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "0.3%",
+              "content": [],
+              "source": {
+                "blockIndex": 803
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "3%",
+              "content": [],
+              "source": {
+                "blockIndex": 804
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "30%",
+              "content": [],
+              "source": {
+                "blockIndex": 805
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 801
+          },
+          "skillId": "percentage_rate",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-014",
+          "sourceNumber": 14,
+          "type": "single_choice",
+          "prompt": "Which statement correctly interprets 0.06%?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "About 6 out of every 10,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 808
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "About 6 out of every 1,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 809
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "About 6 out of every 100.",
+              "content": [],
+              "source": {
+                "blockIndex": 810
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "About 60 out of every 1,000.",
+              "content": [],
+              "source": {
+                "blockIndex": 811
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 807
+          },
+          "skillId": "percentage_interpretation",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-015",
+          "sourceNumber": 15,
+          "type": "single_choice",
+          "prompt": "A project report included 12 quantitative findings and 30 qualitative findings. What is the simplified ratio of the first quantity to the second?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "1:3",
+              "content": [],
+              "source": {
+                "blockIndex": 814
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "2:5",
+              "content": [],
+              "source": {
+                "blockIndex": 815
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "6:5",
+              "content": [],
+              "source": {
+                "blockIndex": 816
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "12:44",
+              "content": [],
+              "source": {
+                "blockIndex": 817
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 813
+          },
+          "skillId": "ratios",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-016",
+          "sourceNumber": 16,
+          "type": "single_choice",
+          "prompt": "The number of project reports with complete graph labels increased from 80 to 100. What was the percentage increase?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "10%",
+              "content": [],
+              "source": {
+                "blockIndex": 820
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "20%",
+              "content": [],
+              "source": {
+                "blockIndex": 821
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "25%",
+              "content": [],
+              "source": {
+                "blockIndex": 822
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "40%",
+              "content": [],
+              "source": {
+                "blockIndex": 823
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 819
+          },
+          "skillId": "percentage_change",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-017",
+          "sourceNumber": 17,
+          "type": "single_choice",
+          "prompt": "Among students who received feedback, what percentage revised their conclusion?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "35%",
+              "content": [],
+              "source": {
+                "blockIndex": 831
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50%",
+              "content": [],
+              "source": {
+                "blockIndex": 832
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "60%",
+              "content": [],
+              "source": {
+                "blockIndex": 833
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "70%",
+              "content": [],
+              "source": {
+                "blockIndex": 834
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 830
+          },
+          "skillId": "column_percentage",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-018",
+          "sourceNumber": 18,
+          "type": "single_choice",
+          "prompt": "Which statement correctly compares the “Yes” percentages within the two groups?",
+          "required": null,
+          "stimulusIds": [
+            "post-research-stimulus-006"
+          ],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "70% of students who received feedback and 50% of students who did not receive feedback revised their conclusion.",
+              "content": [],
+              "source": {
+                "blockIndex": 837
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "50% of students who received feedback and 70% of students who did not receive feedback revised their conclusion.",
+              "content": [],
+              "source": {
+                "blockIndex": 838
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "35% of students who received feedback and 25% of students who did not receive feedback revised their conclusion.",
+              "content": [],
+              "source": {
+                "blockIndex": 839
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "The groups cannot be compared because the table contains counts.",
+              "content": [],
+              "source": {
+                "blockIndex": 840
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 836
+          },
+          "skillId": "column_percentage_comparison",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-019",
+          "sourceNumber": 19,
+          "type": "single_choice",
+          "prompt": "Assume you entered survey data about mentor participation and type of data visualization used in the final project into Excel or Google Sheets. You want to compare the percentage distribution of visualization types according to mentor participation. Which specific spreadsheet command would allow you to do this?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "Drop Cap",
+              "content": [],
+              "source": {
+                "blockIndex": 843
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "Pivot Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 844
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "Quick Tables",
+              "content": [],
+              "source": {
+                "blockIndex": 845
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "Correlation",
+              "content": [],
+              "source": {
+                "blockIndex": 846
+              }
+            },
+            {
+              "id": "E",
+              "label": "E",
+              "text": "Flash Fill",
+              "content": [],
+              "source": {
+                "blockIndex": 847
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 842
+          },
+          "skillId": "spreadsheet_pivot_tables",
+          "skillMappingStatus": "source_map"
+        },
+        {
+          "id": "post-research-cognitive-020",
+          "sourceNumber": 20,
+          "type": "single_choice",
+          "prompt": "A researcher records the number of hours spent analyzing data and confidence in presenting the findings for five students. Based on the data below, which is the best estimate of the correlation?",
+          "required": null,
+          "stimulusIds": [],
+          "content": [
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Analysis hours",
+                  "Confidence score"
+                ],
+                [
+                  "2",
+                  "2"
+                ],
+                [
+                  "4",
+                  "3"
+                ],
+                [
+                  "6",
+                  "4"
+                ],
+                [
+                  "8",
+                  "5"
+                ],
+                [
+                  "10",
+                  "6"
+                ]
+              ],
+              "source": {
+                "blockIndex": 850
+              }
+            }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "label": "A",
+              "text": "+0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 852
+              }
+            },
+            {
+              "id": "B",
+              "label": "B",
+              "text": "+0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 853
+              }
+            },
+            {
+              "id": "C",
+              "label": "C",
+              "text": "-0.2",
+              "content": [],
+              "source": {
+                "blockIndex": 854
+              }
+            },
+            {
+              "id": "D",
+              "label": "D",
+              "text": "-0.9",
+              "content": [],
+              "source": {
+                "blockIndex": 855
+              }
+            }
+          ],
+          "source": {
+            "blockIndex": 849
+          },
+          "skillId": "correlation",
+          "skillMappingStatus": "source_map"
+        }
+      ]
+    }
+  ]
+}

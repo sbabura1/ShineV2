@@ -1,0 +1,986 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "missionId": "vitalis-mission-02",
+  "difficulty": "intermediate",
+  "difficultyLabel": "Intermediate",
+  "status": "draft",
+  "questions": [
+    {
+      "id": "vitalis-q002-intermediate",
+      "sourceNumber": 2,
+      "type": "single_choice",
+      "prompt": "What is the average number of study hours among part-time students?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-001"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "6",
+          "content": [],
+          "source": {
+            "blockIndex": 38
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "7",
+          "content": [],
+          "source": {
+            "blockIndex": 39
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "8",
+          "content": [],
+          "source": {
+            "blockIndex": 40
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "9",
+          "content": [],
+          "source": {
+            "blockIndex": 41
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-002",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F115"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "subgroup_mean",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 2,
+      "skillLabel": "Conditional mean",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Filter to part-time students before you add study hours or count students.",
+        "stuck": {
+          "introduction": "Calculate the mean for the requested enrollment group.",
+          "steps": [
+            "Mark only the rows whose enrollment status is Part-time.",
+            "Add the study hours from those rows and count how many marked students there are.",
+            "Divide that sum by that count, and compare the resulting study-hours average with the options."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q003-intermediate",
+      "sourceNumber": 3,
+      "type": "single_choice",
+      "prompt": "What percentage of full-time students studied 10 hours or more?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-001"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "25%",
+          "content": [],
+          "source": {
+            "blockIndex": 44
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "40%",
+          "content": [],
+          "source": {
+            "blockIndex": 45
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "50%",
+          "content": [],
+          "source": {
+            "blockIndex": 46
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "75%",
+          "content": [],
+          "source": {
+            "blockIndex": 47
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-003",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F116"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "conditional_percentage",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 3,
+      "skillLabel": "Conditional percentages",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Full-time students form the denominator; studying at least 10 hours is the condition to count within that group.",
+        "stuck": {
+          "introduction": "Separate the population from the condition being measured.",
+          "steps": [
+            "Count all Full-time students in the table.",
+            "Among only those students, count how many studied 10 hours or more. Include students who studied exactly 10 hours.",
+            "Divide the second count by the first count and multiply by 100."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q013-intermediate",
+      "sourceNumber": 13,
+      "type": "single_choice",
+      "prompt": "What percentage of non-tutoring participants were first-year students?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-005"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "36%",
+          "content": [],
+          "source": {
+            "blockIndex": 168
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "52%",
+          "content": [],
+          "source": {
+            "blockIndex": 169
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "58%",
+          "content": [],
+          "source": {
+            "blockIndex": 170
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Cannot be determined from the data",
+          "content": [],
+          "source": {
+            "blockIndex": 171
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-013",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F119"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "percentage_table_limits",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 13,
+      "skillLabel": "Denominators and limits of percentage inference",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "The table describes tutoring participants and all students; the question asks about a different group, nonparticipants.",
+        "stuck": {
+          "introduction": "Identify the counts that a nonparticipant percentage would require.",
+          "steps": [
+            "Write the desired percentage as first-year nonparticipants divided by all nonparticipants, multiplied by 100.",
+            "List the population totals you would need to derive those two counts from the tutoring-participant and all-student percentages.",
+            "Decide whether those totals are provided before choosing a numerical answer. Percentages of different populations cannot simply be subtracted to obtain the requested share."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q014-intermediate",
+      "sourceNumber": 14,
+      "type": "single_choice",
+      "prompt": "Which statement is supported by the table?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-005"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "First-year students made up a larger percentage of tutoring participants than of all students",
+          "content": [],
+          "source": {
+            "blockIndex": 174
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "Transfer students made up a larger percentage of tutoring participants than of all students",
+          "content": [],
+          "source": {
+            "blockIndex": 175
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "Continuing students made up a smaller percentage of tutoring participants than of all students",
+          "content": [],
+          "source": {
+            "blockIndex": 176
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "The table shows that tutoring caused students to remain in college",
+          "content": [],
+          "source": {
+            "blockIndex": 177
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-014",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F120"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "percentage_table_interpretation",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 14,
+      "skillLabel": "Comparing percentage distributions",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Compare the same class year across the two columns, and distinguish composition from an explanation of what tutoring caused.",
+        "stuck": {
+          "introduction": "Use the table to describe participation, without adding an unsupported outcome claim.",
+          "steps": [
+            "For each class year, compare its share of tutoring participants with its share of all students.",
+            "Record whether each share is larger, smaller, or equal in the tutoring-participant column.",
+            "Check each option against those comparisons and ask whether the table actually measures the outcome or cause mentioned in the option."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q015-intermediate",
+      "sourceNumber": 15,
+      "type": "single_choice",
+      "prompt": "A campus clinic recorded 3 flu cases among 1,000 students during one month. What percentage of the observations does this represent?",
+      "required": null,
+      "stimulusIds": [],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "0.03%",
+          "content": [],
+          "source": {
+            "blockIndex": 180
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "0.3%",
+          "content": [],
+          "source": {
+            "blockIndex": 181
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "3%",
+          "content": [],
+          "source": {
+            "blockIndex": 182
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "30%",
+          "content": [],
+          "source": {
+            "blockIndex": 183
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-015",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F121"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "percentage_rate",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 15,
+      "skillLabel": "Calculating a small percentage",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Convert cases out of all students to a proportion first, then convert that proportion to a percentage.",
+        "stuck": {
+          "introduction": "Keep the decimal proportion and percentage distinct.",
+          "steps": [
+            "Write flu cases divided by the total number of students observed.",
+            "Perform the division, then multiply the proportion by 100 to express it as a percentage.",
+            "Check the decimal place: the event count is much smaller than the population total, so assess whether your percentage has a reasonable size."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q017-intermediate",
+      "sourceNumber": 17,
+      "type": "single_choice",
+      "prompt": "A city with 80,000 residents reported 240 burglaries during one year.  What was the burglary rate per 1,000 residents?",
+      "required": null,
+      "stimulusIds": [],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "0.3 per 1,000",
+          "content": [],
+          "source": {
+            "blockIndex": 191
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "3 per 1,000",
+          "content": [],
+          "source": {
+            "blockIndex": 192
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "30 per 1,000",
+          "content": [],
+          "source": {
+            "blockIndex": 193
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "300 per 1,000",
+          "content": [],
+          "source": {
+            "blockIndex": 194
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-017",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F122"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "rates",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 17,
+      "skillLabel": "Population-standardized rates",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Per 1,000 residents uses a multiplier of 1,000 rather than the multiplier used for a percentage.",
+        "stuck": {
+          "introduction": "Convert the citywide count to the requested population unit.",
+          "steps": [
+            "Divide the number of burglaries by the number of residents.",
+            "Multiply that result by 1,000 to express the rate on a base of 1,000 residents.",
+            "Label the result burglaries per 1,000 residents for the stated year, and check the options for decimal-place errors."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q020-intermediate",
+      "sourceNumber": 20,
+      "type": "single_choice",
+      "prompt": "Among full-time students, what percentage used the database?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-006"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "35%",
+          "content": [],
+          "source": {
+            "blockIndex": 214
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "50%",
+          "content": [],
+          "source": {
+            "blockIndex": 215
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "65%",
+          "content": [],
+          "source": {
+            "blockIndex": 216
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "75%",
+          "content": [],
+          "source": {
+            "blockIndex": 217
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-020",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F123"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "column_percentage",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 20,
+      "skillLabel": "Calculating within-group percentages",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Among full-time students means the denominator comes from the Full-time column, not the grand total.",
+        "stuck": {
+          "introduction": "Read the requested group and outcome from the two-way table.",
+          "steps": [
+            "Find the Yes cell in the Full-time column.",
+            "Find the total for that same column, including both Yes and No responses.",
+            "Divide the Yes count by the Full-time total and multiply by 100."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q021-intermediate",
+      "sourceNumber": 21,
+      "type": "single_choice",
+      "prompt": "Which statement correctly compares the “No” percentages within the two groups?",
+      "required": null,
+      "stimulusIds": [
+        "baseline-stimulus-006"
+      ],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "75% of full-time students and 50% of part-time students didn’t use the database.",
+          "content": [],
+          "source": {
+            "blockIndex": 220
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "50% of full-time students and 70% of part-time students didn’t use the database.",
+          "content": [],
+          "source": {
+            "blockIndex": 221
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "25% of full-time students and 50% of part-time students didn’t use the database.",
+          "content": [],
+          "source": {
+            "blockIndex": 222
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "The groups cannot be compared because the total population counts differs for the two groups.",
+          "content": [],
+          "source": {
+            "blockIndex": 223
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-021",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F124"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "column_percentage_comparison",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 21,
+      "skillLabel": "Comparing within-group percentages",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Calculate a separate No percentage within each enrollment group before comparing them.",
+        "stuck": {
+          "introduction": "Use each enrollment group's own denominator.",
+          "steps": [
+            "For Full-time students, identify the No count and the Full-time total.",
+            "For Part-time students, identify the No count and the Part-time total. Divide each No count by its corresponding total and multiply by 100.",
+            "Compare the two percentages, checking that no option substitutes the grand total or the total No count as the denominator."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q023-intermediate",
+      "sourceNumber": 23,
+      "type": "single_choice",
+      "prompt": "A community clinic records the following waiting times in minutes: 8, 8, 9, 10, 11, 12, 45. Which measure would give the most useful description of a typical waiting time?",
+      "required": null,
+      "stimulusIds": [],
+      "content": [],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "Mean",
+          "content": [],
+          "source": {
+            "blockIndex": 233
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "Median",
+          "content": [],
+          "source": {
+            "blockIndex": 234
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "Mode",
+          "content": [],
+          "source": {
+            "blockIndex": 235
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Range",
+          "content": [],
+          "source": {
+            "blockIndex": 236
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-023",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F125"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "typical_value_with_outlier",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 23,
+      "skillLabel": "Selecting a measure of center with an outlier",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Ask which summary describes where most waiting times lie when one observation is far from the rest.",
+        "stuck": {
+          "introduction": "Compare what the proposed summaries describe.",
+          "steps": [
+            "Order the waiting times and identify the middle observation and the most frequent value.",
+            "Consider how the unusually large observation changes the arithmetic mean compared with the middle observation.",
+            "Decide which measure best matches the question's goal of describing a typical wait. A measure of spread answers a different question."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vitalis-q024-intermediate",
+      "sourceNumber": 24,
+      "type": "single_choice",
+      "prompt": "Please base your answer to the following question on the table below showing the age distributions of patients at two urgent care clinics.  The table shows the ages of patients treated at two urgent care clinics in the last hour before closing.",
+      "required": null,
+      "stimulusIds": [],
+      "content": [
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Age Distribution of Patients at Urgent Care Clinics"
+            ],
+            [
+              "Clinic A",
+              "Clinic B"
+            ],
+            [
+              "48",
+              "25"
+            ],
+            [
+              "49",
+              "40"
+            ],
+            [
+              "50",
+              "50"
+            ],
+            [
+              "51",
+              "60"
+            ],
+            [
+              "52",
+              "75"
+            ]
+          ],
+          "source": {
+            "blockIndex": 240
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "label": "A",
+          "text": "Clinic A has the larger standard deviation because the ages of the patients are closer together",
+          "content": [],
+          "source": {
+            "blockIndex": 242
+          }
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "text": "Clinic B has the larger standard deviation because the ages of the patients are more spread out",
+          "content": [],
+          "source": {
+            "blockIndex": 243
+          }
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "text": "The two clinics have the same standard deviation because they have the same mean",
+          "content": [],
+          "source": {
+            "blockIndex": 244
+          }
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "text": "Standard deviation cannot be compared unless the sample sizes are different",
+          "content": [],
+          "source": {
+            "blockIndex": 245
+          }
+        }
+      ],
+      "source": {
+        "id": "baseline-questions",
+        "questionId": "baseline-cognitive-024",
+        "workbook": {
+          "sheet": "Assessment Map",
+          "cell": "F126"
+        },
+        "reuse": "original_preassessment_question_with_all_shared_stimuli_and_options"
+      },
+      "skillId": "standard_deviation",
+      "skillMappingStatus": "proposed_needs_review",
+      "sectorId": "vitalis",
+      "missionId": "vitalis-mission-02",
+      "sourcePreAssessmentQuestionNumber": 24,
+      "skillLabel": "Interpreting standard deviation and variance",
+      "depthOfKnowledge": {
+        "level": null,
+        "scope": "not_specified_in_source"
+      },
+      "support": {
+        "hint": "Standard deviation describes distances from the mean, rather than the mean alone.",
+        "stuck": {
+          "introduction": "Compare how tightly the ages cluster in each clinic.",
+          "steps": [
+            "Find the mean age for each clinic or locate the center of each age distribution.",
+            "Compare how far the individual ages lie from that center in each clinic; the ranges can provide a first visual check.",
+            "Choose the statement whose description of greater or smaller spread agrees with those distances. Equal sample sizes do not prevent this comparison."
+          ]
+        }
+      }
+    }
+  ],
+  "stimuli": [
+    {
+      "id": "baseline-stimulus-001",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 1-3 use the table below. Eight students reported their enrollment status and the number of hours they studied last week.",
+          "source": {
+            "blockIndex": 28
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Student",
+              "Enrollment status",
+              "Study hours"
+            ],
+            [
+              "1",
+              "Full-time",
+              "8"
+            ],
+            [
+              "2",
+              "Part-time",
+              "6"
+            ],
+            [
+              "3",
+              "Full-time",
+              "10"
+            ],
+            [
+              "4",
+              "Part-time",
+              "4"
+            ],
+            [
+              "5",
+              "Full-time",
+              "12"
+            ],
+            [
+              "6",
+              "Part-time",
+              "8"
+            ],
+            [
+              "7",
+              "Full-time",
+              "6"
+            ],
+            [
+              "8",
+              "Part-time",
+              "10"
+            ]
+          ],
+          "source": {
+            "blockIndex": 29
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-005",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 13-14 use the table below. It compares students who participated in tutoring with all students at the college.",
+          "source": {
+            "blockIndex": 163
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Class-Year Composition of Tutoring Participants and All Students"
+            ],
+            [
+              "Class Year",
+              "Tutoring Participants",
+              "All students"
+            ],
+            [
+              "First-year",
+              "48%",
+              "42%"
+            ],
+            [
+              "Transfer",
+              "32%",
+              "38%"
+            ],
+            [
+              "Continuing",
+              "20%",
+              "20%"
+            ]
+          ],
+          "source": {
+            "blockIndex": 165
+          }
+        }
+      ]
+    },
+    {
+      "id": "baseline-stimulus-006",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Questions 20-21 use the table below, based on a survey about use of a library database.",
+          "source": {
+            "blockIndex": 208
+          }
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Library Database Use by Enrollment Status"
+            ],
+            [
+              "Used database",
+              "Full-time",
+              "Part-time",
+              "Total"
+            ],
+            [
+              "Yes",
+              "105",
+              "80",
+              "185"
+            ],
+            [
+              "No",
+              "35",
+              "80",
+              "115"
+            ],
+            [
+              "Total",
+              "140",
+              "160",
+              "300"
+            ]
+          ],
+          "source": {
+            "blockIndex": 211
+          }
+        }
+      ]
+    }
+  ]
+}

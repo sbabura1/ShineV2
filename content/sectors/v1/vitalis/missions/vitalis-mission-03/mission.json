@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentVersion": "v1-draft",
+  "sectorId": "vitalis",
+  "id": "vitalis-mission-03",
+  "title": "Testing Health Support",
+  "titleStatus": "proposed_in_source",
+  "missionType": "research",
+  "order": 3,
+  "status": "draft",
+  "questionFiles": {
+    "beginning": "missions/vitalis-mission-03/beginning.json",
+    "intermediate": "missions/vitalis-mission-03/intermediate.json",
+    "advanced": "missions/vitalis-mission-03/advanced.json"
+  },
+  "skillIds": [
+    "independent_dependent_variables",
+    "controlling_for_variables"
+  ],
+  "sourcePreAssessmentQuestionNumbers": [
+    4,
+    27
+  ],
+  "preMissionSprintId": null,
+  "sprintSourceStatus": "not_defined_in_supplied_files",
+  "completion": {
+    "requiredDifficultyLevels": null,
+    "passingPercentage": null,
+    "attemptLimit": null,
+    "advancedRequiresInvestigationEvidence": true
+  },
+  "source": {
+    "id": "sector-workbook",
+    "sheet": "Sector Reference",
+    "cell": "H13"
+  }
+}
