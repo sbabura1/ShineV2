@@ -9,8 +9,8 @@ dist/
 /.taste-skill/
 /artifacts/
 
-# This repository is public; assessment keys and answer-bearing authoring tools stay local.
-/content/assessments/*/private/
-/content/sectors/*/*/private/
-/scripts/build-shine-assessments.mjs
-/scripts/validate-vitalis-content.mjs
+# Frontend-only repository. Backend, learning content, tooling and setup notes stay local.
+/backend/
+/content/
+/scripts/
+/FRONTEND_BACKEND_SETUP.md
