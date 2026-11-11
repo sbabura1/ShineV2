@@ -32,7 +32,7 @@ export default function AccountRouter({ onLogout, loadingAlreadyVisible = false 
     if (!account) return undefined;
     const guard = () => {
       const current = window.location.hash.replace(/^#/, '').split('?')[0] || '/';
-      const destination = account.accountRole === 'faculty' ? '/faculty'
+      const destination = account.accountRole === 'faculty' ? (current === '/faculty' || current.startsWith('/faculty/') ? null : '/faculty')
         : ['/', '/welcome', '/login'].includes(current) ? '/identity'
           : current === '/faculty' || current.startsWith('/faculty/') ? '/nexus' : null;
       if (destination && current !== destination) window.history.replaceState({ scalaris: true }, '', `#${destination}`);

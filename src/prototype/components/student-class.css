@@ -1,0 +1,36 @@
+.student-class-connection { min-width: 0; }
+.identity-profile-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.identity-details-card .identity-profile-row > label { display: grid; gap: 8px; font-size: 14px; }
+.identity-profile-row input { margin: 0; }
+.student-class-connection :is(h2, h3) { margin: 6px 0 8px; }
+.student-class-connection h2 { font-size: 20px; }
+.student-class-connection h3 { font-size: 16px; }
+.student-class-connection p { font-size: 14px; line-height: 1.7; }
+.student-class-label, .student-class-connection small { font-size: 12px; color: var(--text-muted); }
+.student-class-join { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px 12px; min-width: 0; }
+.student-class-join > button { align-self: start; margin-top: 29px; min-height: 44px; white-space: nowrap; }
+.student-class-join label, .student-class-post-form label { display: grid; gap: 8px; font-size: 14px; }
+.student-class-join p { grid-column: 1 / -1; margin: 0; font-size: 12px; }
+.student-class-connection :is(input, textarea, select) { width: 100%; min-width: 0; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; min-height: 44px; padding: 10px 12px; font: inherit; }
+.student-class-connection textarea { resize: vertical; }
+.student-class-connection input::placeholder { color: var(--text-muted); opacity: 1; }
+.student-class-connected { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--card-border); }
+.student-class-connected p { margin: 0 0 4px; }
+.student-class-leave { margin-top: 16px; padding: 16px; border: 1px solid var(--border); border-radius: 8px; }
+.student-class-leave button + button { margin-left: 10px; }
+.student-class-conversations { margin-top: 24px; border-top: 1px solid var(--card-border); padding-top: 20px; }
+.student-class-conversations > summary { color: var(--text); font-weight: 600; cursor: pointer; min-height: 44px; }
+.student-class-conversations > summary span { color: var(--text-muted); margin-left: 8px; font-size: 12px; }
+.student-class-post-form { display: grid; gap: 16px; margin-block: 20px; }
+.student-class-post-form button { justify-self: start; }
+.student-class-thread { padding: 22px 0; border-top: 1px solid var(--card-border); }
+.student-class-thread :is(p, h3) { overflow-wrap: anywhere; white-space: pre-wrap; }
+.student-class-thread blockquote { margin: 16px 0; border-left: 2px solid var(--primary); padding: 12px 16px; background: var(--surface-alt); }
+.student-class-thread blockquote strong { font-size: 12px; }
+.student-class-thread blockquote p { margin-bottom: 0; }
+.student-class-connection .student-class-error { color: var(--danger); }
+@media (max-width: 600px) {
+  .identity-profile-row { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .student-class-connected { flex-direction: column; align-items: flex-start; }
+  .student-class-connection :is(input, textarea, select) { font-size: 16px; }
+}

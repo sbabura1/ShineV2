@@ -86,7 +86,7 @@ export default function ScalarisApp({ onLogout, loadingAlreadyVisible = false, i
     setModel(current => ({ ...current, profile: result.profile }));
   };
   let screen;
-  if (route.screen === 'identity') screen = <Identity profile={model.profile} sectors={model.sectors} onSave={saveProfile} onContinue={home} baseline={model.progress.baseline} />;
+  if (route.screen === 'identity') screen = <Identity profile={model.profile} onSave={saveProfile} onContinue={home} baseline={model.progress.baseline} />;
   else if (route.screen === 'baseline') screen = <LearningRun key={`baseline:${launch.nonce}`} kind="ASSESSMENT" startPath="/v1/assessments/baseline/runs"
     existingRunId={model.progress.baseline.submittedAt ? model.progress.baseline.activeRunId : undefined} onBack={home} onProgress={refreshProgress} onGuard={setGuard} />;
   else if (route.screen === 'sector' && sector) screen = <SectorHub key={sector.id} sector={sector} progress={model.progress} onBack={home} onMission={openMission} />;
