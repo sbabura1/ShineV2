@@ -75,7 +75,7 @@ export default function ScalarisApp({ onLogout, loadingAlreadyVisible = false, i
   }, [navigate]);
   const home = () => navigate({ screen: 'nexus', path: '/nexus' });
   const openSector = sectorId => navigate({ screen: 'sector', sectorId, path: `/sectors/${segment(sectorId)}` });
-  const openMission = (missionId, difficulty, options = {}) => navigate({ screen: 'mission', sectorId: 'vitalis', missionId, difficulty, path: `/sectors/vitalis/missions/${segment(missionId)}/${difficulty}` }, options);
+  const openMission = (missionId, difficulty, options = {}) => navigate({ screen: 'mission', sectorId: route.sectorId, missionId, difficulty, path: `/sectors/${segment(route.sectorId)}/missions/${segment(missionId)}/${difficulty}` }, options);
   const logout = async () => { try { await guard.current?.(); await onLogout(); } catch (failure) { setError(failure); } };
   if (!model && !error) return <div className="app"><DelayedBeaconLoading variant={route.screen === 'baseline' ? 'assessment' : 'account'} fullPage initiallyVisible={loadingAlreadyVisible} /></div>;
   if (!model) return <div className="app"><main className="page"><section className="card remote-loading" role="alert"><h1>Unable to load your account</h1><p>{error.message}</p><button type="button" className="btn" onClick={() => setRetry(value => value + 1)}>Retry</button><button type="button" className="btn secondary" onClick={onLogout}>Sign out</button></section></main></div>;
