@@ -61,6 +61,7 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
   const { run, definition, answers } = data;
   const completed = run.status === 'COMPLETED';
   const pendingReview = run.status === 'PENDING_REVIEW';
+  const reviewRun = definition.questions?.some(question => question.type === 'investigation') || false;
   const editable = ['IN_PROGRESS', 'CHANGES_REQUESTED'].includes(run.status) && saveState !== 'conflict';
   const sections = definition.sections;
   const totalPages = sections ? sections.length : definition.questions.length;
@@ -91,7 +92,7 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
         <div className="remote-score-percentage"><strong>{run.result.percentage}%</strong><span>Overall score</span></div>
         <progress className="remote-score-track" aria-label="Overall score" value={run.result.score} max={run.result.maximumScore} />
       </div>}
-      {pendingReview && <p>Your responses and investigation work are saved. Completion will be updated after review.</p>}
+      {pendingReview && <p>{reviewRun ? 'Your responses and investigation work are saved. Completion will be updated after review.' : 'Your submission is saved. Completion will be updated after review.'}</p>}
       {run.result?.feedback && <p>{run.result.feedback}</p>}
       <div className="cta-row">
         {kind === 'MISSION' && onRestart && <button type="button" className="btn secondary" onClick={() => leave(() => onRestart(run.runId))}>Start again</button>}
@@ -99,7 +100,7 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
         {sectorCompleted && <><span className="tag">Sector completed</span><button type="button" className="btn" onClick={() => leave(onNexus)}>Back to the Nexus</button><p>More sectors are coming soon.</p></>}
       </div>
     </section>}
-    {run.status === 'CHANGES_REQUESTED' && <section className="callout"><h2>Changes requested</h2><p>{run.result?.feedback || 'Review your investigation and submit the updated work.'}</p></section>}
+    {reviewRun && run.status === 'CHANGES_REQUESTED' && <section className="callout"><h2>Changes requested</h2><p>{run.result?.feedback || 'Review your investigation and submit the updated work.'}</p></section>}
     <div className="remote-run-layout"><div className="remote-run-work">
     <section className="remote-question-progress" aria-label={isMission ? 'Mission progress' : 'Assessment progress'}>
       <div className="remote-progress-labels"><strong>{isMission ? 'Mission progress' : 'Assessment progress'}</strong><span aria-live="polite" aria-atomic="true">{progress.answered} of {progress.total} questions answered <span className="remote-progress-remaining">· {progress.remaining} left</span></span></div>
