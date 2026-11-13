@@ -792,7 +792,7 @@ td[data-numeric],
 .preassess-lock-banner p { margin: 6px 0 0; }
 
 .nexus-layout {
-  grid-template-columns: minmax(0, 2fr) minmax(300px, 0.72fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
   align-items: start;
 }
@@ -812,9 +812,14 @@ td[data-numeric],
 .sector-node:focus-visible { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-soft); }
 .node-icon { color: var(--secondary-ink); }
 
-.side-stack { gap: 14px; }
-.side-stack > .card { box-shadow: var(--card-glow); }
-.side-stack > .card:first-child { border-top: 2px solid var(--primary); }
+.nexus-resume-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; }
+.nexus-resume-card > div { min-width: 0; }
+.nexus-resume-card h2 { margin: 0; font-size: 1.15rem; }
+.nexus-resume-card p { margin: 8px 0 0; overflow-wrap: anywhere; }
+.nexus-resume-card .btn { flex-shrink: 0; }
+@media (max-width: 760px) {
+  .nexus-resume-card { align-items: flex-start; flex-direction: column; gap: 16px; padding: 20px; }
+}
 
 .stat-row {
   grid-template-columns: repeat(3, minmax(0, 1fr));

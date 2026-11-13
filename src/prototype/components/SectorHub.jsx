@@ -4,8 +4,8 @@ export default function SectorHub({ sector, progress, onBack, onMission }) {
   const [levels, setLevels] = useState({});
   const complete = progress.sectors.find(item => item.sectorId === sector.id)?.completed;
   return <main className="page"><button type="button" className="btn secondary" onClick={onBack}>← Back to Nexus</button><section className="card sector-hero"><SectorIcon sectorId={sector.id} size={34} /><div className="eyebrow">{sector.name} sector</div><h1>{sector.label}</h1><p>{sector.workforceConnection}</p>
-    {complete && <div className="callout"><strong>Sector completed</strong><p>All missions are complete. More sectors are coming soon.</p><button type="button" className="btn" onClick={onBack}>Back to the Nexus</button></div>}
-    <div className="grid cols-3">{sector.sourceSkillGroups?.map(group => <section key={group.id}><h3>{group.title}</h3><ul>{group.items.map(item => <li key={item}>{item}</li>)}</ul></section>)}</div><button type="button" className="btn secondary" disabled>Skills sprint · Coming soon</button></section>
+    {complete && <div className="callout"><strong>Sector completed</strong><p>All missions are complete.</p></div>}
+    <div className="grid cols-3">{sector.sourceSkillGroups?.map(group => <section key={group.id}><h3>{group.title}</h3><ul>{group.items.map(item => <li key={item}>{item}</li>)}</ul></section>)}</div></section>
     <header className="section-title"><div><h2>{sector.name} Missions</h2><p>Every difficulty keeps its own saved work. Completing any one difficulty completes the mission.</p></div></header>
     <div className="mission-card-grid">{sector.missions.map((mission, index) => {
       const difficulty = levels[mission.id] || sector.difficultyLevels[0].id;

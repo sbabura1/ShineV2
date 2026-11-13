@@ -1,0 +1,57 @@
+.topbar.student-topbar {
+  flex-wrap: nowrap;
+  gap: 20px;
+  min-height: 80px;
+  padding: 16px clamp(20px, 4vw, 64px);
+  background: var(--surface);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.student-topbar .brand { flex-shrink: 0; }
+.student-topbar .brand-title { font-size: 16px; font-weight: 750; }
+.student-topbar .brand-sub { font-size: 11px; letter-spacing: .1em; margin-top: 2px; }
+.student-topbar .planet-mark { width: 32px; height: 32px; }
+.student-navbar-actions { display: flex; align-items: center; justify-content: flex-end; gap: 18px; min-width: 0; }
+.student-navbar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  box-shadow: none;
+}
+.student-identity-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 2px 6px 2px 16px;
+  border: 0;
+  border-left: 1px solid var(--card-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  box-shadow: none;
+}
+.student-navbar-avatar { display: block; flex: 0 0 34px; width: 34px; height: 34px; overflow: hidden; border-radius: 50%; background: var(--surface-alt); }
+.student-navbar-name { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 600; }
+.student-navbar-icon:hover, .student-identity-button:hover { background: var(--surface-alt); color: var(--text); }
+@media (max-width: 760px) {
+  .topbar.student-topbar { min-height: 70px; padding: 14px 18px; gap: 12px; }
+  .student-topbar .brand { gap: 9px; }
+  .student-topbar .brand-title { font-size: 13px; }
+  .student-topbar .planet-mark { width: 27px; height: 27px; }
+  .student-navbar-actions { gap: 4px; }
+  .student-identity-button { gap: 7px; padding-left: 10px; padding-right: 2px; }
+  .student-navbar-avatar { flex-basis: 28px; width: 28px; height: 28px; }
+  .student-navbar-name { max-width: 92px; }
+  .student-navbar-icon { flex-basis: 40px; width: 40px; }
+}

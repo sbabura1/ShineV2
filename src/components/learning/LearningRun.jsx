@@ -35,15 +35,15 @@ function Evidence({ question, value = {}, onChange, disabled }) {
   </fieldset>;
 }
 
-export default function LearningRun({ kind, displayTitle, identity, startPath, existingRunId, restart, previousRunId, onBack, onProgress, onGuard, nextMission, onNextMission, onRestart, sectorCompleted, onNexus }) {
-  const state = useRun({ kind, startPath, existingRunId, restart, previousRunId, onProgress });
-  const { data, error, saveState, submitting, loadingPhase, queue, flush, leave, submit, reload } = state;
+export default function LearningRun({ kind, displayTitle, identity, startPath, existingRunId, restart, previousRunId, onBack, onProgress, onGuard, nextMission, onNextMission, onRestart, sectorCompleted, onNexus, accessBlocked, accessVersion, onRefreshAccess }) {
+  const state = useRun({ kind, startPath, existingRunId, restart, previousRunId, onProgress, accessBlocked, accessVersion, onRefreshAccess });
+  const { data, error, saveState, submitting, loadingPhase, queue, flush, prepareLeave, leave, submit, reload, restricted } = state;
   const [page, setPage] = useState(0);
   const initialized = useRef(null);
   useEffect(() => {
     if (['COMPLETED', 'PENDING_REVIEW'].includes(data?.run.status)) window.scrollTo({ top: 0, behavior: 'auto' });
   }, [data?.run.status]);
-  useEffect(() => { onGuard?.(flush); return () => onGuard?.(null); }, [flush, onGuard]);
+  useEffect(() => { onGuard?.(prepareLeave); return () => onGuard?.(null); }, [prepareLeave, onGuard]);
   useEffect(() => {
     if (!data || initialized.current === data.run.runId) return;
     initialized.current = data.run.runId;
@@ -52,6 +52,7 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
       : data.definition.questions.findIndex(question => question.id === data.run.currentQuestionId || question.responses?.some(response => response.id === data.run.currentQuestionId));
     setPage(Math.max(0, index));
   }, [data]);
+  if (restricted) return <main className="page"><section className="card remote-loading" role="status"><h1>Sector access changed</h1><p>Your teacher has not enabled this sector for your class.</p><p>Your previously saved progress is kept. Any unsaved edits stay in this tab while you wait for access to be restored.</p><div className="cta-row"><button type="button" className="btn" onClick={() => leave(onNexus || onBack)}>Back to the Nexus</button><button type="button" className="btn secondary" onClick={() => onRefreshAccess?.().then(() => { if (!data) reload(); }).catch(() => {})}>Check access again</button></div></section></main>;
   if (!data && !error) return <DelayedBeaconLoading variant={loadingPhase} name={displayTitle} onBack={onBack} />;
   if (!data) return <main className="page"><section className="card remote-loading" role="alert">
     <h1>Unable to open your saved work</h1>
@@ -86,7 +87,9 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
       {saveState === 'conflict' && <button type="button" className="btn" onClick={reload}>Reload latest saved work</button>}
     </section>}
     {(completed || pendingReview) && <section className="card remote-result" aria-label="Submission result">
-      <h2>{completed ? 'Completed' : 'Submitted for review'}</h2>
+      <div className="remote-result-heading"><h2>{completed ? 'Completed' : 'Submitted for review'}</h2>
+        {kind === 'MISSION' && onRestart && <button type="button" className="btn secondary" onClick={() => leave(() => onRestart(run.runId))}>Start again</button>}
+      </div>
       {run.result?.maximumScore > 0 && <div className="remote-score-summary">
         <div><p className="remote-score-label">Your score</p><p className="remote-score">{run.result.score} / {run.result.maximumScore} <span>points</span></p></div>
         <div className="remote-score-percentage"><strong>{run.result.percentage}%</strong><span>Overall score</span></div>
@@ -94,11 +97,7 @@ export default function LearningRun({ kind, displayTitle, identity, startPath, e
       </div>}
       {pendingReview && <p>{reviewRun ? 'Your responses and investigation work are saved. Completion will be updated after review.' : 'Your submission is saved. Completion will be updated after review.'}</p>}
       {run.result?.feedback && <p>{run.result.feedback}</p>}
-      <div className="cta-row">
-        {kind === 'MISSION' && onRestart && <button type="button" className="btn secondary" onClick={() => leave(() => onRestart(run.runId))}>Start again</button>}
-        {completed && kind === 'MISSION' && nextMission && !sectorCompleted && <button type="button" className="btn" onClick={() => leave(() => onNextMission(nextMission.id))}>Go to next mission</button>}
-        {sectorCompleted && <><span className="tag">Sector completed</span><button type="button" className="btn" onClick={() => leave(onNexus)}>Back to the Nexus</button><p>More sectors are coming soon.</p></>}
-      </div>
+      {completed && kind === 'MISSION' && nextMission && !sectorCompleted && <div className="cta-row"><button type="button" className="btn" onClick={() => leave(() => onNextMission(nextMission.id))}>Go to next mission</button></div>}
     </section>}
     {reviewRun && run.status === 'CHANGES_REQUESTED' && <section className="callout"><h2>Changes requested</h2><p>{run.result?.feedback || 'Review your investigation and submit the updated work.'}</p></section>}
     <div className="remote-run-layout"><div className="remote-run-work">

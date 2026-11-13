@@ -71,19 +71,27 @@
 .remote-question-card .remote-question:last-child { margin-bottom: 0; }
 .remote-choice input { accent-color: var(--primary); }
 .remote-choice { font-size: 15px; }
-.remote-result { padding: clamp(20px, 3vw, 32px); }
-.remote-result h2 { margin: 0 0 20px; font-size: 24px; }
-.remote-score-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; max-width: 700px; }
+.remote-result { padding: 20px 24px; }
+.remote-result-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; }
+.remote-result-heading .btn { flex-shrink: 0; }
+.remote-result h2 { margin: 0; font-size: 24px; }
+.remote-score-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; width: 100%; }
 .remote-score-label { margin: 0 0 4px; color: var(--text-muted); font-size: 14px; }
 .remote-score { margin: 0; font-size: clamp(28px, 3vw, 36px); font-weight: 650; font-variant-numeric: tabular-nums; }
 .remote-score span { color: var(--text-muted); font-size: 14px; font-weight: 400; }
 .remote-score-percentage { display: grid; align-content: center; gap: 4px; text-align: right; }
 .remote-score-percentage strong { font-size: 28px; font-variant-numeric: tabular-nums; }
 .remote-score-percentage span { color: var(--text-muted); font-size: 13px; }
-.remote-score-track { grid-column: 1 / -1; margin: 0 0 12px; color: var(--success); }
+.remote-score-track { grid-column: 1 / -1; margin: 0; color: var(--success); }
 .remote-score-track::-webkit-progress-value { background: var(--success); }
 .remote-score-track::-moz-progress-bar { background: var(--success); }
 .remote-result .cta-row { justify-content: flex-start; flex-wrap: wrap; margin-top: 20px; }
+@media (max-width: 480px) {
+  .remote-result { padding: 16px; }
+  .remote-result h2 { font-size: 20px; }
+  .remote-result-heading { gap: 12px; }
+  .remote-result-heading .btn { min-height: 44px; padding: 8px 12px; font-size: 14px; }
+}
 .mission-beacon { position: sticky; top: 100px; min-width: 0; max-height: calc(100dvh - 116px); overflow-y: auto; padding: 22px; color: var(--text); background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius-panel); scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
 .mission-beacon header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .mission-beacon h2 { margin: 0; font-size: 20px; }

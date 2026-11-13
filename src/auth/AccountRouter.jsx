@@ -51,5 +51,5 @@ export default function AccountRouter({ onLogout, loadingAlreadyVisible = false 
   </section></main></div>;
   if (!account || !routeReady) return loading ? <BeaconLoading variant={window.location.hash.startsWith('#/assessments/pre') ? 'assessment' : 'account'} fullPage /> : <div className="app beacon-loading-placeholder beacon-loading-placeholder--full" aria-busy="true" />;
   if (account.accountRole === 'faculty') return <FacultyDashboard profile={account.profile} onLogout={onLogout} />;
-  return <ScalarisApp initialProfile={account.profile} onLogout={onLogout} loadingAlreadyVisible={loadingShown.current} />;
+  return <ScalarisApp initialProfile={account.profile} initialUserId={account.userId} onLogout={onLogout} loadingAlreadyVisible={loadingShown.current} />;
 }

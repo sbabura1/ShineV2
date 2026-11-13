@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowLeft, Check, ChevronRight, Copy, Download, LogOut, Moon, Sun, Users, X } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Copy, LogOut, Moon, Sun, Users, X } from 'lucide-react';
 import { useTheme } from '../../prototype/utils/theme';
-import { getStudentStatus, classMetrics, activityLabel } from './facultyData';
+import { classMetrics, activityLabel } from './facultyData';
 import { api, segment } from '../../api/client';
 import { classroomWrite } from '../../api/classrooms';
 import { ClassesHome, Overview, Roster, Discussions, ClassSettings, tabs, navigate, Avatar, Status, Empty } from './FacultyViews';
@@ -100,14 +100,6 @@ export default function FacultyDashboard({ profile = {}, onLogout }) {
     await classroomWrite(classPath + '/discussions/' + segment(post.id), 'PATCH', { reviewed: !post.reviewed, expectedVersion: post.rev });
     await loadClass(classroom.id);
   });
-  const exportProgress = () => {
-    // Quote cells and neutralize spreadsheet formulas when faculty edit names.
-    const quote = value => '"' + String(value ?? '').replace(/^[=+@\-\t\r]/, "'$&").replaceAll('"', '""') + '"';
-    const rows = [['Student', 'Email', 'Status', 'Missions completed', 'Baseline accuracy (%)', 'Last active'], ...classroom.students.map(student => [student.name, student.email, getStudentStatus(student), student.missions, student.accuracy, student.lastActive])];
-    const url = URL.createObjectURL(new Blob([rows.map(row => row.map(quote).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' }));
-    const link = document.createElement('a'); link.href = url; link.download = classroom.course.replace(/[^a-z0-9]/gi, '-') + '-progress.csv'; link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000); notify('Class progress exported.');
-  };
   return <div className="app faculty-app">
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content').focus(); }}>Skip to content</a>
     <header className="faculty-topbar">
@@ -123,7 +115,7 @@ export default function FacultyDashboard({ profile = {}, onLogout }) {
       {error && <div className="faculty-error" role="alert">{error} <button className="fd-text-button" onClick={() => refresh().then(() => setError('')).catch(failure => setError(failure.message))}>Retry</button></div>}
       {loading && (!classroom || !classroom.loaded) ? <><h1>{route.classId ? 'Your class' : 'Your classes'}</h1><p role="status">Loading your workspace…</p></> : route.classId && !classroom ? <><h1>Class unavailable</h1><Empty title="Unable to open this class">Return to your classes or retry the request.</Empty><button className="fd-button" onClick={() => navigate()}>Back to classes</button></> : classroom ? <>
         <button className="fd-text-button fd-back" onClick={() => navigate()}><ArrowLeft size={16} />All classes</button>
-        <div className="fd-page-heading fd-class-heading"><div><div className="fd-course-meta">{classroom.course}<span>·</span>{classroom.term}<span>·</span>{classroom.section}</div><h1>{classroom.name}</h1><p>A shared journey. Individual growth.</p></div><button className="fd-button fd-secondary" onClick={exportProgress}><Download size={16} />Export progress</button></div>
+        <div className="fd-page-heading fd-class-heading"><div><div className="fd-course-meta">{classroom.course}<span>·</span>{classroom.term}<span>·</span>{classroom.section}</div><h1>{classroom.name}</h1><p>A shared journey. Individual growth.</p></div></div>
         <section className="fd-invite-banner" aria-label="Invite students"><div><Users size={20} /><span><strong>Bring your class together</strong><small>Students can join using your class code in My Identity.</small></span></div><button className="fd-code-button" onClick={() => copy(classroom.code, 'Class code copied.')} aria-label={'Copy class code ' + classroom.code}><span>{classroom.code}</span><Copy size={16} /><span className="fd-code-copy">Copy code</span></button></section>
         <nav className="fd-tabs" aria-label="Class navigation">{tabs.map(({ id, label, icon: Icon }) => <a key={id} href={'#/faculty/' + classroom.id + '/' + id} aria-current={route.tab === id ? 'page' : undefined}><Icon size={17} />{label}{id === 'discussions' && classMetrics(classroom).needsReview > 0 && <span>{classMetrics(classroom).needsReview}</span>}</a>)}</nav>
         <div key={classroom.id + '/' + route.tab} className="fd-class-content">
